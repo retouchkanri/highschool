@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerNav, site } from "@/lib/site";
+import { InstagramIcon, XIcon, YouTubeIcon } from "@/components/SocialIcons";
 
 const snsLinks = [
-  { label: "YouTube", href: site.sns.youtube },
-  { label: "Instagram", href: site.sns.instagram },
-  { label: "X (Twitter)", href: site.sns.twitter },
+  { label: "YouTube", href: site.sns.youtube, Icon: YouTubeIcon },
+  { label: "Instagram", href: site.sns.instagram, Icon: InstagramIcon },
+  { label: "X (Twitter)", href: site.sns.twitter, Icon: XIcon },
 ];
 
 export default function Footer() {
@@ -50,15 +51,16 @@ export default function Footer() {
               ／FAX {site.fax}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {snsLinks.map((s) => (
+              {snsLinks.map(({ label, href, Icon }) => (
                 <a
-                  key={s.label}
-                  href={s.href}
+                  key={label}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-white/25 px-4 py-1.5 text-xs font-medium text-white/80 transition hover:border-sun-400 hover:text-sun-400"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/25 text-white/80 transition hover:border-sun-400 hover:text-sun-400"
                 >
-                  {s.label}
+                  <Icon className="h-[18px] w-[18px]" />
                 </a>
               ))}
             </div>

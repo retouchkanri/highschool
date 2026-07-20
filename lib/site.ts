@@ -11,7 +11,7 @@ export const site = {
   principal: "野口佳槻",
   founded: "2009年1月",
   sns: {
-    youtube: "https://www.youtube.com/@bajigaku",
+    youtube: "https://www.youtube.com/@umastable",
     instagram: "https://www.instagram.com/bajigakuin/",
     twitter: "https://twitter.com/bajigakuin",
   },
