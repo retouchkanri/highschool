@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
 export type QA = { q: string; a: string };
 
@@ -16,7 +15,7 @@ export default function Accordion({ items }: { items: QA[] }) {
         return (
           <div
             key={i}
-            className="overflow-hidden rounded-2xl border border-cream-300 bg-white shadow-soft"
+            className="overflow-hidden border border-cream-300 bg-white shadow-soft"
           >
             <button
               type="button"
@@ -30,34 +29,33 @@ export default function Accordion({ items }: { items: QA[] }) {
               <span className="flex-1 text-sm font-bold leading-6 text-pine-950 md:text-[15px]">
                 {item.q}
               </span>
-              <motion.span
-                animate={{ rotate: open ? 45 : 0 }}
-                transition={{ duration: 0.25 }}
+              <span
                 className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-pine-50 text-base font-bold text-pine-700"
+                style={{
+                  transform: `rotate(${open ? 45 : 0}deg)`,
+                  transition: "transform 250ms ease",
+                }}
                 aria-hidden
               >
                 +
-              </motion.span>
+              </span>
             </button>
-            <AnimatePresence initial={false}>
-              {open && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="flex gap-4 border-t border-cream-200 px-5 py-4 md:px-7 md:py-5">
-                    <span className="font-serif text-lg font-bold text-pine-600">
-                      A
-                    </span>
-                    <p className="flex-1 text-sm leading-7 text-ink-700">
-                      {item.a}
-                    </p>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div
+              className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="flex gap-4 border-t border-cream-200 px-5 py-4 md:px-7 md:py-5">
+                  <span className="font-serif text-lg font-bold text-pine-600">
+                    A
+                  </span>
+                  <p className="flex-1 text-sm leading-7 text-ink-700">
+                    {item.a}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         );
       })}

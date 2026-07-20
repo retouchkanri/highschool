@@ -5,6 +5,7 @@ import { Section, SectionTitle } from "@/components/Section";
 import { FadeUp, ScaleIn, SlideIn, Stagger, StaggerItem } from "@/components/motion";
 import Counter from "@/components/Counter";
 import Marquee from "@/components/Marquee";
+import YouTubeMarquee from "@/components/YouTubeMarquee";
 import CTABand from "@/components/CTABand";
 import HomeHero from "@/components/home/HomeHero";
 import { site } from "@/lib/site";
@@ -114,7 +115,7 @@ export default function HomePage() {
               <StaggerItem key={n.title}>
                 <Link
                   href={n.href}
-                  className="group flex flex-col gap-2 rounded-2xl border border-cream-300 bg-white px-6 py-5 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift md:flex-row md:items-center md:gap-6"
+                  className="group flex flex-col gap-2 border border-cream-300 bg-white px-6 py-5 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift md:flex-row md:items-center md:gap-6"
                 >
                   <time className="text-xs font-bold tracking-wider text-ink-500">
                     {n.date}
@@ -174,7 +175,7 @@ export default function HomePage() {
             </FadeUp>
           </div>
           <div className="relative">
-            <ScaleIn className="relative z-10 overflow-hidden rounded-3xl shadow-lift">
+            <ScaleIn className="relative z-10 overflow-hidden shadow-lift">
               <Image
                 src="/images/DSC_0047-2.jpg"
                 alt="馬場で騎乗する生徒たち"
@@ -186,7 +187,7 @@ export default function HomePage() {
             <SlideIn
               direction={-1}
               delay={0.25}
-              className="relative z-20 -mt-16 ml-auto w-2/3 overflow-hidden rounded-3xl border-4 border-white shadow-lift md:-mt-24"
+              className="relative z-20 -mt-16 ml-auto w-2/3 overflow-hidden border-4 border-white shadow-lift md:-mt-24"
             >
               <Image
                 src="/images/tokucho_001_1.jpg"
@@ -239,7 +240,7 @@ export default function HomePage() {
             <StaggerItem key={c.title} className="h-full">
               <Link
                 href={c.href}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift"
+                className="group flex h-full flex-col overflow-hidden bg-white shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift"
               >
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -285,7 +286,7 @@ export default function HomePage() {
         <Stagger gap={0.06} className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           {futures.map((f) => (
             <StaggerItem key={f.title}>
-              <div className="group relative h-44 overflow-hidden rounded-2xl shadow-soft md:h-56">
+              <div className="group relative h-44 overflow-hidden shadow-soft md:h-56">
                 <Image
                   src={f.img}
                   alt={f.title}
@@ -337,39 +338,8 @@ export default function HomePage() {
             </FadeUp>
           </div>
         </div>
-        <FadeUp delay={0.1} className="mt-12">
-          <div className="flex gap-5 overflow-x-auto px-6 pb-6 [scrollbar-width:thin] md:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]">
-            {channels.map((ch) => (
-              <a
-                key={ch.no}
-                href={site.sns.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-72 shrink-0"
-              >
-                <div className="relative h-40 overflow-hidden rounded-2xl">
-                  <Image
-                    src={ch.img}
-                    alt={ch.title}
-                    fill
-                    sizes="288px"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-pine-950/20 transition group-hover:bg-transparent" />
-                  <span className="absolute bottom-3 left-3 rounded bg-pine-950/85 px-2.5 py-1 font-serif text-[10px] font-bold tracking-[0.25em] text-gold-300">
-                    CH {ch.no}
-                  </span>
-                  <span className="absolute inset-0 m-auto flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-pine-950 opacity-0 shadow-lift transition duration-300 group-hover:opacity-100">
-                    ▶
-                  </span>
-                </div>
-                <p className="mt-3 text-sm font-bold text-white transition group-hover:text-sun-400">
-                  {ch.title}
-                </p>
-                <p className="mt-1 text-xs text-white/60">{ch.desc}</p>
-              </a>
-            ))}
-          </div>
+        <FadeUp delay={0.1} className="mt-12 pb-6">
+          <YouTubeMarquee channels={channels} youtubeUrl={site.sns.youtube} />
         </FadeUp>
       </section>
 
@@ -440,7 +410,7 @@ export default function HomePage() {
             <StaggerItem key={e.title} className="h-full">
               <Link
                 href={e.href}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-cream-100 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift"
+                className="group flex h-full flex-col overflow-hidden bg-cream-100 shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image

@@ -115,7 +115,7 @@ export default function CampPage() {
             </FadeUp>
           </div>
           <div className="relative">
-            <ScaleIn className="relative z-10 overflow-hidden rounded-3xl shadow-lift">
+            <ScaleIn className="relative z-10 overflow-hidden shadow-lift">
               <Image
                 src="/images/tokubetsu_002_1.jpg"
                 alt="騎手を目指してトレーニングに励む生徒"
@@ -127,7 +127,7 @@ export default function CampPage() {
             <SlideIn
               direction={-1}
               delay={0.25}
-              className="relative z-20 -mt-16 ml-auto w-2/3 overflow-hidden rounded-3xl border-4 border-white shadow-lift md:-mt-24"
+              className="relative z-20 -mt-16 ml-auto w-2/3 overflow-hidden border-4 border-white shadow-lift md:-mt-24"
             >
               <Image
                 src="/images/tokubetsu_002_2.jpg"
@@ -156,7 +156,7 @@ export default function CampPage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {programs.map((p) => (
             <StaggerItem key={p.no} className="h-full">
-              <div className="flex h-full flex-col rounded-3xl bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="flex h-full flex-col bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <div className="flex items-baseline justify-between">
                   <span className="font-serif text-3xl font-bold text-gold-500">
                     {p.no}
@@ -188,7 +188,7 @@ export default function CampPage() {
               lead="毎年、夏休み期間に開催しています。年度ごとの日程・お申込み方法は、お気軽にお問い合わせください。"
             />
             <FadeUp delay={0.2}>
-              <div className="mt-8 rounded-3xl bg-pine-900 p-7 text-white shadow-soft">
+              <div className="mt-8 bg-pine-900 p-7 text-white shadow-soft">
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
                   GUARANTEE
                 </p>
@@ -206,7 +206,7 @@ export default function CampPage() {
           <Stagger className="space-y-3">
             {outlineRows.map((row) => (
               <StaggerItem key={row.label}>
-                <div className="flex flex-col gap-2 rounded-2xl border border-cream-300 bg-cream-100 px-6 py-5 md:flex-row md:items-start md:gap-8">
+                <div className="flex flex-col gap-2 border border-cream-300 bg-cream-100 px-6 py-5 md:flex-row md:items-start md:gap-8">
                   <span className="w-32 shrink-0 text-sm font-bold text-pine-800">
                     {row.label}
                   </span>
@@ -242,7 +242,7 @@ export default function CampPage() {
             },
           ].map((r) => (
             <StaggerItem key={r.no} className="h-full">
-              <div className="flex h-full gap-5 rounded-3xl bg-white p-7 shadow-soft">
+              <div className="flex h-full gap-5 bg-white p-7 shadow-soft">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-pine-800 font-serif text-lg font-bold text-white">
                   {r.no}
                 </span>
@@ -259,7 +259,7 @@ export default function CampPage() {
           ))}
         </Stagger>
         <FadeUp delay={0.2}>
-          <div className="mx-auto mt-6 max-w-4xl rounded-2xl border-2 border-gold-500/40 bg-white px-6 py-5">
+          <div className="mx-auto mt-6 max-w-4xl border-2 border-gold-500/40 bg-white px-6 py-5">
             <p className="text-sm leading-7 text-ink-700">
               <span className="font-bold text-pine-800">高校1年生の方へ：</span>
               高校1年生での参加をご希望の場合は、直接、本校事務局（
@@ -296,7 +296,7 @@ export default function CampPage() {
           <Stagger gap={0.06} className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
             {gallery.map((g) => (
               <StaggerItem key={g.img}>
-                <div className="group relative h-40 overflow-hidden rounded-2xl shadow-soft md:h-56">
+                <div className="group relative h-40 overflow-hidden shadow-soft md:h-56">
                   <Image
                     src={g.img}
                     alt={g.alt}

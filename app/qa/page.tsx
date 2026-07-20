@@ -46,7 +46,7 @@ export default function QaPage() {
         />
         <Stagger className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col items-center rounded-3xl bg-cream-100 p-8 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div className="flex h-full flex-col items-center bg-cream-100 p-8 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 TEL
               </p>
@@ -65,7 +65,7 @@ export default function QaPage() {
             </div>
           </StaggerItem>
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col items-center rounded-3xl bg-cream-100 p-8 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+            <div className="flex h-full flex-col items-center bg-cream-100 p-8 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 FORM
               </p>

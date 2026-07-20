@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { nav, site } from "@/lib/site";
 
 export default function Header() {
@@ -68,12 +67,12 @@ export default function Header() {
                   </svg>
                 </button>
                 <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-pine-900/95 p-2 shadow-lift backdrop-blur-md">
+                  <div className="overflow-hidden border border-white/10 bg-pine-900/95 p-2 shadow-lift backdrop-blur-md">
                     {item.children.map((c) => (
                       <Link
                         key={c.href}
                         href={c.href}
-                        className="block rounded-xl px-4 py-3 text-[13px] font-medium text-white/85 transition hover:bg-pine-700/60 hover:text-sun-400"
+                        className="block px-4 py-3 text-[13px] font-medium text-white/85 transition hover:bg-pine-700/60 hover:text-sun-400"
                       >
                         {c.label}
                       </Link>
@@ -133,56 +132,51 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden bg-pine-950/98 backdrop-blur-md lg:hidden"
-          >
-            <nav className="space-y-1 px-6 pb-8 pt-2">
-              {nav.map((item) =>
-                item.children ? (
-                  <div key={item.label} className="pt-2">
-                    <p className="px-2 pb-1 text-[11px] font-bold tracking-widest text-gold-400">
-                      {item.label}
-                    </p>
-                    {item.children.map((c) => (
-                      <Link
-                        key={c.href}
-                        href={c.href}
-                        className="block rounded-lg px-4 py-3 text-sm font-medium text-white/90 transition hover:bg-pine-800"
-                      >
-                        {c.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
+      <div
+        className={`overflow-hidden bg-pine-950/98 backdrop-blur-md transition-all duration-300 lg:hidden ${
+          open ? "max-h-[75vh] opacity-100" : "max-h-0 opacity-0"
+        }`}
+        aria-hidden={!open}
+      >
+        <nav className="space-y-1 px-6 pb-8 pt-2">
+          {nav.map((item) =>
+            item.children ? (
+              <div key={item.label} className="pt-2">
+                <p className="px-2 pb-1 text-[11px] font-bold tracking-widest text-gold-400">
+                  {item.label}
+                </p>
+                {item.children.map((c) => (
                   <Link
-                    key={item.href}
-                    href={item.href!}
-                    className="block rounded-lg px-2 py-3 text-sm font-medium text-white/90 transition hover:bg-pine-800"
+                    key={c.href}
+                    href={c.href}
+                    className="block px-4 py-3 text-sm font-medium text-white/90 transition hover:bg-pine-800"
                   >
-                    {item.label}
+                    {c.label}
                   </Link>
-                )
-              )}
-              <div className="pt-4">
-                <a
-                  href={site.forms.shiryo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-full bg-sun-500 px-6 py-3.5 text-center text-sm font-bold text-pine-950"
-                >
-                  無料の資料請求はこちら
-                </a>
+                ))}
               </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href!}
+                className="block px-2 py-3 text-sm font-medium text-white/90 transition hover:bg-pine-800"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
+          <div className="pt-4">
+            <a
+              href={site.forms.shiryo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-full bg-sun-500 px-6 py-3.5 text-center text-sm font-bold text-pine-950"
+            >
+              無料の資料請求はこちら
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

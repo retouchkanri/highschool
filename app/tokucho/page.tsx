@@ -107,7 +107,7 @@ export default function TokuchoPage() {
             </FadeUp>
           </div>
           <div className="relative">
-            <ScaleIn className="relative z-10 overflow-hidden rounded-3xl shadow-lift">
+            <ScaleIn className="relative z-10 overflow-hidden shadow-lift">
               <Image
                 src="/images/tokucho_001_2.jpg"
                 alt="緑豊かなキャンパスで馬と過ごす生徒たち"
@@ -119,7 +119,7 @@ export default function TokuchoPage() {
             <SlideIn
               direction={-1}
               delay={0.25}
-              className="relative z-20 -mt-14 ml-auto w-2/3 overflow-hidden rounded-3xl border-4 border-white shadow-lift md:-mt-20"
+              className="relative z-20 -mt-14 ml-auto w-2/3 overflow-hidden border-4 border-white shadow-lift md:-mt-20"
             >
               <Image
                 src="/images/tokucho_001_3.jpg"
@@ -148,7 +148,7 @@ export default function TokuchoPage() {
         <Stagger className="mt-14 grid gap-6 md:grid-cols-2 md:gap-8">
           {features.map((f) => (
             <StaggerItem key={f.no} className="h-full">
-              <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <article className="group flex h-full flex-col overflow-hidden bg-white shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <div className="relative h-52 overflow-hidden md:h-64">
                   <Image
                     src={f.img}
@@ -221,7 +221,7 @@ export default function TokuchoPage() {
                 <p className="mt-4 text-sm leading-8 text-white/85 md:text-[15px]">
                   広域通信制高校・明蓬館高等学校との連携により、「学校だったら当たり前」「高校だったら常識」という従来の枠にとらわれず、皆さんが最も学びやすいカリキュラムを編成しています。
                 </p>
-                <blockquote className="mt-8 rounded-2xl border-l-4 border-gold-500 bg-white/5 px-7 py-6">
+                <blockquote className="mt-8 border-l-4 border-gold-500 bg-white/5 px-7 py-6">
                   <p className="font-serif text-xl font-bold text-sun-400 md:text-2xl">
                     「勉強は最低限！夢は最大限！」
                   </p>
@@ -238,7 +238,7 @@ export default function TokuchoPage() {
               </FadeUp>
             </div>
             <SlideIn delay={0.2} className="relative">
-              <div className="overflow-hidden rounded-3xl border-4 border-white/10 shadow-lift">
+              <div className="overflow-hidden border-4 border-white/10 shadow-lift">
                 <Image
                   src="/images/DSC_0026-4.jpg"
                   alt="生徒と馬が向き合うバジガクの日常"

@@ -1,3 +1,5 @@
+"use client";
+
 import { site } from "@/lib/site";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 
@@ -64,7 +66,7 @@ export default function CTABand() {
                 href={c.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group block h-full rounded-2xl p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-lift ${c.accent}`}
+                className={`group block h-full p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-lift ${c.accent}`}
               >
                 <p className="text-[10px] font-bold tracking-[0.35em] opacity-70">
                   {c.en}

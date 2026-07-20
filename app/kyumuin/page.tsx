@@ -163,7 +163,7 @@ export default function KyumuinPage() {
             <Stagger className="mt-10 space-y-4">
               {overviewPoints.map((p) => (
                 <StaggerItem key={p.title}>
-                  <div className="rounded-2xl border border-cream-300 bg-cream-100 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+                  <div className="border border-cream-300 bg-cream-100 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
                     <h3 className="flex items-start gap-3 text-sm font-bold text-pine-950 md:text-[15px]">
                       <span className="mt-0.5 inline-block h-4 w-1 shrink-0 rounded-full bg-gold-500" />
                       {p.title}
@@ -177,7 +177,7 @@ export default function KyumuinPage() {
             </Stagger>
           </div>
           <div className="relative lg:sticky lg:top-28">
-            <ScaleIn className="relative z-10 overflow-hidden rounded-3xl shadow-lift">
+            <ScaleIn className="relative z-10 overflow-hidden shadow-lift">
               <Image
                 src="/images/kyumuin_001_2.jpg"
                 alt="学校所有の現役競走馬を管理する生徒たち"
@@ -189,7 +189,7 @@ export default function KyumuinPage() {
             <SlideIn
               direction={-1}
               delay={0.25}
-              className="relative z-20 -mt-14 ml-auto w-2/3 overflow-hidden rounded-3xl border-4 border-white shadow-lift md:-mt-20"
+              className="relative z-20 -mt-14 ml-auto w-2/3 overflow-hidden border-4 border-white shadow-lift md:-mt-20"
             >
               <Image
                 src="/images/kyumuin_001_3.jpg"
@@ -218,7 +218,7 @@ export default function KyumuinPage() {
         <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
             <StaggerItem key={s.no} className="h-full">
-              <div className="relative flex h-full flex-col rounded-3xl bg-white p-8 pt-10 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="relative flex h-full flex-col bg-white p-8 pt-10 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <span className="absolute -top-5 left-8 flex h-11 w-11 items-center justify-center rounded-full bg-pine-800 font-serif text-sm font-bold text-gold-300 shadow-soft">
                   {s.no}
                 </span>
@@ -236,7 +236,7 @@ export default function KyumuinPage() {
           ))}
         </Stagger>
         <FadeUp delay={0.15} className="mt-12">
-          <div className="overflow-hidden rounded-3xl shadow-soft">
+          <div className="overflow-hidden shadow-soft">
             <Image
               src="/images/kyumuin_002_1.jpg"
               alt="競馬場で学校所有馬を応援する生徒たち"
@@ -273,7 +273,7 @@ export default function KyumuinPage() {
               { value: totalPassed, label: "最終合格（累計）", note: "高校在学中の現役合格も多数" },
             ].map((s) => (
               <StaggerItem key={s.label} className="text-center">
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+                <div className="border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
                   <p className="font-serif text-5xl font-bold text-sun-400">
                     <Counter to={s.value} suffix="名" />
                   </p>
@@ -284,7 +284,7 @@ export default function KyumuinPage() {
             ))}
           </Stagger>
           <FadeUp delay={0.15} className="mt-12">
-            <div className="overflow-x-auto rounded-2xl border border-white/10">
+            <div className="overflow-x-auto border border-white/10">
               <table className="w-full min-w-[560px] text-left text-sm text-white/85">
                 <thead>
                   <tr className="bg-white/10 text-[12px] tracking-wider text-gold-300">
@@ -331,7 +331,7 @@ export default function KyumuinPage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {supports.map((s) => (
             <StaggerItem key={s.no} className="h-full">
-              <div className="flex h-full flex-col rounded-3xl border border-cream-300 bg-cream-100 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="flex h-full flex-col border border-cream-300 bg-cream-100 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <p className="font-serif text-2xl font-bold text-gold-500">{s.no}</p>
                 <h3 className="mt-3 font-serif text-base font-bold leading-snug text-pine-950 md:text-lg">
                   {s.title}
@@ -344,7 +344,7 @@ export default function KyumuinPage() {
           ))}
         </Stagger>
         <FadeUp delay={0.1} className="mt-10">
-          <p className="mx-auto max-w-3xl rounded-2xl bg-pine-50 px-6 py-5 text-center text-sm font-bold leading-7 text-pine-800">
+          <p className="mx-auto max-w-3xl bg-pine-50 px-6 py-5 text-center text-sm font-bold leading-7 text-pine-800">
             高校3年次に、JRA競馬学校「厩務員課程」の受験が可能。
             <br className="hidden md:block" />
             地方競馬の厩務員や育成・生産牧場への就職を目指す生徒にも有利なカリキュラムです。
@@ -355,7 +355,7 @@ export default function KyumuinPage() {
       {/* (6) 充実のインターンシップ */}
       <Section className="bg-cream-100">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <ScaleIn className="order-2 overflow-hidden rounded-3xl shadow-lift lg:order-1">
+          <ScaleIn className="order-2 overflow-hidden shadow-lift lg:order-1">
             <Image
               src="/images/kyumuin_003_1.jpg"
               alt="牧場でのインターンシップに取り組む生徒"
@@ -378,7 +378,7 @@ export default function KyumuinPage() {
                 しかも、経験できるのは1か所だけではありません。在学中に約3か所以上の牧場を経験できるから、技術も知識も視野も大きく広がり、自分に合った就職先をじっくり見極められます。これはバジガクならではの大きなメリットです。
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="rounded-2xl bg-white p-6 text-center shadow-soft">
+                <div className="bg-white p-6 text-center shadow-soft">
                   <p className="font-serif text-3xl font-bold text-pine-800 md:text-4xl">
                     <Counter to={350} suffix="件超" />
                   </p>
@@ -386,7 +386,7 @@ export default function KyumuinPage() {
                     全国の馬関連求人情報
                   </p>
                 </div>
-                <div className="rounded-2xl bg-white p-6 text-center shadow-soft">
+                <div className="bg-white p-6 text-center shadow-soft">
                   <p className="font-serif text-3xl font-bold text-pine-800 md:text-4xl">
                     約<Counter to={3} suffix="か所" />
                     <span className="text-lg">以上</span>
@@ -410,7 +410,7 @@ export default function KyumuinPage() {
           lead="高校の授業そのものが、厩務員課程受験と馬のプロへの準備につながる。バジガクならではの科目編成です。"
         />
         <FadeUp delay={0.1} className="mt-12">
-          <div className="overflow-x-auto rounded-2xl border border-cream-300 shadow-soft">
+          <div className="overflow-x-auto border border-cream-300 shadow-soft">
             <table className="w-full min-w-[560px] text-left text-sm">
               <thead>
                 <tr className="bg-pine-800 text-[12px] tracking-wider text-white">

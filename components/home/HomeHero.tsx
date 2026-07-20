@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 
 const slides = [
   "/images/DSC_0047-2.jpg",
@@ -22,25 +21,27 @@ export default function HomeHero() {
   }, []);
 
   return (
-    <section className="relative flex h-[100svh] min-h-[560px] items-center justify-center overflow-hidden">
-      <AnimatePresence>
-        <motion.div
-          key={index}
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.8, ease: "easeInOut" }}
-        >
-          <motion.div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[index]})` }}
-            initial={{ scale: 1.15 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 8, ease: "linear" }}
+    <section
+      id="page-hero"
+      className="relative flex h-[100svh] min-h-[560px] items-center justify-center overflow-hidden"
+    >
+      <div className="absolute inset-0">
+        {slides.map((slide, i) => (
+          <div
+            key={slide}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[1800ms] ease-in-out ${
+              i === index ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              backgroundImage: `url(${slide})`,
+              transform: i === index ? "scale(1)" : "scale(1.08)",
+              transitionProperty: "opacity, transform",
+              transitionDuration: "1800ms, 6500ms",
+              transitionTimingFunction: "ease-in-out, linear",
+            }}
           />
-        </motion.div>
-      </AnimatePresence>
+        ))}
+      </div>
 
       <div
         aria-hidden
@@ -48,11 +49,7 @@ export default function HomeHero() {
       />
 
       <div className="relative z-10 flex flex-col items-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div className="animate-[fade-up_1.1s_ease-out_0.2s_both]">
           <Image
             src="/images/top_logo.png"
             alt="馬の学校 東関東馬事高等学院"
@@ -61,33 +58,20 @@ export default function HomeHero() {
             priority
             className="mx-auto w-56 md:w-80"
           />
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 font-serif text-2xl font-bold leading-relaxed text-white [text-shadow:0_2px_24px_rgb(11_31_22/0.6)] md:text-4xl"
+        </div>
+        <h1
+          className="animate-[fade-up_1s_ease-out_0.6s_both] mt-8 font-serif text-2xl font-bold leading-relaxed text-white [text-shadow:0_2px_24px_rgb(11_31_22/0.6)] md:text-4xl"
         >
           勉強は最低限、夢は最大限。
           <br />
           <span className="text-xl md:text-3xl">
             馬と共に過ごす、高校3年間。
           </span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.0, delay: 1.0 }}
-          className="mt-5 text-xs leading-6 tracking-widest text-white/85 md:text-sm"
-        >
+        </h1>
+        <p className="animate-[fade-in_1s_ease-out_1s_both] mt-5 text-xs leading-6 tracking-widest text-white/85 md:text-sm">
           千葉県山武市｜全寮制・馬の学校｜広域通信制 明蓬館高等学校 連携
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-9 flex flex-wrap justify-center gap-4"
-        >
+        </p>
+        <div className="animate-[fade-up_0.9s_ease-out_1.25s_both] mt-9 flex flex-wrap justify-center gap-4">
           <Link
             href="/opencampus"
             className="group inline-flex items-center gap-3 rounded-full bg-sun-500 px-8 py-4 text-sm font-bold text-pine-950 shadow-lift transition hover:brightness-105"
@@ -103,7 +87,7 @@ export default function HomeHero() {
           >
             コースを見る
           </Link>
-        </motion.div>
+        </div>
       </div>
 
       {/* slide dots */}
@@ -122,21 +106,12 @@ export default function HomeHero() {
       </div>
 
       {/* scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center"
-      >
+      <div className="animate-[fade-in_1s_ease-out_1.8s_both] absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center">
         <p className="text-[10px] font-bold tracking-[0.4em] text-white/70">
           SCROLL
         </p>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="mx-auto mt-2 h-8 w-[1px] bg-gradient-to-b from-white/80 to-transparent"
-        />
-      </motion.div>
+        <div className="mx-auto mt-2 h-8 w-[1px] animate-[scroll-line_1.8s_ease-in-out_infinite] bg-gradient-to-b from-white/80 to-transparent" />
+      </div>
     </section>
   );
 }

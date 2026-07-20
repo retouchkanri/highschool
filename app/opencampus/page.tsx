@@ -163,7 +163,7 @@ export default function OpenCampusPage() {
             </FadeUp>
           </div>
           <div className="relative">
-            <ScaleIn className="relative z-10 overflow-hidden rounded-3xl shadow-lift">
+            <ScaleIn className="relative z-10 overflow-hidden shadow-lift">
               <Image
                 src="/images/taiken-1_003_1.jpg"
                 alt="オープンキャンパスで馬とふれあう参加者"
@@ -175,7 +175,7 @@ export default function OpenCampusPage() {
             <SlideIn
               direction={-1}
               delay={0.25}
-              className="relative z-20 -mt-14 ml-auto w-2/3 overflow-hidden rounded-3xl border-4 border-white shadow-lift md:-mt-20"
+              className="relative z-20 -mt-14 ml-auto w-2/3 overflow-hidden border-4 border-white shadow-lift md:-mt-20"
             >
               <Image
                 src="/images/taiken-1_002_1-1.jpg"
@@ -194,7 +194,7 @@ export default function OpenCampusPage() {
         <Stagger className="mt-16 grid gap-6 md:grid-cols-3">
           {features.map((f) => (
             <StaggerItem key={f.no} className="h-full">
-              <div className="flex h-full flex-col rounded-3xl border border-cream-300 bg-cream-100 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="flex h-full flex-col border border-cream-300 bg-cream-100 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <p className="font-serif text-xs font-bold tracking-[0.35em] text-gold-600">
                   POINT {f.no}
                 </p>
@@ -243,7 +243,7 @@ export default function OpenCampusPage() {
                         </p>
                       )}
                       {t.details && (
-                        <ul className="mt-4 grid gap-2 rounded-2xl border border-cream-300 bg-white p-6 sm:grid-cols-2">
+                        <ul className="mt-4 grid gap-2 border border-cream-300 bg-white p-6 sm:grid-cols-2">
                           {t.details.map((d) => (
                             <li
                               key={d}
@@ -260,7 +260,7 @@ export default function OpenCampusPage() {
                       )}
                     </div>
                     {t.img && (
-                      <div className="relative h-44 w-full overflow-hidden rounded-2xl shadow-soft md:h-40 md:w-60">
+                      <div className="relative h-44 w-full overflow-hidden shadow-soft md:h-40 md:w-60">
                         <Image
                           src={t.img.src}
                           alt={t.img.alt}
@@ -295,7 +295,7 @@ export default function OpenCampusPage() {
         />
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
           <FadeUp>
-            <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-lift md:p-10">
+            <div className="flex h-full flex-col bg-white p-8 shadow-lift md:p-10">
               <p className="text-[11px] font-bold tracking-[0.4em] text-gold-600">
                 OUTLINE
               </p>
@@ -339,7 +339,7 @@ export default function OpenCampusPage() {
           <Stagger className="grid content-start gap-5 sm:grid-cols-2">
             {campPrograms.map((p) => (
               <StaggerItem key={p.title} className="h-full">
-                <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-pine-900 p-6 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                <div className="flex h-full flex-col border border-white/10 bg-pine-900 p-6 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                   <h4 className="font-serif text-base font-bold text-sun-400 md:text-lg">
                     {p.title}
                   </h4>
@@ -350,7 +350,7 @@ export default function OpenCampusPage() {
               </StaggerItem>
             ))}
             <StaggerItem className="sm:col-span-2">
-              <p className="rounded-2xl border border-gold-400/40 bg-pine-900/60 p-5 text-xs leading-6 text-white/70">
+              <p className="border border-gold-400/40 bg-pine-900/60 p-5 text-xs leading-6 text-white/70">
                 ※ 実際の授業の雰囲気も体験しながら、学校生活を過ごすように入学をご検討いただけます。お申し込みまでに、学校見学・オープンキャンパスへのご参加をお願いしています。
               </p>
             </StaggerItem>
@@ -359,7 +359,7 @@ export default function OpenCampusPage() {
         <Stagger gap={0.06} className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3">
           {campGallery.map((g) => (
             <StaggerItem key={g.src}>
-              <div className="group relative h-40 overflow-hidden rounded-2xl md:h-52">
+              <div className="group relative h-40 overflow-hidden md:h-52">
                 <Image
                   src={g.src}
                   alt={g.alt}

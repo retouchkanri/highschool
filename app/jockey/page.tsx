@@ -197,7 +197,7 @@ export default function JockeyPage() {
         />
 
         <FadeUp className="mt-12">
-          <div className="relative overflow-hidden rounded-3xl bg-pine-900 px-6 py-10 md:px-12 md:py-14">
+          <div className="relative overflow-hidden bg-pine-900 px-6 py-10 md:px-12 md:py-14">
             <div
               aria-hidden
               className="absolute inset-0 bg-cover bg-center opacity-10"
@@ -228,7 +228,7 @@ export default function JockeyPage() {
 
         <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:items-center">
           <FadeUp>
-            <div className="rounded-3xl border-l-4 border-gold-500 bg-cream-100 p-8 md:p-10">
+            <div className="border-l-4 border-gold-500 bg-cream-100 p-8 md:p-10">
               <p className="font-serif text-2xl font-bold leading-relaxed text-pine-950 md:text-3xl">
                 それでも——
                 <br />
@@ -285,7 +285,7 @@ export default function JockeyPage() {
 
         <Stagger className="mt-12 grid gap-6 lg:grid-cols-3">
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col rounded-3xl bg-pine-950 p-8 shadow-soft">
+            <div className="flex h-full flex-col bg-pine-950 p-8 shadow-soft">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
                 JRA
               </p>
@@ -314,7 +314,7 @@ export default function JockeyPage() {
           </StaggerItem>
 
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-soft">
+            <div className="flex h-full flex-col bg-white p-8 shadow-soft">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 NAR
               </p>
@@ -325,7 +325,7 @@ export default function JockeyPage() {
                 {narResults.map((n) => (
                   <div
                     key={n.term}
-                    className="rounded-xl border border-cream-300 bg-cream-100 px-2 py-3 text-center"
+                    className="border border-cream-300 bg-cream-100 px-2 py-3 text-center"
                   >
                     <p className="text-[10px] font-bold text-ink-500">
                       {n.term}
@@ -343,7 +343,7 @@ export default function JockeyPage() {
           </StaggerItem>
 
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col rounded-3xl border-2 border-gold-500/40 bg-white p-8 shadow-soft">
+            <div className="flex h-full flex-col border-2 border-gold-500/40 bg-white p-8 shadow-soft">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 FEMALE JOCKEYS
               </p>
@@ -388,7 +388,7 @@ export default function JockeyPage() {
             {programs.map((p) => (
               <StaggerItem key={p.no} className="h-full">
                 {p.img ? (
-                  <div className="flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                  <div className="flex h-full flex-col overflow-hidden bg-white shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                     <div className="relative h-44 overflow-hidden">
                       <Image
                         src={p.img}
@@ -411,7 +411,7 @@ export default function JockeyPage() {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex h-full flex-col rounded-3xl border border-gold-500/30 bg-pine-900 p-6 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                  <div className="flex h-full flex-col border border-gold-500/30 bg-pine-900 p-6 transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                     <span className="font-serif text-3xl font-bold text-gold-400">
                       {p.no}
                     </span>
@@ -459,7 +459,7 @@ export default function JockeyPage() {
             },
           ].map((b) => (
             <StaggerItem key={b.title} className="h-full">
-              <div className="h-full rounded-2xl border border-cream-300 bg-white p-6 shadow-soft">
+              <div className="h-full border border-cream-300 bg-white p-6 shadow-soft">
                 <p className="font-serif text-base font-bold text-pine-950">
                   {b.title}
                 </p>
@@ -472,7 +472,7 @@ export default function JockeyPage() {
         </Stagger>
 
         <FadeUp className="mt-12">
-          <div className="overflow-hidden rounded-3xl bg-white shadow-soft">
+          <div className="overflow-hidden bg-white shadow-soft">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[640px] text-left text-sm">
                 <thead>
@@ -512,7 +512,7 @@ export default function JockeyPage() {
       {/* (6) 合格保証制度 */}
       <Section className="bg-white">
         <FadeUp>
-          <div className="relative overflow-hidden rounded-3xl border-2 border-gold-500 bg-pine-950 px-6 py-12 text-center md:px-12 md:py-16">
+          <div className="relative overflow-hidden border-2 border-gold-500 bg-pine-950 px-6 py-12 text-center md:px-12 md:py-16">
             <div
               aria-hidden
               className="absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold-500/15 blur-3xl"
@@ -546,7 +546,7 @@ export default function JockeyPage() {
                 ].map((s) => (
                   <div
                     key={s.step}
-                    className="rounded-2xl border border-white/15 bg-white/5 px-4 py-5"
+                    className="border border-white/15 bg-white/5 px-4 py-5"
                   >
                     <p className="text-[10px] font-bold tracking-[0.3em] text-gold-300">
                       {s.step}
@@ -605,7 +605,7 @@ export default function JockeyPage() {
           <Stagger className="space-y-3">
             {pathFlow.map((p, i) => (
               <StaggerItem key={p.title}>
-                <div className="relative rounded-2xl border border-cream-300 bg-white p-6 shadow-soft">
+                <div className="relative border border-cream-300 bg-white p-6 shadow-soft">
                   <p className="text-[10px] font-bold tracking-[0.3em] text-gold-600">
                     {p.step}
                   </p>

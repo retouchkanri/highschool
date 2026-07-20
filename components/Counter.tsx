@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
 
 /** Number that counts up when scrolled into view. */
 export default function Counter({
@@ -16,8 +15,26 @@ export default function Counter({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [inView, setInView] = useState(false);
   const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || inView) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "-60px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [inView]);
 
   useEffect(() => {
     if (!inView) return;

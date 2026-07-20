@@ -136,7 +136,7 @@ export default function SupportPage() {
             </FadeUp>
           </div>
           <div className="relative">
-            <ScaleIn className="relative z-10 overflow-hidden rounded-3xl shadow-lift">
+            <ScaleIn className="relative z-10 overflow-hidden shadow-lift">
               <Image
                 src="/images/DSC_0026-4.jpg"
                 alt="馬とふれあいながら過ごす生徒"
@@ -148,7 +148,7 @@ export default function SupportPage() {
             <SlideIn
               direction={-1}
               delay={0.25}
-              className="relative z-20 -mt-16 ml-auto w-2/3 overflow-hidden rounded-3xl border-4 border-white shadow-lift md:-mt-24"
+              className="relative z-20 -mt-16 ml-auto w-2/3 overflow-hidden border-4 border-white shadow-lift md:-mt-24"
             >
               <Image
                 src="/images/20220529_064457.jpg"
@@ -183,7 +183,7 @@ export default function SupportPage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {supports.map((s) => (
             <StaggerItem key={s.no} className="h-full">
-              <div className="group flex h-full flex-col rounded-3xl bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="group flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <div className="flex items-center justify-between">
                   <span className="font-serif text-3xl font-bold text-gold-500">
                     {s.no}
@@ -235,7 +235,7 @@ export default function SupportPage() {
               <Stagger className="mt-10 grid gap-4 sm:grid-cols-2">
                 {parentPoints.map((p) => (
                   <StaggerItem key={p.title}>
-                    <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                    <div className="h-full border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                       <h3 className="text-sm font-bold text-white">{p.title}</h3>
                       <p className="mt-2 text-xs leading-6 text-white/70">
                         {p.desc}
@@ -258,7 +258,7 @@ export default function SupportPage() {
               </FadeUp>
             </div>
             <div className="space-y-5">
-              <ScaleIn className="overflow-hidden rounded-3xl shadow-lift">
+              <ScaleIn className="overflow-hidden shadow-lift">
                 <Image
                   src="/images/shisetsu_001_1.jpg"
                   alt="小学校をリノベーションした校舎と学生寮"
@@ -268,7 +268,7 @@ export default function SupportPage() {
                 />
               </ScaleIn>
               <div className="grid grid-cols-2 gap-5">
-                <ScaleIn delay={0.15} className="overflow-hidden rounded-2xl shadow-lift">
+                <ScaleIn delay={0.15} className="overflow-hidden shadow-lift">
                   <Image
                     src="/images/shisetsu_005_1.jpg"
                     alt="学生寮の個室"
@@ -277,7 +277,7 @@ export default function SupportPage() {
                     className="h-full w-full object-cover"
                   />
                 </ScaleIn>
-                <ScaleIn delay={0.25} className="overflow-hidden rounded-2xl shadow-lift">
+                <ScaleIn delay={0.25} className="overflow-hidden shadow-lift">
                   <Image
                     src="/images/shisetsu_006_1.jpg"
                     alt="食堂での食事の様子"
@@ -303,7 +303,7 @@ export default function SupportPage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
           {steps.map((st) => (
             <StaggerItem key={st.no} className="h-full">
-              <div className="relative flex h-full flex-col rounded-3xl bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="relative flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <p className="text-[11px] font-bold tracking-[0.35em] text-gold-600">
                   {st.no}
                 </p>

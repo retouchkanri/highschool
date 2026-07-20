@@ -225,7 +225,7 @@ export default function GaiyoPage() {
             </FadeUp>
           </div>
           <FadeUp delay={0.1}>
-            <div className="overflow-x-auto rounded-3xl border border-cream-300 bg-white shadow-soft">
+            <div className="overflow-x-auto border border-cream-300 bg-white shadow-soft">
               <table className="w-full min-w-[440px] border-collapse text-left">
                 <tbody>
                   {profileRows.map((row) => (
@@ -269,7 +269,7 @@ export default function GaiyoPage() {
           <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
             {policies.map((p) => (
               <StaggerItem key={p.no} className="h-full">
-                <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition duration-300 hover:-translate-y-1.5 hover:border-gold-400/40">
+                <div className="flex h-full flex-col border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition duration-300 hover:-translate-y-1.5 hover:border-gold-400/40">
                   <div className="flex items-baseline gap-4">
                     <span className="font-serif text-4xl font-bold text-gold-400">
                       {p.no}
@@ -326,7 +326,7 @@ export default function GaiyoPage() {
                   </p>
                 </div>
                 <div
-                  className={`mt-3 rounded-2xl border bg-white p-5 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift md:mt-0 md:p-6 ${
+                  className={`mt-3 border bg-white p-5 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift md:mt-0 md:p-6 ${
                     h.highlight ? "border-gold-500/60" : "border-cream-300"
                   }`}
                 >
@@ -367,7 +367,7 @@ export default function GaiyoPage() {
               key={c.img}
               className={c.wide ? "md:col-span-2 md:row-span-2" : ""}
             >
-              <div className="group relative h-56 overflow-hidden rounded-3xl shadow-soft md:h-full">
+              <div className="group relative h-56 overflow-hidden shadow-soft md:h-full">
                 <Image
                   src={c.img}
                   alt={`${c.title}：${c.desc}`}

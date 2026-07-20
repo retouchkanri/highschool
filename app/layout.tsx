@@ -3,6 +3,8 @@ import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/chat/ChatWidget";
+import ScrollToTop from "@/components/ScrollToTop";
 import { site } from "@/lib/site";
 
 const notoSansJP = Noto_Sans_JP({
@@ -37,6 +39,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ChatWidget />
+        <ScrollToTop />
       </body>
     </html>
   );

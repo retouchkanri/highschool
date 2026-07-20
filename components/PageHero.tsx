@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { FadeUp } from "@/components/motion";
 
@@ -21,7 +23,10 @@ export default function PageHero({
   crumbs: Crumb[];
 }) {
   return (
-    <section className="relative flex min-h-[46vh] items-end overflow-hidden pt-20 md:min-h-[54vh]">
+    <section
+      id="page-hero"
+      className="relative flex min-h-[46vh] items-end overflow-hidden pt-20 md:min-h-[54vh]"
+    >
       <div
         className="absolute inset-0 scale-105 bg-cover bg-center animate-kenburns"
         style={{ backgroundImage: `url(${image})` }}

@@ -49,7 +49,7 @@ export default function FaqExplorer() {
   return (
     <div>
       {/* AIサーチ風の検索ボックス */}
-      <div className="mx-auto max-w-3xl rounded-3xl border border-cream-300 bg-white p-6 shadow-soft md:p-8">
+      <div className="mx-auto max-w-3xl border border-cream-300 bg-white p-6 shadow-soft md:p-8">
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-pine-950 px-3 py-1 text-[10px] font-bold tracking-[0.25em] text-gold-300">
             <svg
@@ -178,7 +178,7 @@ export default function FaqExplorer() {
           ))}
         </div>
       ) : (
-        <div className="mx-auto mt-8 max-w-2xl rounded-3xl border border-cream-300 bg-white p-10 text-center shadow-soft">
+        <div className="mx-auto mt-8 max-w-2xl border border-cream-300 bg-white p-10 text-center shadow-soft">
           <p className="font-serif text-lg font-bold text-pine-950">
             該当するQ&amp;Aが見つかりませんでした。
           </p>

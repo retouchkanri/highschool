@@ -196,7 +196,7 @@ export default function CoursePage() {
         <Stagger className="mt-14 grid items-stretch gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:gap-2">
           {/* STEP 1 */}
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col rounded-3xl border border-cream-300 bg-white p-7 shadow-soft">
+            <div className="flex h-full flex-col border border-cream-300 bg-white p-7 shadow-soft">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 STEP 01
               </p>
@@ -207,7 +207,7 @@ export default function CoursePage() {
                 在学中に騎手（JRA・地方競馬）を目指す方は「騎手受験特別コース」、それ以外の方は「一般高校乗馬コース」からのスタートです。
               </p>
               <div className="mt-5 space-y-3">
-                <div className="flex items-center gap-3 rounded-2xl bg-pine-50 px-4 py-3">
+                <div className="flex items-center gap-3 bg-pine-50 px-4 py-3">
                   <Image
                     src="/images/course_icon_green.png"
                     alt=""
@@ -224,7 +224,7 @@ export default function CoursePage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 rounded-2xl bg-cream-100 px-4 py-3">
+                <div className="flex items-center gap-3 bg-cream-100 px-4 py-3">
                   <Image
                     src="/images/course_icon_orange-2.png"
                     alt=""
@@ -249,7 +249,7 @@ export default function CoursePage() {
 
           {/* STEP 2 */}
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col rounded-3xl border border-cream-300 bg-white p-7 shadow-soft">
+            <div className="flex h-full flex-col border border-cream-300 bg-white p-7 shadow-soft">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 STEP 02
               </p>
@@ -260,7 +260,7 @@ export default function CoursePage() {
                 騎乗レベルや目標に応じて、競走馬に関わる道へチャレンジしたい方は「競走馬厩務員コース」を選択できます。もちろん、乗馬コースを続けて馬術を深めるのも王道です。
               </p>
               <div className="mt-5 space-y-3">
-                <div className="flex items-center gap-3 rounded-2xl bg-cream-100 px-4 py-3">
+                <div className="flex items-center gap-3 bg-cream-100 px-4 py-3">
                   <Image
                     src="/images/course_icon_brown.png"
                     alt=""
@@ -277,7 +277,7 @@ export default function CoursePage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 rounded-2xl bg-pine-50 px-4 py-3">
+                <div className="flex items-center gap-3 bg-pine-50 px-4 py-3">
                   <Image
                     src="/images/course_icon_green.png"
                     alt=""
@@ -302,7 +302,7 @@ export default function CoursePage() {
 
           {/* STEP 3 */}
           <StaggerItem className="h-full">
-            <div className="flex h-full flex-col rounded-3xl border border-cream-300 bg-white p-7 shadow-soft">
+            <div className="flex h-full flex-col border border-cream-300 bg-white p-7 shadow-soft">
               <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                 STEP 03
               </p>
@@ -354,7 +354,7 @@ export default function CoursePage() {
             <StaggerItem key={c.title} className="h-full">
               <Link
                 href={c.href}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift"
+                className="group flex h-full flex-col overflow-hidden bg-white shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift"
               >
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -449,7 +449,7 @@ export default function CoursePage() {
             },
           ].map((p) => (
             <StaggerItem key={p.img}>
-              <figure className="overflow-hidden rounded-2xl bg-white shadow-soft">
+              <figure className="overflow-hidden bg-white shadow-soft">
                 <div className="relative h-52 overflow-hidden md:h-56">
                   <Image
                     src={p.img}
@@ -478,7 +478,7 @@ export default function CoursePage() {
                 direction={i % 2 === 0 ? -1 : 1}
                 className={i % 2 === 0 ? "" : "lg:order-2"}
               >
-                <div className="relative overflow-hidden rounded-3xl shadow-lift">
+                <div className="relative overflow-hidden shadow-lift">
                   <Image
                     src={f.img}
                     alt={f.alt}
@@ -521,7 +521,7 @@ export default function CoursePage() {
               />
             </div>
             <FadeUp delay={0.1}>
-              <div className="overflow-x-auto rounded-3xl bg-white shadow-soft">
+              <div className="overflow-x-auto bg-white shadow-soft">
                 <table className="w-full min-w-[480px] border-collapse text-left">
                   <thead>
                     <tr className="bg-pine-800 text-white">
@@ -569,7 +569,7 @@ export default function CoursePage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
           {paths.map((p) => (
             <StaggerItem key={p.title} className="h-full">
-              <div className="flex h-full flex-col rounded-3xl border border-cream-300 bg-cream-100 p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="flex h-full flex-col border border-cream-300 bg-cream-100 p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
                   {p.en}
                 </p>
@@ -585,7 +585,7 @@ export default function CoursePage() {
           ))}
         </Stagger>
         <div className="mt-16 grid items-center gap-10 lg:grid-cols-2">
-          <ScaleIn className="overflow-hidden rounded-3xl shadow-lift">
+          <ScaleIn className="overflow-hidden shadow-lift">
             <Image
               src="/images/ippan_002_1.jpg"
               alt="仲間と馬と過ごすバジガクの高校生活"

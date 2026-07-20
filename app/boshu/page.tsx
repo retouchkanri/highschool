@@ -130,7 +130,7 @@ export default function BoshuPage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
           {policies.map((p) => (
             <StaggerItem key={p.no} className="h-full">
-              <div className="flex h-full flex-col rounded-3xl bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <p className="font-serif text-3xl font-bold text-gold-500">
                   {p.no}
                 </p>
@@ -161,7 +161,7 @@ export default function BoshuPage() {
               <span className="inline-block h-6 w-1.5 rounded-full bg-gold-500" />
               応募条件
             </h3>
-            <div className="mt-5 overflow-x-auto rounded-2xl border border-cream-300 bg-white shadow-soft">
+            <div className="mt-5 overflow-x-auto border border-cream-300 bg-white shadow-soft">
               <table className="w-full min-w-[420px] text-left">
                 <tbody>
                   {conditions.map((c, i) => (
@@ -189,7 +189,7 @@ export default function BoshuPage() {
               <span className="inline-block h-6 w-1.5 rounded-full bg-gold-500" />
               必要書類
             </h3>
-            <div className="mt-5 overflow-x-auto rounded-2xl border border-cream-300 bg-white shadow-soft">
+            <div className="mt-5 overflow-x-auto border border-cream-300 bg-white shadow-soft">
               <table className="w-full min-w-[420px] text-left">
                 <tbody>
                   {documents.map((d, i) => (
@@ -233,7 +233,7 @@ export default function BoshuPage() {
         <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {applicationPoints.map((a) => (
             <StaggerItem key={a.en} className="h-full">
-              <div className="flex h-full flex-col rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:bg-white/10">
+              <div className="flex h-full flex-col bg-white/5 p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:bg-white/10">
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
                   {a.en}
                 </p>
@@ -249,7 +249,7 @@ export default function BoshuPage() {
           ))}
         </Stagger>
         <FadeUp delay={0.15} className="mt-10">
-          <div className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 md:p-8">
+          <div className="bg-white/5 p-6 ring-1 ring-white/10 md:p-8">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
@@ -299,7 +299,7 @@ export default function BoshuPage() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           {/* 一般高校乗馬コース／競走馬厩務員コース */}
           <FadeUp className="h-full">
-            <div className="flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft">
+            <div className="flex h-full flex-col overflow-hidden bg-white shadow-soft">
               <div className="bg-pine-800 px-7 py-5">
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-300">
                   COURSE A
@@ -390,7 +390,7 @@ export default function BoshuPage() {
 
           {/* 騎手受験特別コース */}
           <FadeUp delay={0.1} className="h-full">
-            <div className="flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft">
+            <div className="flex h-full flex-col overflow-hidden bg-white shadow-soft">
               <div className="bg-pine-950 px-7 py-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
@@ -455,7 +455,7 @@ export default function BoshuPage() {
                 </table>
               </div>
               <div className="flex-1 px-7 py-6">
-                <div className="rounded-2xl border border-gold-500/40 bg-cream-100 p-5">
+                <div className="border border-gold-500/40 bg-cream-100 p-5">
                   <p className="text-[10px] font-bold tracking-[0.3em] text-gold-600">
                     GUARANTEE
                   </p>
@@ -472,7 +472,7 @@ export default function BoshuPage() {
         </div>
 
         <FadeUp delay={0.15} className="mt-8">
-          <div className="rounded-2xl border border-cream-300 bg-white p-6 shadow-soft md:p-8">
+          <div className="border border-cream-300 bg-white p-6 shadow-soft md:p-8">
             <ul className="space-y-2 text-xs leading-6 text-ink-700 md:text-[13px] md:leading-7">
               <li>
                 ※上記とは別途、連携する通信制高校への学費等（3年間あたり約120万円）が必要となります。
@@ -508,7 +508,7 @@ export default function BoshuPage() {
                   <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-pine-800 font-serif text-lg font-bold text-sun-400 shadow-soft md:h-14 md:w-14 md:text-xl">
                     {s.no}
                   </div>
-                  <div className="flex-1 rounded-2xl border border-cream-300 bg-cream-100 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lift md:p-7">
+                  <div className="flex-1 border border-cream-300 bg-cream-100 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lift md:p-7">
                     <h3 className="font-serif text-base font-bold text-pine-950 md:text-lg">
                       {s.title}
                     </h3>

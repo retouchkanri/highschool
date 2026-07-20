@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { type ReactNode } from "react";
+import { type CSSProperties, type ReactNode, useEffect, useRef, useState } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -11,6 +10,42 @@ type RevealProps = {
   once?: boolean;
 };
 
+function useRevealOnce(once = true) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || (once && visible)) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setVisible(true);
+          if (once) observer.disconnect();
+        } else if (!once) {
+          setVisible(false);
+        }
+      },
+      { rootMargin: "-60px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [once, visible]);
+
+  return { ref, visible };
+}
+
+function baseTransition(delay: number): CSSProperties {
+  return {
+    transitionProperty: "opacity, transform, clip-path",
+    transitionDuration: "700ms",
+    transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
+    transitionDelay: `${delay}s`,
+  };
+}
+
 /** Fade + rise on scroll into view. The workhorse reveal. */
 export function FadeUp({
   children,
@@ -19,17 +54,19 @@ export function FadeUp({
   y = 28,
   once = true,
 }: RevealProps) {
-  const reduce = useReducedMotion();
+  const { ref, visible } = useRevealOnce(once);
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      initial={{ opacity: 0, y: reduce ? 0 : y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once, margin: "-80px" }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        ...baseTransition(delay),
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : `translateY(${y}px)`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -44,29 +81,14 @@ export function Stagger({
   gap?: number;
 }) {
   return (
-    <motion.div
+    <div
       className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-60px" }}
-      variants={{
-        hidden: {},
-        show: { transition: { staggerChildren: gap } },
-      }}
+      style={{ ["--stagger-gap" as string]: `${gap}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 26 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
-  },
-};
 
 export function StaggerItem({
   children,
@@ -75,10 +97,20 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
+  const { ref, visible } = useRevealOnce(true);
   return (
-    <motion.div className={className} variants={itemVariants}>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        ...baseTransition(0),
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(26px)",
+        transitionDelay: "var(--stagger-gap, 0s)",
+      }}
+    >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -88,16 +120,20 @@ export function ScaleIn({
   className,
   delay = 0,
 }: RevealProps) {
+  const { ref, visible } = useRevealOnce(true);
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      initial={{ opacity: 0, scale: 0.94 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        ...baseTransition(delay),
+        opacity: visible ? 1 : 0,
+        transform: visible ? "scale(1)" : "scale(0.94)",
+        transitionDuration: "800ms",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -108,17 +144,20 @@ export function SlideIn({
   direction = 1,
   delay = 0,
 }: RevealProps & { direction?: 1 | -1 }) {
-  const reduce = useReducedMotion();
+  const { ref, visible } = useRevealOnce(true);
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      initial={{ opacity: 0, x: reduce ? 0 : 48 * direction }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        ...baseTransition(delay),
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateX(0)" : `translateX(${48 * direction}px)`,
+        transitionDuration: "800ms",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -128,15 +167,19 @@ export function CurtainImage({
   className,
   delay = 0,
 }: RevealProps) {
+  const { ref, visible } = useRevealOnce(true);
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      initial={{ clipPath: "inset(0 100% 0 0)" }}
-      whileInView={{ clipPath: "inset(0 0% 0 0)" }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 1.0, delay, ease: [0.77, 0, 0.175, 1] }}
+      style={{
+        ...baseTransition(delay),
+        clipPath: visible ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)",
+        transitionDuration: "1000ms",
+        transitionTimingFunction: "cubic-bezier(0.77, 0, 0.175, 1)",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

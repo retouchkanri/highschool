@@ -1,3 +1,5 @@
+"use client";
+
 import { FadeUp } from "@/components/motion";
 
 /**
