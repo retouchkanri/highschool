@@ -24,7 +24,17 @@ const profileRows: { label: string; value: React.ReactNode }[] = [
       </>
     ),
   },
-  { label: "設立", value: site.founded },
+  {
+    label: "設立",
+    value: (
+      <>
+        平成21年（2009年）9月
+        <span className="mt-1 block text-xs text-ink-500">
+          運営会社：株式会社馬事学院（{site.founded}設立）
+        </span>
+      </>
+    ),
+  },
   {
     label: "所在地",
     value: (
@@ -195,11 +205,11 @@ const facilityAreas: FacilityArea[] = [
     no: "01",
     en: "SCHOOL BUILDING",
     title: "校舎",
-    desc: "旧・日向小学校の校舎は、面影を残しながら「馬の高校」の学び舎へと生まれ変わりました。明蓬館高等学校と連携した高校授業や馬の座学は、教室・講義室で。授業の合間にはラウンジでひと休みし、元・家庭科室の食堂では365日3食のあたたかいごはんが生徒たちを待っています。放課後には体育館も開放され、体力づくりや息抜きの場になっています。",
+    desc: "旧・日向小学校の校舎は、面影を残しながら「馬の高校」の学び舎へと生まれ変わりました。明蓬館高等学校と連携した高校授業や馬の座学は、教室・講義室で。授業の合間にはラウンジでひと休みし、食堂では365日3食のあたたかいごはんが生徒たちを待っています。放課後には体育館も開放され、体力づくりや息抜きの場になっています。",
     spots: [
       "教室・講義室 — 高校授業と馬の座学の舞台",
       "ラウンジ — 授業の合間や放課後のひと休みに",
-      "食堂（元・家庭科室） — 365日3食を提供",
+      "食堂 — 365日3食を提供",
       "体育館 — 放課後の開放でリフレッシュ",
     ],
     main: { src: "/images/shisetsu_002_1.jpg", alt: "リノベーションされた校舎の外観" },
@@ -228,11 +238,10 @@ const facilityAreas: FacilityArea[] = [
     no: "03",
     en: "DORMITORY",
     title: "学生寮",
-    desc: "学生寮は全室個室で、男子寮と女子寮は棟が分かれています。居室は元・教室をリノベーションしたもので、3年間同じ部屋を自分らしくレイアウトして暮らせます。各フロアにはトイレと洗濯室を完備。夜間はセコムによる管理に加えて宿直スタッフも在籍し、初めての寮生活も安心して始められます。",
+    desc: "学生寮は全室個室で、男子寮と女子寮は棟が分かれています。居室は元・教室をリノベーションしたもので、自分らしくレイアウトして暮らせます。夜間はセコムによる管理に加えて宿直スタッフも在籍し、初めての寮生活も安心して始められます。",
     spots: [
       "全室個室 — 元・教室をリノベーションした自分だけの部屋",
       "男女別棟 — 寮同士の行き来はできません",
-      "各フロアにトイレ・洗濯室を完備",
       "夜間はセコム＋宿直スタッフの二重の見守り",
     ],
     main: { src: "/images/shisetsu_013_2.jpg", alt: "学生寮の個室" },
@@ -280,7 +289,7 @@ const accessRows: { label: string; value: React.ReactNode }[] = [
       <>
         JR総武本線「日向駅」下車、キャンパスまで徒歩圏内です。
         <span className="mt-1 block text-xs text-ink-500">
-          千葉方面・東京方面のどちらからも乗り換えなしでアクセスできます
+          千葉方面・東京方面のどちらからもJR線でアクセスできます
         </span>
       </>
     ),
@@ -413,10 +422,10 @@ export default function GaiyoPage() {
           </div>
           <ScaleIn className="overflow-hidden shadow-lift lg:mt-16">
             <Image
-              src="/images/DSC_2533.jpg"
+              src="/images/1-39-680x415.jpg"
               alt="馬と心を通わせる生徒"
-              width={1000}
-              height={700}
+              width={680}
+              height={415}
               className="h-full w-full object-cover"
             />
           </ScaleIn>

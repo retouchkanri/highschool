@@ -867,7 +867,7 @@ export default function TokuchoPage() {
               まずは資料とオープンキャンパスへ。
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-8 text-white/85 md:text-[15px]">
-              バジガクの空気は、来て、見て、馬に触れてみるのがいちばん伝わります。資料請求は1分程度で完了。オープンキャンパスは毎月開催、JR東京駅からの無料送迎つきです。
+              バジガクの空気は、来て、見て、馬に触れてみるのがいちばん伝わります。資料請求は1分程度で完了。オープンキャンパスは定期開催、JR東京駅からの無料送迎つきです。
             </p>
           </FadeUp>
           <Stagger className="mx-auto mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
@@ -905,7 +905,7 @@ export default function TokuchoPage() {
                   学校見学・オープンキャンパス
                 </p>
                 <p className="mt-3 text-xs leading-6 text-ink-700 md:text-[13px]">
-                  施設見学から乗馬体験までまるごと1日。毎月開催・完全予約制です。
+                  施設見学から乗馬体験までまるごと1日。定期開催・完全予約制です。
                 </p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold-600">
                   見学を予約する

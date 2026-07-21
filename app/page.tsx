@@ -325,9 +325,9 @@ const events = [
     title: "学校見学＆オープンキャンパス",
     desc: "施設見学・入学説明・乗馬体験までまるごと1日。",
     href: "/opencampus",
-    tag: "毎月開催",
+    tag: "定期開催",
     meta: [
-      { label: "開催日", value: "毎月開催（完全予約制）" },
+      { label: "開催日", value: "定期開催（完全予約制）" },
       { label: "集合", value: "JR東京駅より無料送迎あり" },
       { label: "会場", value: "本校キャンパス（千葉県山武市）" },
     ],
