@@ -31,7 +31,7 @@ export default function Header() {
           : "bg-gradient-to-b from-pine-950/70 to-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:h-20 md:px-6">
+      <div className="mx-[5vw] flex h-16 items-center justify-between gap-4 md:h-20">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           <Image
             src="/images/logo.png"

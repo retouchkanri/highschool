@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, SectionTitle } from "@/components/Section";
 import { FadeUp, ScaleIn, SlideIn, Stagger, StaggerItem } from "@/components/motion";
+import Accordion, { type QA } from "@/components/Accordion";
 import CTABand from "@/components/CTABand";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "学校見学・オープンキャンパス",
   description:
-    "馬の高校・東関東馬事高等学院（バジガク）の学校見学＆オープンキャンパスのご案内。JR東京駅八重洲中央口から無料送迎、施設見学・入学説明・乗馬体験までまるごと1日。夏休みには4泊5日のバジガク体験合宿も開催します。",
+    "馬の高校・東関東馬事高等学院（バジガク）の学校見学＆オープンキャンパスのご案内。令和8年度の開催日程、当日のプログラム、保護者の方向けの個別相談・学費説明、参加者の声、よくある質問まで。完全予約制・JR東京駅から無料送迎で、施設見学から乗馬体験までまるごと1日体感できます。",
 };
 
 const features = [
@@ -97,6 +99,92 @@ const timeline: TimelineItem[] = [
   },
 ];
 
+const openDays = [
+  { month: "8", day: "22", dow: "土" },
+  { month: "9", day: "2", dow: "水" },
+  { month: "10", day: "17", dow: "土" },
+];
+
+type ParentPoint = {
+  no: string;
+  title: string;
+  desc: string;
+  link?: { href: string; label: string };
+};
+
+const parentPoints: ParentPoint[] = [
+  {
+    no: "01",
+    title: "個別相談",
+    desc: "寮での暮らし、夜間の安全管理、卒業後の進路のこと——。大切なお子様を3年間お預けいただくうえでのご心配は、当日スタッフが1組ずつ個別にお伺いします。お子様が部活動などで同行できない場合は、保護者様だけのご見学もご相談ください。",
+  },
+  {
+    no: "02",
+    title: "学費のご説明",
+    desc: "入学金や授業費の内訳、納入の時期、分割払いのご相談まで、当日その場で個別にご説明します。ご家庭ごとに事情はさまざまですので、どうぞ率直にお聞かせください。",
+    link: { href: "/boshu#gakuhi", label: "学費についてくわしく見る" },
+  },
+  {
+    no: "03",
+    title: "寮・食事の見学",
+    desc: "生徒たちが実際に暮らす学生寮（全室個室・男女別棟）と食堂もご覧いただけます。365日3食の食事、門限21時・消灯22時30分の生活リズム、夜間のセコムと宿直スタッフによる管理体制など、毎日の暮らしぶりをその目でお確かめください。",
+  },
+];
+
+const voices = [
+  {
+    name: "陽菜さん",
+    tag: "中学3年生・乗馬未経験",
+    img: "/images/taiken-2_002_8.jpg",
+    alt: "オープンキャンパスで馬とふれあう参加者",
+    comment:
+      "馬に触れるのはこの日が初めてで、直前までドキドキしていました。でも在校生の先輩がずっとそばで声をかけてくれて、乗馬体験が終わるころには「ここで馬と暮らしたい」という気持ちに変わっていました。",
+  },
+  {
+    name: "悠斗さん",
+    tag: "中学3年生・保護者の方と参加",
+    img: "/images/taiken-2_002_7.jpg",
+    alt: "仲間と過ごすオープンキャンパスの時間",
+    comment:
+      "母と2人で参加しました。僕が乗馬体験をしている間に、母は寮の部屋や食事のことをじっくり質問できたみたいです。帰り道に「ここなら安心して送り出せるね」と言ってくれたのがうれしかったです。",
+  },
+  {
+    name: "美咲さん",
+    tag: "高校1年生・転入学を検討中",
+    img: "/images/taiken-2_002_9.jpg",
+    alt: "オープンキャンパス参加者の集合写真",
+    comment:
+      "いまの高校に通いながらの見学でしたが、転入学の手続きや授業への合流の仕方まで、私の状況に合わせて具体的に教えてもらえました。ひとりで抱えていた迷いが、帰るころにはずいぶん軽くなっていました。",
+  },
+];
+
+const openCampusFaqs: QA[] = [
+  {
+    q: "参加には予約が必要ですか？",
+    a: `はい、学校見学・オープンキャンパスは完全予約制です。参加申込みフォームまたはお電話（${site.tel}）からご予約ください。日程のご相談やご不明な点も、お電話でお気軽にどうぞ。`,
+  },
+  {
+    q: "当日の持ち物を教えてください。",
+    a: "筆記用具・飲み物・汗ふき用のタオル程度で大丈夫です。ヘルメットやプロテクターなど、乗馬体験に必要な用具はすべて学校でご用意しますので、特別な準備はいりません。※詳しい持ち物は、ご予約時にあらためてご案内します。",
+  },
+  {
+    q: "どんな服装で参加すればよいですか？",
+    a: "動きやすい服装でお越しください。乗馬体験がありますので、長ズボンと運動靴（スニーカー）がおすすめです。スカートやサンダル・ヒールのある靴はお避けください。学校の制服でのご参加も可能ですが、その場合は着替え用の長ズボンをお持ちいただくと安心です。",
+  },
+  {
+    q: "保護者だけでも見学できますか？",
+    a: "はい、ご相談いただけます。ご本人が部活動や学校行事などで同行できない場合は、保護者様のみのご見学にも個別に対応しています。寮や食事、学費のことなど、気になる点を直接お確かめください。",
+  },
+  {
+    q: "雨の日でも開催されますか？",
+    a: "原則として雨天でも開催します。天候によっては、屋内での説明・見学を中心に、プログラムの内容を一部変更する場合があります。※荒天が予想される場合の対応は、ご予約時または前日までにご案内します。",
+  },
+  {
+    q: "車で直接行ってもよいですか？",
+    a: `はい、お車でのご来場も可能です。その場合は13時ごろを目安に、直接学校（${site.address}）へお越しください。駐車場所などの詳細は、ご予約時にご案内します。`,
+  },
+];
+
 const campPrograms = [
   {
     title: "馬のお世話",
@@ -123,9 +211,6 @@ const campGallery = [
   { src: "/images/taiken-2_002_4.jpg", alt: "野外騎乗に出かける参加者たち" },
   { src: "/images/taiken-2_002_5.jpg", alt: "合宿中の騎乗練習のようす" },
   { src: "/images/taiken-2_002_6.jpg", alt: "馬装を学ぶ参加者" },
-  { src: "/images/taiken-2_002_7.jpg", alt: "仲間と過ごす合宿の時間" },
-  { src: "/images/taiken-2_002_8.jpg", alt: "馬とのスキンシップ" },
-  { src: "/images/taiken-2_002_9.jpg", alt: "体験合宿の集合写真" },
 ];
 
 export default function OpenCampusPage() {
@@ -140,7 +225,7 @@ export default function OpenCampusPage() {
       />
 
       {/* ABOUT OPEN CAMPUS */}
-      <Section className="bg-white">
+      <Section id="about" className="bg-white">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <SectionTitle
@@ -211,12 +296,12 @@ export default function OpenCampusPage() {
       </Section>
 
       {/* TIMELINE */}
-      <Section className="texture-paper">
+      <Section id="schedule" className="texture-paper">
         <SectionTitle
-          en="SCHEDULE"
+          en="PROGRAM"
           align="center"
-          title="オープンキャンパス 1日の流れ"
-          lead="東京駅集合から乗馬体験、帰りの送迎まで。参加当日のスケジュールをご紹介します。"
+          title="当日のプログラム・1日の流れ"
+          lead="東京駅集合から校舎・寮の見学、乗馬体験、帰りの送迎まで。参加当日のタイムスケジュールをご紹介します。"
         />
         <div className="mx-auto mt-14 max-w-4xl">
           <ol className="relative space-y-12 border-l-2 border-gold-400/60 pl-8 md:space-y-14 md:pl-12">
@@ -276,6 +361,106 @@ export default function OpenCampusPage() {
             ))}
           </ol>
         </div>
+      </Section>
+
+      {/* UPCOMING DATES */}
+      <Section id="dates" className="bg-white">
+        <SectionTitle
+          en="UPCOMING DATES"
+          align="center"
+          title="令和8年度 開催スケジュール"
+          lead="次回の学校見学＆オープンキャンパスの開催日です。いずれも完全予約制・JR東京駅からの無料送迎付き。まずはご都合のよい日をお選びください。"
+        />
+        <Stagger className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
+          {openDays.map((d) => (
+            <StaggerItem key={`${d.month}-${d.day}`} className="h-full">
+              <div className="flex h-full flex-col items-center border border-cream-300 bg-cream-100 p-8 text-center shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                <p className="text-[11px] font-bold tracking-[0.35em] text-gold-600">
+                  令和8年度
+                </p>
+                <p className="mt-3 font-serif font-bold leading-none text-pine-950">
+                  <span className="text-4xl md:text-5xl">{d.month}</span>
+                  <span className="mx-0.5 text-xl text-gold-600">/</span>
+                  <span className="text-4xl md:text-5xl">{d.day}</span>
+                  <span className="ml-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-pine-800 align-middle text-sm text-white">
+                    {d.dow}
+                  </span>
+                </p>
+                <h3 className="mt-5 font-serif text-base font-bold text-pine-950">
+                  学校見学＆オープンキャンパス
+                </h3>
+                <div className="mt-4 flex flex-wrap justify-center gap-2">
+                  <span className="rounded-full border border-gold-500/60 bg-white px-3 py-1 text-[11px] font-bold text-gold-600">
+                    完全予約制
+                  </span>
+                  <span className="rounded-full border border-gold-500/60 bg-white px-3 py-1 text-[11px] font-bold text-gold-600">
+                    東京駅無料送迎
+                  </span>
+                </div>
+                <p className="mt-4 text-xs leading-6 text-ink-500">
+                  11:30 JR東京駅集合／13:00 現地集合
+                </p>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <div className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-2">
+          <FadeUp className="h-full">
+            <div className="flex h-full flex-col bg-pine-900 p-8 text-white shadow-soft">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-sun-500 px-3 py-1 text-[11px] font-bold text-pine-950">
+                  夏季限定
+                </span>
+                <p className="text-[11px] font-bold tracking-[0.3em] text-gold-300">
+                  SUMMER CAMP
+                </p>
+              </div>
+              <h3 className="mt-4 font-serif text-lg font-bold md:text-xl">
+                夏休み・4泊5日 バジガク体験合宿
+              </h3>
+              <p className="mt-3 flex-1 text-[13px] leading-7 text-white/80">
+                馬のお世話から野外騎乗、競馬場見学まで、バジガクの学校生活をまるごと体験できる宿泊型プログラムです。参加費は16,000円（税込・乗馬費用/宿泊費/食事代を含む）。
+              </p>
+              <a
+                href="#camp"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sun-400 transition hover:gap-3"
+              >
+                このページで詳しく見る
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1} className="h-full">
+            <div className="flex h-full flex-col bg-pine-900 p-8 text-white shadow-soft">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full bg-sun-500 px-3 py-1 text-[11px] font-bold text-pine-950">
+                  中学3年生対象
+                </span>
+                <p className="text-[11px] font-bold tracking-[0.3em] text-gold-300">
+                  JOCKEY CAMP
+                </p>
+              </div>
+              <h3 className="mt-4 font-serif text-lg font-bold md:text-xl">
+                騎手受験事前合宿（6泊7日）
+              </h3>
+              <p className="mt-3 flex-1 text-[13px] leading-7 text-white/80">
+                JRA競馬学校・騎手課程の受験を控えた中学3年生のための集中合宿です。参加費は72,000円。万が一JRAの一次試験が不合格となった場合は、全額を返金します。
+              </p>
+              <Link
+                href="/camp"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-sun-400 transition hover:gap-3"
+              >
+                体験合宿のページで詳しく見る
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </FadeUp>
+        </div>
+        <FadeUp>
+          <p className="mt-10 text-center text-xs leading-6 text-ink-500">
+            ※日程は変更となる場合があります。最新の開催日はお申込みフォームまたはお電話でご確認ください。
+          </p>
+        </FadeUp>
       </Section>
 
       {/* SUMMER CAMP */}
@@ -373,8 +558,143 @@ export default function OpenCampusPage() {
         </Stagger>
       </Section>
 
+      {/* FOR PARENTS */}
+      <Section id="parents" className="bg-cream-100">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-start">
+          <div>
+            <SectionTitle
+              en="FOR PARENTS"
+              title={
+                <>
+                  保護者の皆様にも、
+                  <br />
+                  納得できる1日を。
+                </>
+              }
+            />
+            <FadeUp delay={0.15}>
+              <p className="mt-8 text-sm leading-8 text-ink-700 md:text-[15px]">
+                全寮制の馬の学校に、大切なお子様を3年間お預けいただく——。ご本人以上に、保護者の皆様の中にこそ、たくさんの疑問やご心配があって当然です。オープンキャンパスは、そのひとつひとつをご家族で解消していただく日でもあります。
+              </p>
+            </FadeUp>
+            <ScaleIn className="mt-10 overflow-hidden shadow-lift">
+              <Image
+                src="/images/shisetsu_005_1.jpg"
+                alt="見学でご案内する学生寮・食堂などの施設"
+                width={1200}
+                height={800}
+                className="h-full w-full object-cover"
+              />
+            </ScaleIn>
+          </div>
+          <Stagger className="grid content-start gap-6">
+            {parentPoints.map((p) => (
+              <StaggerItem key={p.no}>
+                <div className="bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift md:p-8">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-serif text-xs font-bold tracking-[0.3em] text-gold-600">
+                      {p.no}
+                    </span>
+                    <h3 className="font-serif text-lg font-bold text-pine-950 md:text-xl">
+                      {p.title}
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-[13px] leading-7 text-ink-700 md:text-sm md:leading-8">
+                    {p.desc}
+                  </p>
+                  {p.link && (
+                    <Link
+                      href={p.link.href}
+                      className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-pine-800 underline decoration-gold-400 decoration-2 underline-offset-4 transition hover:gap-3"
+                    >
+                      {p.link.label}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  )}
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </Section>
+
+      {/* VOICES */}
+      <Section id="voices" className="bg-white">
+        <SectionTitle
+          en="VOICES"
+          align="center"
+          title="参加者の声"
+          lead="学校見学・オープンキャンパスや体験合宿に参加してくれた、先輩たちの感想を紹介します。"
+        />
+        <Stagger className="mt-14 grid gap-6 md:grid-cols-3">
+          {voices.map((v) => (
+            <StaggerItem key={v.name} className="h-full">
+              <div className="flex h-full flex-col border border-cream-300 bg-cream-100 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={v.img}
+                    alt={v.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <p
+                    aria-hidden
+                    className="font-serif text-4xl leading-none text-gold-500"
+                  >
+                    “
+                  </p>
+                  <p className="mt-2 flex-1 text-[13px] leading-7 text-ink-700">
+                    {v.comment}
+                  </p>
+                  <div className="mt-5 border-t border-cream-300 pt-4">
+                    <p className="font-serif text-sm font-bold text-pine-950">
+                      {v.name}
+                    </p>
+                    <p className="mt-1 text-xs text-ink-500">{v.tag}</p>
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <FadeUp>
+          <p className="mt-8 text-center text-xs leading-6 text-ink-500">
+            ※写真は過去のオープンキャンパス・体験合宿のようすです。
+          </p>
+        </FadeUp>
+      </Section>
+
+      {/* FAQ */}
+      <Section id="faq" className="texture-paper">
+        <SectionTitle
+          en="FAQ"
+          align="center"
+          title="見学に関するよくある質問"
+          lead="学校見学・オープンキャンパスについて、よくお寄せいただくご質問をまとめました。このほかのご質問は、お電話・フォームからお気軽にどうぞ。"
+        />
+        <div className="mx-auto mt-14 max-w-4xl">
+          <FadeUp>
+            <Accordion items={openCampusFaqs} />
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="mt-10 text-center">
+              <Link
+                href="/qa"
+                className="inline-flex items-center gap-2 text-sm font-bold text-pine-800 underline decoration-gold-400 decoration-2 underline-offset-4 transition hover:gap-3"
+              >
+                入学・授業・寮生活のQ&Aはこちら
+                <span aria-hidden>→</span>
+              </Link>
+            </p>
+          </FadeUp>
+        </div>
+      </Section>
+
       {/* APPLY */}
-      <Section className="bg-white">
+      <Section id="entry" className="bg-white">
         <div className="mx-auto max-w-3xl text-center">
           <SectionTitle
             en="ENTRY"

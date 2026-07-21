@@ -1,95 +1,125 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import { Section, SectionTitle } from "@/components/Section";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import CTABand from "@/components/CTABand";
+import Accordion from "@/components/Accordion";
+import { faqs } from "@/lib/faq";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "募集要項｜東関東馬事高等学院",
   description:
-    "東関東馬事高等学院（バジガク）の令和9年4月生 一般募集要項。応募条件・必要書類・出願期間（令和8年8月22日〜10月28日）・学費・入学手続きまでの流れをご案内します。出願費用は不要、随時選考で約1週間で合否をお知らせします。",
+    "東関東馬事高等学院（バジガク）の令和9年4月生 一般募集要項。資料請求から入学までの6ステップ、応募資格・必要書類・出願期間（令和8年8月22日〜10月28日）、学費の詳細と分納などの学費サポート、よくある質問までをまとめてご案内します。出願費用は不要、随時選考で約1週間で合否をお知らせします。",
 };
 
-const policies = [
+/* ── 入学までの流れ（6ステップ） ───────────────────── */
+const flowSteps: {
+  no: string;
+  title: string;
+  desc: string;
+  link: { label: string; href: string; external?: boolean };
+}[] = [
   {
     no: "01",
-    title: "思いやりと感謝の心を育てる",
-    desc: "馬という大きな命と向き合い、寮での団体生活を仲間と重ねる毎日。互いに助け合う経験を通して、相手を思いやる心と、支えてくれる人への感謝の気持ちを持てる人を育てます。",
+    title: "資料請求",
+    desc: "学校案内・募集要項の冊子を無料でお届けします。写真やデータを眺めながら、バジガクでの3年間を思い描いてみてください。",
+    link: { label: "資料請求フォームへ", href: site.forms.shiryo, external: true },
   },
   {
     no: "02",
-    title: "一人ひとりの個性を伸ばす",
-    desc: "個性尊重の教育のもと、一人ひとりが秘めている可能性・個性・特性を最大限に引き出します。馬との時間を通じて感受性を磨き、情操豊かな人間性を養います。",
+    title: "学校見学・オープンキャンパス",
+    desc: "校舎・厩舎・学生寮と、馬たちの暮らしをその目で確かめていただきます。JR東京駅からの無料送迎つき、完全予約制です。",
+    link: { label: "学校見学の詳細へ", href: "/opencampus" },
   },
   {
     no: "03",
-    title: "馬業界を担う人材を育成する",
-    desc: "馬の世界を志す若者に、確かな馬学の知識と豊かな技術を授けます。国内外の馬事の発展に貢献できる、有能なホースマンの育成を目指します。",
+    title: "出願",
+    desc: "入校申込書（願書）を郵送、またはWebの出願フォームからご提出ください。出願にあたって費用は一切かかりません。",
+    link: { label: "募集要項を確認する", href: "#boshu" },
+  },
+  {
+    no: "04",
+    title: "選考（書類・面談）",
+    desc: "願書の到着順に随時選考します。学力試験はありません。書類の内容と、見学・面談での意欲を大切に拝見します。",
+    link: { label: "選考方法を確認する", href: "#boshu" },
+  },
+  {
+    no: "05",
+    title: "合格通知（約1週間）",
+    desc: "出願からおよそ1週間を目安に、合否の結果を郵送でお知らせします。合格された方には入学手続き案内書を同封します。",
+    link: { label: "合格後の手続きへ", href: "#tetsuzuki" },
+  },
+  {
+    no: "06",
+    title: "入学手続き",
+    desc: "入学金を納めていただいた時点でお申し込みが確定します。学費等の納付を済ませ、4月の入学式で馬たちが待っています。",
+    link: { label: "手続きの詳細へ", href: "#tetsuzuki" },
   },
 ];
 
-const conditions = [
+/* ── 募集要項（定義テーブル） ─────────────────────── */
+const boshuRows: { label: string; value: ReactNode }[] = [
   {
-    label: "年齢",
-    value: "本校入学時点で中学卒業以上、18歳以下の方。",
-  },
-  {
-    label: "健康",
-    value: "騎乗や馬の管理を行ううえで支障のない健康状態であること。",
-  },
-  {
-    label: "体重",
+    label: "募集対象",
     value:
-      "騎手受験特別コースを選択される場合のみ45kg以下。その他のコースは65kg以下。",
-  },
-];
-
-const documents = [
-  {
-    no: "1",
-    label: "入校申込書（様式1）",
-    value: "出願フォームからの提出もご利用いただけます。",
+      "令和9年4月に入学される新入生。一般高校乗馬コースまたは騎手受験特別コースを入学時に選択します（競走馬厩務員コースは2年次10月以降の選択となります）。",
   },
   {
-    no: "2",
-    label: "健康診断書（様式2）",
-    value: "入学内定後にご提出いただく場合があります。",
+    label: "募集人数",
+    value: "20名程度（定員に達し次第、受付を締め切ります）。",
   },
   {
-    no: "3",
-    label: "住民票",
-    value: "発行3ヶ月以内で、家族構成のわかるもの（入学内定後にご提出ください）。",
+    label: "出願資格",
+    value: (
+      <ul className="list-disc space-y-1.5 pl-5">
+        <li>本校入学時点で中学卒業以上、18歳以下の方。</li>
+        <li>騎乗や馬の管理を行ううえで支障のない健康状態であること。</li>
+        <li>
+          体重は、騎手受験特別コースを希望される場合のみ45kg以下。その他のコースは65kg以下。
+        </li>
+      </ul>
+    ),
   },
-];
-
-const applicationPoints = [
   {
-    en: "PERIOD",
     label: "出願期間",
-    main: "令和8年8月22日（土）〜 10月28日（水）",
-    note: "令和9年4月生対象。随時募集・随時選考方式です。",
+    value: "令和8年8月22日（土）〜 10月28日（水）",
   },
   {
-    en: "SCREENING",
-    label: "選考・合否通知",
-    main: "出願順に随時選考、約1週間で合否通知",
-    note: "願書の到着順に審査を行い、合否通知を発送します。",
+    label: "選考方法",
+    value:
+      "出願順に随時選考します。学力試験は行わず、書類の内容と見学・面談での様子を総合的に評価します。",
   },
   {
-    en: "FEE",
+    label: "合否通知",
+    value: "出願からおよそ1週間を目安に、郵送でお知らせします。",
+  },
+  {
     label: "出願費用",
-    main: "不要",
-    note: "出願にあたって費用はいただいておりません。",
+    value: "不要（受験料・選考料はいただいておりません）。",
   },
   {
-    en: "CAPACITY",
-    label: "募集定員",
-    main: "20名程度",
-    note: "定員に達し次第、受付を締め切ります。",
+    label: "必要書類",
+    value: (
+      <ul className="list-disc space-y-1.5 pl-5">
+        <li>入校申込書（様式1）── Webの出願フォームからの提出も可能です。</li>
+        <li>健康診断書（様式2）── 入学内定後のご提出で構いません。</li>
+        <li>
+          住民票 ── 発行3ヶ月以内・家族構成のわかるもの。入学内定後にご提出ください。
+        </li>
+      </ul>
+    ),
+  },
+  {
+    label: "出願の前提",
+    value:
+      "体験入学または学校見学へのご参加が出願の前提となります。まずは資料請求のうえ、お気軽にお越しください。",
   },
 ];
 
+/* ── 合格後の入学手続き（3ステップ） ─────────────── */
 const steps = [
   {
     no: "1",
@@ -108,6 +138,46 @@ const steps = [
   },
 ];
 
+/* ── 奨学金・学費サポート ─────────────────────────── */
+const supports = [
+  {
+    en: "INSTALLMENT",
+    title: "分納・分割払い制度",
+    desc: "授業費は分割払いでのご契約にも対応しています。本校が独自に連携する保証会社の審査を経てご利用いただける制度です。まとまった納付がむずかしい場合も、あきらめる前にご相談ください。",
+  },
+  {
+    en: "FLEXIBLE",
+    title: "納付時期の柔軟なご相談",
+    desc: "教育ローンの審査待ちなど、ご事情により納付が期限に間に合わない場合は、事前にご連絡いただければ納付期限の調整など柔軟に対応いたします。まずは事務局までお気軽にお声がけください。",
+  },
+  {
+    en: "RELIEF",
+    title: "災害等による学費のご相談・救済措置",
+    desc: "災害などの影響で家計が急変した場合には、学費に関するご相談や救済措置を個別に検討しています。ご家庭の状況をうかがいながら、学びを続けられる道を一緒に探します。",
+  },
+  {
+    en: "SUBSIDY",
+    title: "高等学校等就学支援金",
+    desc: "連携する広域通信制・明蓬館高等学校の学費部分については、高等学校等就学支援金の制度対象となる場合があります。対象条件や手続きの詳細は、事務局とお住まいの自治体にご確認ください。",
+  },
+];
+
+/* ── よくある質問（出願・学費・転入学） ───────────── */
+const faqPicks = [
+  "誰でも入学できますか？入学の条件はありますか？",
+  "乗馬の未経験者でも合格できますか？",
+  "中学校の成績が良くないのですが、合否に影響しますか？",
+  "いま通っている高校から転入学（転校）はできますか？",
+  "願書の提出時期と合格発表のタイミングを教えてください。",
+  "合格通知が届いた後の流れを教えてください。",
+  "納付金の入金が遅れてしまった場合はどうなりますか？",
+];
+
+const boshuFaqs = faqPicks.flatMap((q) => {
+  const hit = faqs.find((f) => f.q === q);
+  return hit ? [{ q: hit.q, a: hit.a }] : [];
+});
+
 export default function BoshuPage() {
   return (
     <>
@@ -119,137 +189,119 @@ export default function BoshuPage() {
         crumbs={[{ label: "HOME", href: "/" }, { label: "募集要項" }]}
       />
 
-      {/* 教育方針 */}
-      <Section className="texture-paper">
+      {/* 入学までの流れ */}
+      <Section className="texture-paper" id="flow">
         <SectionTitle
-          en="EDUCATION POLICY"
+          en="ROAD TO BAJIGAKU"
           align="center"
-          title="バジガクが大切にする、3つの教育方針"
-          lead="馬と暮らす3年間で何を学び、どんな人に育ってほしいのか。本校の教育は、この3つの方針を土台としています。"
+          title="入学までの流れ"
+          lead="資料請求から入学まで、大きく6つのステップ。本校では、体験入学または学校見学へのご参加が出願の前提となっています。まずは一度、馬たちに会いに来てください。"
         />
-        <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
-          {policies.map((p) => (
-            <StaggerItem key={p.no} className="h-full">
-              <div className="flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-                <p className="font-serif text-3xl font-bold text-gold-500">
-                  {p.no}
-                </p>
+        <Stagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {flowSteps.map((s) => (
+            <StaggerItem key={s.no} className="h-full">
+              <div className="flex h-full flex-col bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                <div className="flex items-baseline gap-3">
+                  <p className="font-serif text-3xl font-bold text-gold-500">
+                    {s.no}
+                  </p>
+                  <p className="text-[10px] font-bold tracking-[0.3em] text-ink-500">
+                    STEP
+                  </p>
+                </div>
                 <div className="mt-3 h-[3px] w-10 rule-gold" />
                 <h3 className="mt-5 font-serif text-lg font-bold leading-snug text-pine-950">
-                  {p.title}
+                  {s.title}
                 </h3>
                 <p className="mt-4 flex-1 text-[13px] leading-7 text-ink-700">
-                  {p.desc}
+                  {s.desc}
                 </p>
+                <div className="mt-5">
+                  {s.link.external ? (
+                    <a
+                      href={s.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-pine-700 transition hover:text-gold-600"
+                    >
+                      {s.link.label}
+                      <span aria-hidden>→</span>
+                    </a>
+                  ) : s.link.href.startsWith("#") ? (
+                    <a
+                      href={s.link.href}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-pine-700 transition hover:text-gold-600"
+                    >
+                      {s.link.label}
+                      <span aria-hidden>→</span>
+                    </a>
+                  ) : (
+                    <Link
+                      href={s.link.href}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-pine-700 transition hover:text-gold-600"
+                    >
+                      {s.link.label}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  )}
+                </div>
               </div>
             </StaggerItem>
           ))}
         </Stagger>
-      </Section>
-
-      {/* 応募条件・必要書類 */}
-      <Section className="bg-white">
-        <SectionTitle
-          en="REQUIREMENTS"
-          align="center"
-          title="応募条件と必要書類"
-          lead="乗馬経験の有無は問いません。馬と真剣に向き合いたい気持ちがあれば、どなたでも挑戦できます。"
-        />
-        <div className="mt-12 grid gap-10 lg:grid-cols-2">
-          <FadeUp>
-            <h3 className="flex items-center gap-3 font-serif text-xl font-bold text-pine-950">
-              <span className="inline-block h-6 w-1.5 rounded-full bg-gold-500" />
-              応募条件
-            </h3>
-            <div className="mt-5 overflow-x-auto border border-cream-300 bg-white shadow-soft">
-              <table className="w-full min-w-[420px] text-left">
-                <tbody>
-                  {conditions.map((c, i) => (
-                    <tr
-                      key={c.label}
-                      className={i > 0 ? "border-t border-cream-300" : ""}
-                    >
-                      <th
-                        scope="row"
-                        className="w-32 whitespace-nowrap bg-pine-50 px-6 py-5 align-top font-serif text-sm font-bold text-pine-900"
-                      >
-                        {c.label}
-                      </th>
-                      <td className="px-6 py-5 text-sm leading-7 text-ink-700">
-                        {c.value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <h3 className="flex items-center gap-3 font-serif text-xl font-bold text-pine-950">
-              <span className="inline-block h-6 w-1.5 rounded-full bg-gold-500" />
-              必要書類
-            </h3>
-            <div className="mt-5 overflow-x-auto border border-cream-300 bg-white shadow-soft">
-              <table className="w-full min-w-[420px] text-left">
-                <tbody>
-                  {documents.map((d, i) => (
-                    <tr
-                      key={d.no}
-                      className={i > 0 ? "border-t border-cream-300" : ""}
-                    >
-                      <th
-                        scope="row"
-                        className="w-52 whitespace-nowrap bg-pine-50 px-6 py-5 align-top font-serif text-sm font-bold text-pine-900"
-                      >
-                        <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pine-800 text-[11px] font-bold text-white">
-                          {d.no}
-                        </span>
-                        {d.label}
-                      </th>
-                      <td className="px-6 py-5 text-sm leading-7 text-ink-700">
-                        {d.value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-xs leading-6 text-ink-500">
-              ※ご提出いただいた応募書類は、合否の結果を問わずお返しできません。お預かりした個人情報は厳重に管理いたします。
+        <FadeUp delay={0.15} className="mt-8">
+          <div className="border border-gold-500/40 bg-white p-6 shadow-soft md:p-7">
+            <p className="text-[10px] font-bold tracking-[0.3em] text-gold-600">
+              IMPORTANT
             </p>
-          </FadeUp>
-        </div>
+            <p className="mt-2 text-[13px] leading-7 text-ink-700">
+              出願には、体験入学または学校見学へのご参加が前提となります。実際の環境と馬たちを知ったうえで進路を決めていただきたい、という本校の想いによるものです。日程が合わない場合は、個別見学のご相談も承ります。
+            </p>
+          </div>
+        </FadeUp>
       </Section>
 
-      {/* 出願方法・期間 */}
-      <Section className="bg-pine-900" id="apply">
+      {/* 募集要項 */}
+      <Section className="bg-white" id="boshu">
         <SectionTitle
-          dark
-          en="APPLICATION"
+          en="APPLICATION GUIDELINES"
           align="center"
-          title="出願方法・出願期間"
-          lead="令和9年4月生の出願は、届いた順に審査を行う随時選考方式。定員を満たした時点で締め切りとなるため、早めの出願・見学をおすすめします。"
+          title="令和9年4月生 募集要項"
+          lead="乗馬経験の有無は問いません。願書の到着順に審査を行う随時選考方式のため、定員を満たした時点で受付終了となります。早めの見学・出願をおすすめします。"
         />
-        <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {applicationPoints.map((a) => (
-            <StaggerItem key={a.en} className="h-full">
-              <div className="flex h-full flex-col bg-white/5 p-6 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:bg-white/10">
-                <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
-                  {a.en}
-                </p>
-                <p className="mt-2 text-sm font-bold text-white/80">{a.label}</p>
-                <p className="mt-3 font-serif text-lg font-bold leading-relaxed text-sun-400">
-                  {a.main}
-                </p>
-                <p className="mt-3 flex-1 text-xs leading-6 text-white/60">
-                  {a.note}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
-        <FadeUp delay={0.15} className="mt-10">
-          <div className="bg-white/5 p-6 ring-1 ring-white/10 md:p-8">
+        <FadeUp className="mx-auto mt-12 max-w-4xl">
+          <div className="overflow-x-auto border border-cream-300 bg-white shadow-soft">
+            <table className="w-full min-w-[560px] text-left">
+              <tbody>
+                {boshuRows.map((r, i) => (
+                  <tr
+                    key={r.label}
+                    className={i > 0 ? "border-t border-cream-300" : ""}
+                  >
+                    <th
+                      scope="row"
+                      className="w-36 whitespace-nowrap bg-pine-50 px-6 py-5 align-top font-serif text-sm font-bold text-pine-900"
+                    >
+                      {r.label}
+                    </th>
+                    <td className="px-6 py-5 text-sm leading-7 text-ink-700">
+                      {r.value}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs leading-6 text-ink-500">
+            ※ご提出いただいた応募書類は、合否の結果を問わずお返しできません。お預かりした個人情報は厳重に管理いたします。
+            <br />
+            ※出願期間・選考方法は変更となる場合があります。最新の情報は資料請求またはお電話でご確認ください。
+          </p>
+        </FadeUp>
+
+        {/* 学校見学 開催日 */}
+        <FadeUp delay={0.1} className="mx-auto mt-10 max-w-4xl">
+          <div className="bg-pine-900 p-6 md:p-8">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
@@ -259,10 +311,10 @@ export default function BoshuPage() {
                   学校見学 開催日
                 </p>
                 <p className="mt-2 text-xs leading-6 text-white/60">
-                  出願前に、キャンパスと馬たちの様子をぜひ一度ご覧ください。
+                  完全予約制。JR東京駅からの無料送迎つきで、キャンパスと馬たちの日常をご覧いただけます。
                 </p>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 {["8月22日", "9月2日", "10月17日"].map((d) => (
                   <span
                     key={d}
@@ -271,10 +323,16 @@ export default function BoshuPage() {
                     {d}
                   </span>
                 ))}
+                <Link
+                  href="/opencampus"
+                  className="rounded-full border-2 border-white/40 px-5 py-2 text-sm font-bold text-white transition hover:border-sun-400 hover:text-sun-400"
+                >
+                  詳細を見る
+                </Link>
               </div>
             </div>
             <p className="mt-5 border-t border-white/10 pt-5 text-xs leading-6 text-white/60">
-              ※令和8年度中の編入学・転入学は個別相談として柔軟に対応しています。お気軽に
+              ※開催日は令和8年度の公表日です。※令和8年度中の編入学・転入学は個別相談として柔軟に対応しています。お気軽に
               <a
                 href={`tel:${site.tel}`}
                 className="mx-1 font-bold tracking-wider text-sun-400 hover:underline"
@@ -288,12 +346,12 @@ export default function BoshuPage() {
       </Section>
 
       {/* 学費 */}
-      <Section className="texture-paper" id="fees">
+      <Section className="texture-paper" id="gakuhi">
         <SectionTitle
           en="TUITION & FEES"
           align="center"
           title="学費の詳細"
-          lead="入学金は各コース共通で480,000円（48万円）。授業費はコースにより異なります。納付時期や分割払いのご相談も承っていますので、不安な点は遠慮なくお問い合わせください。"
+          lead="入学金は各コース共通で480,000円（48万円）。授業費はコースにより異なり、別途、連携する通信制高校の学費と寮生活の諸経費が必要です。納付時期や分割払いのご相談も承っていますので、不安な点は遠慮なくお問い合わせください。"
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
@@ -478,6 +536,9 @@ export default function BoshuPage() {
                 ※上記とは別途、連携する通信制高校への学費等（3年間あたり約120万円）が必要となります。
               </li>
               <li>
+                ※入寮費・教育充実費・食堂運営諸経費・生活諸経費など、寮生活にかかる費用も別途必要です。納付時期は下記「合格後の入学手続き」をご覧ください。
+              </li>
+              <li>
                 ※入学金（入学申込金）の納付期限は、合格通知の発送から約2週間です。
               </li>
               <li>
@@ -488,13 +549,13 @@ export default function BoshuPage() {
         </FadeUp>
       </Section>
 
-      {/* 入学手続きまでの流れ */}
-      <Section className="bg-white">
+      {/* 合格後の入学手続き */}
+      <Section className="bg-white" id="tetsuzuki">
         <SectionTitle
-          en="PROCESS"
+          en="AFTER PASSING"
           align="center"
-          title="入学手続きまでの流れ"
-          lead="出願から入学まで、手続きは大きく3つのステップ。わからないことがあれば、その都度お電話でサポートします。"
+          title="合格後の入学手続き"
+          lead="合格通知を受け取ってから入学までの手続きは、大きく3つのステップ。わからないことがあれば、その都度お電話でサポートします。"
         />
         <div className="mx-auto mt-12 max-w-3xl">
           <Stagger className="relative space-y-8">
@@ -522,10 +583,143 @@ export default function BoshuPage() {
           </Stagger>
           <FadeUp delay={0.2}>
             <p className="mt-8 text-xs leading-6 text-ink-500">
-              ※騎手受験特別コースを除き、後期授業費は7月中旬、前期授業費は1月中旬までのご納付をお願いしています。
+              ※騎手受験特別コースを除き、前期授業費は1月中旬、後期授業費は7月中旬までのご納付をお願いしています。※納付時期・金額は変更となる場合があります。詳細は合格通知に同封する入学手続き案内書でご確認ください。
             </p>
           </FadeUp>
         </div>
+      </Section>
+
+      {/* 奨学金・学費サポート */}
+      <Section className="bg-pine-900" id="support">
+        <SectionTitle
+          dark
+          en="FINANCIAL SUPPORT"
+          align="center"
+          title="奨学金・学費サポート"
+          lead="「学費のことが気がかりで、一歩を踏み出せない」──そんなご家庭の声に、本校は制度とご相談の両面でお応えしています。まずは事情をお聞かせください。"
+        />
+        <Stagger className="mt-12 grid gap-5 sm:grid-cols-2">
+          {supports.map((s) => (
+            <StaggerItem key={s.en} className="h-full">
+              <div className="flex h-full flex-col bg-white/5 p-7 ring-1 ring-white/10 transition duration-300 hover:-translate-y-1.5 hover:bg-white/10">
+                <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
+                  {s.en}
+                </p>
+                <h3 className="mt-3 font-serif text-lg font-bold leading-snug text-white">
+                  {s.title}
+                </h3>
+                <div className="mt-4 h-[3px] w-10 rule-gold" />
+                <p className="mt-4 flex-1 text-[13px] leading-7 text-white/70">
+                  {s.desc}
+                </p>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <FadeUp delay={0.15} className="mt-8">
+          <p className="text-xs leading-6 text-white/60">
+            ※各制度の内容・対象条件は変更となる場合があります。高等学校等就学支援金の対象範囲や申請方法など、最新の情報は本校事務局（
+            <a
+              href={`tel:${site.tel}`}
+              className="mx-1 font-bold tracking-wider text-sun-400 hover:underline"
+            >
+              {site.tel}
+            </a>
+            ）およびお住まいの自治体にご確認ください。
+          </p>
+        </FadeUp>
+      </Section>
+
+      {/* よくある質問 */}
+      <Section className="bg-white" id="faq">
+        <SectionTitle
+          en="FAQ"
+          align="center"
+          title="出願・学費のよくある質問"
+          lead="出願を考えはじめたご家庭からよく寄せられる質問をまとめました。ここにない疑問は、Q&Aページやお電話でお気軽にどうぞ。"
+        />
+        <FadeUp className="mx-auto mt-12 max-w-3xl">
+          <Accordion items={boshuFaqs} />
+        </FadeUp>
+        <FadeUp delay={0.1} className="mt-10 text-center">
+          <Link
+            href="/qa"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-pine-800 px-8 py-3.5 text-sm font-bold text-pine-800 transition hover:bg-pine-800 hover:text-white"
+          >
+            よくある質問をすべて見る
+            <span aria-hidden>→</span>
+          </Link>
+        </FadeUp>
+      </Section>
+
+      {/* ダウンロード・資料 */}
+      <Section className="texture-paper" id="download">
+        <SectionTitle
+          en="DOCUMENTS"
+          align="center"
+          title="募集要項・願書のご請求"
+          lead="出願に必要な書類一式は、資料請求フォームから無料でお取り寄せいただけます。冊子を手に取って、ご家族でゆっくりご検討ください。"
+        />
+        <Stagger className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
+          <StaggerItem className="h-full">
+            <div className="flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
+                BROCHURE
+              </p>
+              <h3 className="mt-3 font-serif text-xl font-bold text-pine-950">
+                募集要項・学校案内（冊子）
+              </h3>
+              <div className="mt-4 h-[3px] w-10 rule-gold" />
+              <p className="mt-5 flex-1 text-[13px] leading-7 text-ink-700">
+                コース紹介・学費・寮生活・進路実績など、本校の3年間がひと目でわかる冊子です。資料請求フォームからお申し込みいただくと、無料で郵送いたします。
+              </p>
+              <a
+                href={site.forms.shiryo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-pine-800 px-8 py-3.5 text-sm font-bold text-white transition hover:bg-pine-700"
+              >
+                資料請求フォームへ
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+          </StaggerItem>
+          <StaggerItem className="h-full">
+            <div className="flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
+                APPLICATION FORM
+              </p>
+              <h3 className="mt-3 font-serif text-xl font-bold text-pine-950">
+                願書（入校申込書）
+              </h3>
+              <div className="mt-4 h-[3px] w-10 rule-gold" />
+              <p className="mt-5 flex-1 text-[13px] leading-7 text-ink-700">
+                願書は学校案内の冊子に同封してお届けしています。まだお手元にない方は、資料請求フォームからご請求ください。なお、出願はWebの出願フォームからのご提出も可能です。
+              </p>
+              <a
+                href={site.forms.shiryo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border-2 border-pine-800 px-8 py-3 text-sm font-bold text-pine-800 transition hover:bg-pine-800 hover:text-white"
+              >
+                願書を請求する（資料請求）
+                <span aria-hidden>→</span>
+              </a>
+            </div>
+          </StaggerItem>
+        </Stagger>
+        <FadeUp delay={0.15} className="mx-auto mt-8 max-w-4xl">
+          <p className="text-xs leading-6 text-ink-500">
+            ※資料はすべて無料です。※Web出願をご希望の方や、書類の記入についてご不明な点がある方は、事務局（
+            <a
+              href={`tel:${site.tel}`}
+              className="mx-1 font-bold tracking-wider text-pine-800 hover:underline"
+            >
+              {site.tel}
+            </a>
+            ）までお気軽にお問い合わせください。
+          </p>
+        </FadeUp>
       </Section>
 
       <CTABand />

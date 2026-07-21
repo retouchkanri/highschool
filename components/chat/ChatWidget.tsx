@@ -218,17 +218,11 @@ export default function ChatWidget() {
             transition={{ duration: 0.2, ease: "easeOut" }}
             onClick={() => setOpen(true)}
             aria-label="AIチャット相談を開く"
-            className="fixed bottom-5 left-5 z-[60] flex items-center gap-2.5 rounded-full bg-pine-800 py-3.5 pl-4 pr-5 text-white shadow-lift transition hover:bg-pine-700 md:bottom-8 md:left-8"
+            className="fixed bottom-5 left-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-pine-800 text-white shadow-lift transition hover:bg-pine-700 md:bottom-8 md:left-8"
           >
             <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-pine-950 text-gold-300">
               {sparkle}
               <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-sun-500" />
-            </span>
-            <span className="text-left leading-tight">
-              <span className="block text-[9px] font-bold tracking-[0.2em] text-gold-300">
-                AI CHAT
-              </span>
-              <span className="block text-[13px] font-bold">チャット相談</span>
             </span>
           </motion.button>
         )}

@@ -11,8 +11,44 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "中3対象・騎手受験事前合宿｜東関東馬事高等学院",
   description:
-    "JRA競馬学校・地方競馬教養センターの騎手課程受験を目指す中学3年生のための6泊7日事前対策合宿。運動機能検査の模擬テスト、筆記・面接・騎乗試験対策まで。JRA一次試験不合格の場合は参加費全額返金保証付き。",
+    "JRA競馬学校・地方競馬教養センターの騎手課程受験を目指す中学3年生のための6泊7日事前対策合宿。騎乗訓練・運動機能検査の模擬テスト・筆記・面接対策から寮での集団生活まで、合宿中の一日のスケジュール、参加者の声、申込方法をご紹介。JRA一次試験不合格の場合は参加費全額返金保証付き。",
 };
+
+const outlineRows = [
+  {
+    label: "対象",
+    value:
+      "JRA競馬学校・地方競馬教養センターの騎手課程受験を目指す中学3年生",
+  },
+  {
+    label: "開催目的",
+    value:
+      "騎手課程受験に向けた受験指導とサポート。一次試験（筆記・運動機能検査・面接）から二次試験の騎乗まで、本番への備えを6泊7日で集中的に行います。",
+  },
+  {
+    label: "開催時期",
+    value: "毎年夏休み期間に開催（年度ごとの詳細日程はお問い合わせください）",
+  },
+  { label: "期間", value: "6泊7日" },
+  {
+    label: "参加費",
+    value: "72,000円（宿泊費・騎乗訓練費・食事費を含む）",
+  },
+  {
+    label: "返金保証",
+    value:
+      "JRA競馬学校 騎手課程の第一次試験が不合格だった場合、参加費は全額返金いたします。",
+  },
+  {
+    label: "保護者の同伴",
+    value:
+      "初日は騎手受験についての説明を行いますので、保護者の方の同伴をお願いしています。",
+  },
+  {
+    label: "送迎",
+    value: "JR東京駅からの送迎があります（お申込み時にご相談ください）。",
+  },
+];
 
 const programs = [
   {
@@ -45,29 +81,66 @@ const programs = [
     tag: "RIDING",
     desc: "二次試験の騎乗試験を見据えた騎乗訓練に加え、厩舎での活動姿勢についても指導します。馬と向き合う日々の所作こそが、騎手への第一歩。本校の馬たちと共に実践的に学びます。",
   },
+  {
+    no: "06",
+    title: "集団生活",
+    tag: "DORM LIFE",
+    desc: "合宿期間中は本校の学生寮に宿泊し、あいさつ・時間・馬優先という馬の世界の生活リズムを体験します。騎手課程に合格すれば始まる寄宿生活の、いわば予行演習。共に汗を流す仲間の存在が、受験への覚悟を確かなものにしてくれます。",
+  },
 ];
 
-const outlineRows = [
+const schedule = [
+  { time: "06:00", label: "起床・厩舎作業", note: "馬の世界の朝を体験" },
+  { time: "07:30", label: "朝食", note: "寮の食堂で仲間と一緒に" },
+  { time: "09:00", label: "騎乗訓練", note: "騎乗試験を見据えた実技" },
+  { time: "11:00", label: "体力トレーニング", note: "運動機能検査への備え" },
+  { time: "12:30", label: "昼食", note: "午後に向けてしっかりと" },
+  { time: "14:00", label: "学科（筆記対策）", note: "国語・社会の対策学習" },
+  { time: "16:00", label: "面接練習・振り返り", note: "実践形式で繰り返し" },
+  { time: "18:00", label: "夕食", note: "一日がんばった体に栄養を" },
+  { time: "19:30", label: "自習・ミーティング", note: "その日の学びを整理" },
+  { time: "21:30", label: "就寝", note: "早寝早起きも訓練のうち" },
+];
+
+const voices = [
   {
-    label: "開催時期",
-    value: "毎年夏休み期間に開催（年度ごとの詳細日程はお問い合わせください）",
+    name: "蒼真さん",
+    attr: "中学3年生・合宿参加者",
+    img: "/images/taiken-3_002_2.jpg",
+    alt: "騎乗訓練に取り組む合宿参加者",
+    text: "運動機能検査の模擬テストで、いまの自分に足りないものが数字ではっきり分かりました。帰ってから何を練習すればいいのか迷わなくなったのが、いちばんの収穫です。消灯前に仲間と将来の話をした時間も、忘れられません。",
   },
-  { label: "期間", value: "6泊7日" },
   {
-    label: "参加費",
-    value: "72,000円（宿泊費・騎乗訓練費・食事費を含む）",
+    name: "由紀さん",
+    attr: "合宿に参加した中3男子の保護者",
+    img: "/images/taiken-3_002_4.jpg",
+    alt: "厩舎で馬と向き合う合宿参加者",
+    text: "初日の保護者向け説明で、騎手受験の仕組みから受験までの過ごし方まで丁寧に教えていただき、親としての心構えができました。7日ぶりに迎えに行ったとき、日に焼けた息子の顔つきが変わっていたことに驚いています。",
   },
   {
-    label: "返金保証",
-    value: "JRA競馬学校 騎手課程の第一次試験が不合格だった場合、参加費は全額返金いたします。",
+    name: "悠斗さん",
+    attr: "在校生・過去の合宿参加から入学",
+    img: "/images/taiken-3_002_6.jpg",
+    alt: "騎手を目指して訓練に励む生徒",
+    text: "中3の夏にこの合宿へ参加して、「ここで学びたい」と入学を決めました。朝の厩舎作業も、馬優先の生活リズムも、いま騎手受験特別コースで送っている毎日の原点です。迷っているなら、まず一度体験してみてほしいです。",
+  },
+];
+
+const steps = [
+  {
+    no: "01",
+    title: "騎手説明会に参加する",
+    desc: "学校見学＆オープンキャンパスで開催している「騎手説明会」にご参加ください。騎手受験の仕組みや合宿の内容を、実際のキャンパスでご説明します。",
   },
   {
-    label: "保護者の同伴",
-    value: "初日は騎手受験についての説明を行いますので、保護者の方の同伴をお願いしています。",
+    no: "02",
+    title: "フォームまたはお電話でお申込み",
+    desc: "お問い合わせフォームかお電話で「騎手受験事前合宿に参加したい」とお伝えください。参加を迷っている段階のご相談も歓迎です。",
   },
   {
-    label: "送迎",
-    value: "JR東京駅からの送迎があります（お申込み時にご相談ください）。",
+    no: "03",
+    title: "詳細日程・持ち物のご案内",
+    desc: "お申込み後、事務局からその年度の開催日程・集合場所・当日の持ち物などをご案内します。ご不明な点は、いつでもお気軽にご相談ください。",
   },
 ];
 
@@ -91,12 +164,12 @@ export default function CampPage() {
         crumbs={[{ label: "HOME", href: "/" }, { label: "中3対象・騎手受験事前合宿" }]}
       />
 
-      {/* 対象と目的 */}
-      <Section className="bg-white">
+      {/* 合宿概要 */}
+      <Section id="outline" className="bg-white">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <SectionTitle
-              en="FOR WHOM"
+              en="OUTLINE"
               title={
                 <>
                   初めての受験の不安を、
@@ -143,15 +216,69 @@ export default function CampPage() {
             />
           </div>
         </div>
+
+        {/* 開催概要 */}
+        <div className="mt-16 grid gap-12 md:mt-20 lg:grid-cols-[320px_1fr] lg:gap-16">
+          <div>
+            <FadeUp>
+              <p className="text-[11px] font-bold tracking-[0.35em] text-gold-600">
+                SUMMARY
+              </p>
+              <h3 className="mt-3 font-serif text-2xl font-bold text-pine-950 md:text-3xl">
+                開催概要
+              </h3>
+              <div className="mt-4 h-[2px] w-12 rule-gold" />
+              <p className="mt-5 text-sm leading-8 text-ink-700">
+                毎年、夏休み期間に開催しています。年度ごとの日程やお申込み方法は、お気軽にお問い合わせください。
+              </p>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <div className="mt-8 bg-pine-900 p-7 text-white shadow-soft">
+                <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
+                  GUARANTEE
+                </p>
+                <p className="mt-3 font-serif text-xl font-bold leading-snug text-sun-400">
+                  JRA一次試験
+                  <br />
+                  不合格なら全額返金
+                </p>
+                <p className="mt-3 text-xs leading-6 text-white/80">
+                  この合宿は「合格してもらうため」の合宿です。JRA競馬学校 騎手課程の第一次試験が不合格だった場合、参加費72,000円は全額返金いたします。
+                </p>
+              </div>
+            </FadeUp>
+          </div>
+          <div>
+            <Stagger className="space-y-3">
+              {outlineRows.map((row) => (
+                <StaggerItem key={row.label}>
+                  <div className="flex flex-col gap-2 border border-cream-300 bg-cream-100 px-6 py-5 md:flex-row md:items-start md:gap-8">
+                    <span className="w-32 shrink-0 text-sm font-bold text-pine-800">
+                      {row.label}
+                    </span>
+                    <span className="flex-1 text-sm leading-7 text-ink-700">
+                      {row.value}
+                    </span>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
+            <FadeUp delay={0.1}>
+              <p className="mt-4 text-xs leading-6 text-ink-500">
+                ※開催日程・参加費などは年度により変更となる場合があります。最新の情報はお問い合わせください。
+              </p>
+            </FadeUp>
+          </div>
+        </div>
       </Section>
 
-      {/* 実施内容 */}
-      <Section className="texture-paper">
+      {/* 合宿プログラム */}
+      <Section id="program" className="texture-paper">
         <SectionTitle
           en="PROGRAM"
           align="center"
-          title="6泊7日で取り組む、5つの受験対策"
-          lead="JRA一次試験で問われる「筆記試験・運動機能検査・面接」から、二次試験の騎乗試験まで。合宿の7日間で、騎手課程受験の全体像をつかみます。"
+          title="6泊7日で取り組む、6つのプログラム"
+          lead="一次試験で問われる「筆記・運動機能検査（フィジカル）・面接」の対策から、二次試験を見据えた騎乗の実技、そして寮での集団生活まで。7日間で騎手課程受験の全体像を、頭とからだの両方でつかみます。"
         />
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {programs.map((p) => (
@@ -178,56 +305,102 @@ export default function CampPage() {
         </Stagger>
       </Section>
 
-      {/* 開催概要 */}
-      <Section className="bg-white">
-        <div className="grid gap-12 lg:grid-cols-[320px_1fr]">
-          <div>
-            <SectionTitle
-              en="OUTLINE"
-              title="開催概要"
-              lead="毎年、夏休み期間に開催しています。年度ごとの日程・お申込み方法は、お気軽にお問い合わせください。"
-            />
-            <FadeUp delay={0.2}>
-              <div className="mt-8 bg-pine-900 p-7 text-white shadow-soft">
-                <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
-                  GUARANTEE
+      {/* 一日のスケジュール */}
+      <Section id="schedule" className="bg-white">
+        <SectionTitle
+          en="DAILY SCHEDULE"
+          align="center"
+          title="合宿中の一日のスケジュール"
+          lead="朝は馬の世話から始まり、夜は仲間と一日の学びを振り返る。騎手課程の生活を先取りする、合宿中のとある一日をご紹介します。"
+        />
+        <FadeUp delay={0.1}>
+          <ol className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-y-10 lg:grid-cols-5">
+            {schedule.map((s) => (
+              <li
+                key={s.time}
+                className="relative border-t-2 border-gold-400/50 px-5 pb-2 pt-7"
+              >
+                <span
+                  aria-hidden
+                  className="absolute left-5 top-0 h-3.5 w-3.5 -translate-y-1/2 rounded-full border-[3px] border-gold-500 bg-white shadow-soft"
+                />
+                <p className="font-serif text-xl font-bold tracking-wider text-pine-900">
+                  {s.time}
                 </p>
-                <p className="mt-3 font-serif text-xl font-bold leading-snug text-sun-400">
-                  JRA一次試験
-                  <br />
-                  不合格なら全額返金
+                <p className="mt-2 text-sm font-bold leading-6 text-pine-950">
+                  {s.label}
                 </p>
-                <p className="mt-3 text-xs leading-6 text-white/80">
-                  この合宿は「合格してもらうため」の合宿です。JRA競馬学校 騎手課程の第一次試験が不合格だった場合、参加費72,000円は全額返金いたします。
+                <p className="mt-1.5 text-[11px] leading-5 text-ink-500">
+                  {s.note}
                 </p>
-              </div>
-            </FadeUp>
-          </div>
-          <Stagger className="space-y-3">
-            {outlineRows.map((row) => (
-              <StaggerItem key={row.label}>
-                <div className="flex flex-col gap-2 border border-cream-300 bg-cream-100 px-6 py-5 md:flex-row md:items-start md:gap-8">
-                  <span className="w-32 shrink-0 text-sm font-bold text-pine-800">
-                    {row.label}
-                  </span>
-                  <span className="flex-1 text-sm leading-7 text-ink-700">
-                    {row.value}
-                  </span>
-                </div>
-              </StaggerItem>
+              </li>
             ))}
-          </Stagger>
-        </div>
+          </ol>
+        </FadeUp>
+        <FadeUp delay={0.15}>
+          <p className="mt-10 text-center text-xs leading-6 text-ink-500">
+            ※スケジュールは一例です。天候・日程により変わります。
+          </p>
+        </FadeUp>
       </Section>
 
-      {/* 応募資格 */}
-      <Section className="texture-paper">
+      {/* 参加者の声 */}
+      <Section id="voices" className="bg-cream-100">
         <SectionTitle
-          en="REQUIREMENTS"
+          en="VOICES"
           align="center"
-          title="応募資格"
-          lead="本気で騎手を目指す方に、確かな指導を届けるための参加条件です。"
+          title="参加者の声"
+          lead="合宿を経験した参加者と保護者、そして合宿をきっかけに本校へ入学した在校生。3人の声をご紹介します。"
         />
+        <Stagger className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+          {voices.map((v) => (
+            <StaggerItem key={v.name} className="h-full">
+              <div className="flex h-full flex-col bg-white shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={v.img}
+                    alt={v.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <span
+                    aria-hidden
+                    className="font-serif text-4xl font-bold leading-none text-gold-400"
+                  >
+                    “
+                  </span>
+                  <p className="mt-2 flex-1 text-[13px] leading-7 text-ink-700">
+                    {v.text}
+                  </p>
+                  <div className="mt-5 border-t border-cream-300 pt-4">
+                    <p className="text-sm font-bold text-pine-950">{v.name}</p>
+                    <p className="mt-1 text-[11px] text-ink-500">{v.attr}</p>
+                  </div>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <FadeUp delay={0.1}>
+          <p className="mt-8 text-center text-xs leading-6 text-ink-500">
+            ※プライバシー保護のため、お名前は下のお名前のみ掲載しています。
+          </p>
+        </FadeUp>
+      </Section>
+
+      {/* 申込方法・開催日程 */}
+      <Section id="entry" className="texture-paper">
+        <SectionTitle
+          en="HOW TO ENTRY"
+          align="center"
+          title="申込方法・応募資格"
+          lead="本気で騎手を目指す方に確かな指導を届けるため、参加には2つの条件があります。条件を満たしている方は、3つのステップでお申込みいただけます。"
+        />
+
+        {/* 応募資格 */}
         <Stagger className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
           {[
             {
@@ -258,8 +431,76 @@ export default function CampPage() {
             </StaggerItem>
           ))}
         </Stagger>
+
+        {/* 申込ステップ */}
+        <FadeUp delay={0.1}>
+          <h3 className="mt-16 text-center font-serif text-2xl font-bold text-pine-950 md:text-3xl">
+            お申込みの流れ
+          </h3>
+          <div className="mx-auto mt-4 h-[2px] w-12 rule-gold" />
+        </FadeUp>
+        <Stagger className="mx-auto mt-10 grid max-w-5xl gap-6 md:grid-cols-3">
+          {steps.map((s, i) => (
+            <StaggerItem key={s.no} className="h-full">
+              <div className="relative flex h-full flex-col bg-white p-7 shadow-soft">
+                {i < steps.length - 1 && (
+                  <span
+                    aria-hidden
+                    className="absolute -right-[26px] top-1/2 z-10 hidden -translate-y-1/2 text-2xl font-bold text-gold-500 md:block"
+                  >
+                    →
+                  </span>
+                )}
+                <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
+                  STEP <span className="font-serif text-2xl tracking-normal text-gold-500">{s.no}</span>
+                </p>
+                <h4 className="mt-3 font-serif text-lg font-bold text-pine-950">
+                  {s.title}
+                </h4>
+                <p className="mt-3 flex-1 text-[13px] leading-7 text-ink-700">
+                  {s.desc}
+                </p>
+                {s.no === "01" && (
+                  <Link
+                    href="/opencampus"
+                    className="mt-4 inline-flex items-center gap-2 text-xs font-bold text-pine-800 underline decoration-gold-400 underline-offset-4 transition hover:text-gold-600"
+                  >
+                    学校見学＆オープンキャンパスを見る
+                    <span aria-hidden>→</span>
+                  </Link>
+                )}
+                {s.no === "02" && (
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href={site.forms.contact}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-pine-800 underline decoration-gold-400 underline-offset-4 transition hover:text-gold-600"
+                    >
+                      お問い合わせフォームはこちら
+                      <span aria-hidden>→</span>
+                    </a>
+                    <a
+                      href={`tel:${site.tel}`}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-pine-800 underline decoration-gold-400 underline-offset-4 transition hover:text-gold-600"
+                    >
+                      TEL {site.tel}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <FadeUp delay={0.1}>
+          <p className="mx-auto mt-6 max-w-5xl text-xs leading-6 text-ink-500">
+            ※開催日程は年度により異なります。お申込み・ご相談はお早めにどうぞ。
+          </p>
+        </FadeUp>
+
+        {/* 高1向け */}
         <FadeUp delay={0.2}>
-          <div className="mx-auto mt-6 max-w-4xl border-2 border-gold-500/40 bg-white px-6 py-5">
+          <div className="mx-auto mt-10 max-w-4xl border-2 border-gold-500/40 bg-white px-6 py-5">
             <p className="text-sm leading-7 text-ink-700">
               <span className="font-bold text-pine-800">高校1年生の方へ：</span>
               高校1年生での参加をご希望の場合は、直接、本校事務局（
@@ -276,7 +517,7 @@ export default function CampPage() {
       </Section>
 
       {/* 合格実績 + ギャラリー */}
-      <section className="relative overflow-hidden bg-pine-950 py-16 md:py-24">
+      <section id="results" className="relative overflow-hidden bg-pine-950 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
             <SectionTitle
@@ -321,7 +562,7 @@ export default function CampPage() {
       </section>
 
       {/* 申込CTA */}
-      <Section className="bg-white">
+      <Section id="contact" className="bg-white">
         <div className="mx-auto max-w-3xl text-center">
           <SectionTitle
             en="ENTRY"
