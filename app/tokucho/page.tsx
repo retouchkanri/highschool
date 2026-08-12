@@ -62,8 +62,8 @@ const whys = [
 
 const studentTypes = [
   {
-    title: "馬が大好きな人",
-    desc: "とにかく馬が好き。その「好き」が、いちばん強い入学理由です。",
+    title: "とにかく、馬が大好きな人",
+    desc: "「馬が好き！」それが一番の入学理由。大好きな馬と毎日過ごし、馬を中心とした高校生活を送りたい生徒が集まっています。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M12 20s-7-4.6-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.4-9 9-9 9z" />
@@ -71,8 +71,8 @@ const studentTypes = [
     ),
   },
   {
-    title: "乗馬未経験の人",
-    desc: "経験ゼロで大丈夫。入学者の多くが未経験からのスタートです。",
+    title: "乗馬初心者・未経験の人",
+    desc: "入学者の多くが乗馬未経験からスタート。馬に触った経験が少なくても、基礎から自分のペースで成長できる環境があります。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M12 21V11" />
@@ -83,7 +83,7 @@ const studentTypes = [
   },
   {
     title: "新しい挑戦をしたい人",
-    desc: "転入学や不登校からの再スタートも歓迎。環境を変えて輝く生徒がたくさんいます。",
+    desc: "勉強が苦手、不登校を経験した、今の高校が合わない、転校したい。そんな生徒も大丈夫。環境を変えて、新しい高校生活に挑戦できます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M5 21V4" />
@@ -92,8 +92,8 @@ const studentTypes = [
     ),
   },
   {
-    title: "馬の仕事を目指す人",
-    desc: "騎手・厩務員・牧場スタッフ。夢への最短ルートがここにあります。",
+    title: "馬の仕事に就きたい人",
+    desc: "騎手・厩務員・牧場スタッフ・乗馬クラブなど、「将来は馬と働きたい」という夢を持つ生徒たち。高校生から夢に向かって本格的に学べます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <circle cx="12" cy="12" r="9" />
@@ -103,8 +103,8 @@ const studentTypes = [
     ),
   },
   {
-    title: "体験から学びたい人",
-    desc: "机の上より、体で覚えるタイプ。頑張りがそのまま成績になります。",
+    title: "乗馬を上達させたい人",
+    desc: "乗馬経験者や他の馬の学校からの転入も歓迎。もっと馬に乗りたい、馬術大会で活躍したいなど、一人ひとりの目標に合わせて挑戦できます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M7 11V6a2 2 0 014 0v5" />
@@ -116,14 +116,14 @@ const studentTypes = [
 ];
 
 const timeline = [
-  { time: "06:30", label: "起床・朝の飼付" },
-  { time: "07:30", label: "厩舎作業" },
-  { time: "09:00", label: "騎乗授業" },
-  { time: "12:00", label: "昼食" },
-  { time: "13:00", label: "高校授業" },
-  { time: "15:00", label: "午後の騎乗・調教" },
-  { time: "17:00", label: "夕方の飼付・見回り" },
-  { time: "19:00", label: "寮で自由時間" },
+  { time: "06:30～", label: "朝の飼いつけ（当番制）" },
+  { time: "07:00～", label: "起床・朝食" },
+  { time: "08:00～", label: "集合・厩舎管理" },
+  { time: "09:00～", label: "高校授業" },
+  { time: "11:30～", label: "昼食・自由時間" },
+  { time: "13:00～", label: "大好きな馬との授業" },
+  { time: "16:30～", label: "集合・解散" },
+  { time: "放課後～", label: "夕食・自由時間" },
 ];
 
 const learnings = [
@@ -359,7 +359,7 @@ export default function TokuchoPage() {
           en="STUDENTS"
           align="center"
           title="どんな生徒が入学しているの？"
-          lead="バジガクに集まるのは、こんな生徒たちです。ひとつでも当てはまったら、きっとこの学校が合っています。"
+          lead="バジガクに集まるのは、こんな生徒たち。馬が大好き。乗馬をやってみたい。馬の仕事に就きたい。勉強はちょっと苦手。今の学校が自分には合わない。入学する理由は、一人ひとり違って大丈夫です。ひとつでも「自分かも」と思ったら、バジガクが新しい一歩になるかもしれません。"
         />
         <Stagger gap={0.06} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {studentTypes.map((s, i) => (
@@ -381,13 +381,13 @@ export default function TokuchoPage() {
         </Stagger>
         <FadeUp delay={0.1} className="mt-10 text-center">
           <p className="text-sm leading-7 text-ink-700">
-            転入学・編入学も随時受付中。不登校を経験した生徒も、馬との毎日から新しい一歩を踏み出しています。
+            入学のきっかけは、みんな違っていい。経験がなくても、勉強が得意じゃなくても、今まで学校生活がうまくいかなかったとしても。大切なのは、これから何をやってみたいか。「馬が好き」から始まる高校生活。バジガクで、自分らしい3年間を見つけてみませんか。
           </p>
           <Link
             href="/support"
             className="mt-4 inline-flex items-center gap-2 text-xs font-bold text-gold-600 transition hover:text-gold-500"
           >
-            不登校からの高校進学について
+            不登校からの高校・転入について
             <span aria-hidden>→</span>
           </Link>
         </FadeUp>
@@ -436,7 +436,7 @@ export default function TokuchoPage() {
               </ol>
             </div>
             <p className="mt-4 text-center text-[11px] text-ink-500">
-              ※スケジュールは一例です。時期・学年・コースにより変わります。
+              ※スケジュールは一例です。季節・学年・授業内容・個別スケジュール等により変更となる場合があります。
             </p>
           </div>
         </FadeUp>
@@ -523,8 +523,8 @@ export default function TokuchoPage() {
             <SlideIn delay={0.2} className="relative">
               <div className="overflow-hidden border-4 border-white/10 shadow-lift">
                 <Image
-                  src={`/images/${encodeURIComponent("高橋羽　2年 (4).JPG")}`}
-                  alt="馬場で騎乗練習する生徒たち"
+                  src="/images/%E9%AB%98%E6%A9%8B%E7%BE%BD%E3%80%802%E5%B9%B4%20(4).JPG"
+                  alt="生徒と馬が向き合うバジガクの日常"
                   width={900}
                   height={1100}
                   className="h-full w-full object-cover"
@@ -691,6 +691,7 @@ export default function TokuchoPage() {
         </FadeUp>
       </Section>
 
+
       {/* BAJIGAKU IN NUMBERS */}
       <section id="numbers" className="relative overflow-hidden bg-pine-900 py-16 md:py-24">
         <div
@@ -803,12 +804,14 @@ export default function TokuchoPage() {
                 {site.tel}
               </a>
               まで。
-              <Link
+              <a
                 href={site.forms.contact}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-2 underline decoration-white/40 underline-offset-4 transition hover:text-white"
               >
                 お問い合わせフォーム
-              </Link>
+              </a>
               は24時間受付です。
             </p>
           </FadeUp>

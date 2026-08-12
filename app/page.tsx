@@ -284,12 +284,12 @@ const futures = [
 ];
 
 const facilities = [
-  { img: "/images/shisetsu_008_1.jpg", title: "厩舎", desc: "校舎のすぐそばで馬たちが暮らす" },
-  { img: "/images/DSC_0047-2.jpg", title: "馬場", desc: "校庭跡に広がるメインアリーナ" },
-  { img: "/images/shisetsu_005_1.jpg", title: "教室", desc: "高校授業もキャンパス内で完結" },
-  { img: "/images/shisetsu_013_1.jpg", title: "学生寮（全室個室）", desc: "教室をリノベーションした個室寮" },
-  { img: "/images/shisetsu_004_1.jpg", title: "食堂", desc: "365日3食、仲間と食卓を囲む" },
-  { img: "/images/shisetsu_007_1.jpg", title: "体育館", desc: "天候を気にせず身体を動かせる" },
+  { img: "/facility/faci%20(1).jpg", title: "馬場", desc: "馬と過ごす毎日の中心になるメインエリア", featured: true },
+  { img: "/facility/faci%20(2).jpg", title: "厩舎", desc: "生徒と馬がすぐそばで学び合う実践空間" },
+  { img: "/facility/faci%20(3).jpg", title: "教室", desc: "高校授業もキャンパス内で集中して学べる" },
+  { img: "/facility/faci%20(4).jpg", title: "学生寮（全室個室）", desc: "安心して暮らせる全寮制の生活空間" },
+  { img: "/facility/faci%20(5).jpg", title: "食堂", desc: "365日3食、仲間と食卓を囲むあたたかな場所" },
+  { img: "/facility/faci%20(6).jpg", title: "体育館", desc: "天候を気にせず身体を動かせる校内施設" },
 ];
 
 const staff = [
@@ -862,21 +862,36 @@ export default async function HomePage() {
           />
           <Stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {facilities.map((f) => (
-              <StaggerItem key={f.title}>
-                <div className="group relative h-52 overflow-hidden shadow-soft md:h-60">
+              <StaggerItem
+                key={f.title}
+                className={f.featured ? "sm:col-span-2 sm:row-span-2 lg:col-span-2" : undefined}
+              >
+                <div
+                  className={`group relative overflow-hidden shadow-soft ${
+                    f.featured ? "h-64 md:h-[31rem]" : "h-52 md:h-60"
+                  }`}
+                >
                   <Image
                     src={f.img}
                     alt={`${f.title}：${f.desc}`}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes={
+                      f.featured
+                        ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                        : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    }
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-pine-950/85 via-pine-950/20 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="font-serif text-base font-bold text-white md:text-lg">
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-t ${
+                      f.featured ? "from-pine-950/90 via-pine-950/25 to-transparent" : "from-pine-950/85 via-pine-950/20 to-transparent"
+                    }`}
+                  />
+                  <div className={`absolute inset-x-0 bottom-0 ${f.featured ? "p-6 md:p-7" : "p-5"}`}>
+                    <p className={`font-serif font-bold text-white ${f.featured ? "text-xl md:text-2xl" : "text-base md:text-lg"}`}>
                       {f.title}
                     </p>
-                    <p className="mt-1 text-[11px] leading-5 text-white/80">
+                    <p className={`mt-1 leading-5 text-white/80 ${f.featured ? "text-sm md:text-[15px]" : "text-[11px]"}`}>
                       {f.desc}
                     </p>
                   </div>
