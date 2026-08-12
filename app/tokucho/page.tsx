@@ -21,42 +21,42 @@ const whys = [
     en: "PRACTICE",
     img: "/images/tokucho_002_1.jpg",
     title: "実践中心の「馬が真ん中」の教育",
-    desc: "騎乗授業はほぼ毎日。朝の飼付から夕方の見回りまで、教科書ではなく本物の馬から学ぶ3年間です。育成馬・競走馬・引退馬・競技馬——多彩な馬たちが、いちばんの先生です。",
+    desc: "騎乗授業はほぼ毎日。約120頭の多彩な馬たちから学び、担当馬を持って世話をする。教科書だけでは学べない、馬が先生になる3年間です。",
   },
   {
     no: "02",
     en: "SMALL CLASS",
     img: "/images/tokucho_003_1.jpg",
     title: "少人数だから、一人ひとりに届く指導",
-    desc: "在校生は約60名。騎乗レベル別の班編成に加え、伸び悩むときは1対1の個人レッスンも行います。スタッフ全員が、生徒一人ひとりの顔と成長をしっかり見ている学校です。",
+    desc: "在校生は約50名。騎乗レベルや成長に合わせて授業を組み、必要に応じて個人レッスンも実施。「みんな同じ」ではなく、一人ひとりを尊重して成長を支えます。",
   },
   {
     no: "03",
     en: "REAL FIELD",
     img: "/images/tokucho_008_1.jpg",
     title: "「本物の現場」で積む業界経験",
-    desc: "学校所有の現役競走馬は約20頭。競馬場や牧場・乗馬クラブでの研修といった校外学習も高校の単位につながり、在学中から馬業界のリアルを肌で学べます。",
+    desc: "乗馬クラブや競走馬の生産・育成牧場などで校外研修を経験。在学中から騎手・JRA厩務員試験にも挑戦でき、高校3年次でのJRA厩務員合格者も輩出しています。",
   },
   {
     no: "04",
     en: "BEGINNER",
     img: "/images/DSC_0073.jpg",
-    title: "未経験者がほとんど。安心のスタート",
-    desc: "入学者の多くは、乗馬まったく未経験からのスタートです。基礎の基礎から段階的に学べるカリキュラムと、何度でも寄り添う指導で、3年後には見違える騎乗技術が身につきます。",
+    title: "未経験から、馬に乗れる自分へ",
+    desc: "入学者の多くが乗馬未経験からのスタート。レベルに合った馬と段階的な騎乗指導で、基礎から着実にステップアップ。毎日の経験が自信と技術に変わります。",
   },
   {
     no: "05",
     en: "LICENSE",
     img: "/images/tokucho_004_1.jpg",
-    title: "資格・ライセンスを高校授業で取得",
-    desc: "乗馬ライセンスや騎乗者資格、さらに家畜商免許まで、将来につながる資格取得を授業の一環として目指せます。評価は定期テストではなく、日々の学習成果による単位認定です。",
+    title: "高校生活で資格・競技にも挑戦",
+    desc: "高校授業として乗馬ライセンスや騎乗者資格の取得を目指せます。馬術大会にも挑戦でき、全日本ジュニア選手権大会へ5年連続出場するなど、本格的な経験を積めます。",
   },
   {
     no: "06",
     en: "CAREER",
     img: "/images/kyumuin_001_1.jpg",
-    title: "卒業後まで見据えた進路サポート",
-    desc: "350件超の馬関連求人と職場実習、JRA競馬学校・地方競馬教養センターの受験対策まで。「馬と生きる」進路の実現を、入学初日から卒業のその先まで全力で支えます。",
+    title: "「馬と生きる」未来までサポート",
+    desc: "馬関連企業への就職から、JRA競馬学校・地方競馬教養センターへの挑戦、大学進学、一般企業への就職まで。一人ひとりが描く卒業後の進路をサポートします。",
   },
 ];
 
@@ -131,37 +131,37 @@ const learnings = [
     en: "RIDING",
     img: "/images/tokucho_002_2.jpg",
     title: "騎乗授業",
-    desc: "ほぼ毎日騎乗し、部班運動から障害飛越、コース走行まで段階的にレベルアップ。大会遠征の費用は学校が全額負担します。",
+    desc: "ほぼ毎日、個々のレベルに応じた騎乗授業を実施。初心者から競技・騎手・厩務員を目指す生徒まで幅広く学べる馬たちが在厩しています。",
   },
   {
     en: "HORSE CARE",
     img: "/images/DSC9265.jpg",
     title: "馬のお世話・飼養管理",
-    desc: "担当馬制度のもと、飼付・手入れ・馬房清掃を毎日担当。「命を預かる」仕事の基本を、日々の積み重ねで身につけます。",
+    desc: "一人ひとりが担当馬を持ち、飼付や手入れ、馬房清掃を経験。毎日向き合いながら「命を預かる責任」を学べる最高の学習環境です。",
   },
   {
     en: "CLASSROOM",
     img: "/images/shisetsu_005_1.jpg",
     title: "高校授業（座学）",
-    desc: "連携する明蓬館高等学校の授業は1日2〜3時間に凝縮。集中して学んで高校卒業資格を取得し、残りの時間は思う存分馬へ。",
+    desc: "高校学習は1日2〜3時間。卒業資格を目指しながら、大好きな「馬」にたっぷり時間を使えます。勉強が苦手な生徒もしっかりサポート。",
   },
   {
     en: "FIELDWORK",
     img: "/images/tokucho_008_2.jpg",
     title: "実習・研修（校外学習）",
-    desc: "競馬場・牧場・乗馬クラブなど本物の現場での研修が高校の単位に。年に一度は九州・明蓬館本校へのスクーリングも。",
+    desc: "全国の競走馬・生産牧場や育成牧場や乗馬クラブなどで現場研修。本物の仕事を経験し、将来につながる力を身につけます。",
   },
   {
     en: "LICENSE",
     img: "/images/tokucho_004_2.jpg",
-    title: "資格取得サポート",
-    desc: "乗馬ライセンス・騎乗者資格・家畜商免許など、将来に直結する資格の取得を高校授業の一環としてサポートします。",
+    title: "資格取得・受験サポート",
+    desc: "高校卒業資格の取得はもちろん、乗馬ライセンスや騎乗者資格の取得をサポート。在学中から騎手・厩務員試験にも挑戦できます。",
   },
   {
     en: "DORMITORY",
     img: "/images/shisetsu_003_1.jpg",
     title: "全寮制の学校生活",
-    desc: "全室個室の学生寮で、同じ夢を持つ仲間と暮らす3年間。食事は365日3食、夜間は宿直スタッフが見守るので安心です。",
+    desc: "はじめてのひとり暮らしも安心の全室個室・Wi-Fi完備。全国から集まる仲間と暮らしながら、自立心と規則正しい生活習慣を育てます。",
   },
 ];
 
@@ -175,8 +175,8 @@ const careerSteps = [
 const supports = [
   {
     en: "JOB NETWORK",
-    title: "全国350件超の求人ネットワーク",
-    desc: "全国の牧場・乗馬クラブ・競馬関係団体から届く350件超の求人情報を進路指導に活用。希望に合う就職先をじっくり選べます。",
+    title: "全国の馬施設とのネットワーク",
+    desc: "全国の生産牧場や育成牧場、乗馬クラブ・観光牧場などから多数の求人が集結。豊富な選択肢から、自分に合った就職先を目指せます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <rect x="3" y="7" width="18" height="13" rx="2" />
@@ -187,7 +187,7 @@ const supports = [
   {
     en: "EXAM SUPPORT",
     title: "JRA・地方競馬の受験対策",
-    desc: "JRA競馬学校 騎手課程・厩務員課程、地方競馬教養センターの受験対策が高校授業そのもの。体重管理や体力づくりまで伴走します。",
+    desc: "JRA騎手・厩務員、地方競馬の受験を徹底サポート。騎乗技術から体力・体重管理まで実践的に指導します。JRA厩務員合格実績も多数。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M4 19.5A2.5 2.5 0 016.5 17H20V3H6.5A2.5 2.5 0 004 5.5v14z" />
@@ -198,7 +198,7 @@ const supports = [
   {
     en: "INTERNSHIP",
     title: "職場実習から内定へ",
-    desc: "在学中の職場実習・インターンシップで現場との相性を確かめてから就職へ。実習先でそのまま内定をいただくケースも多数あります。",
+    desc: "3年生の在学中から牧場や乗馬クラブなどで職場実習を経験。自分に合う仕事を見極め、そのまま内定につなげているので定着率も非常に高い。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M3 21h18" />
@@ -224,47 +224,6 @@ const achievements = [
   "騎手課程（JRA・地方競馬）合格者 38名を輩出",
   "JRA競馬学校 厩務員課程にも合格者を輩出",
   "卒業生が全国の牧場・乗馬クラブ・競馬の現場で活躍中",
-];
-
-const graduateVoices = [
-  {
-    name: "拓海",
-    meta: "競走馬厩務員コース卒業／JRA厩務員",
-    img: "/images/top_future_003.jpg",
-    quote:
-      "在学中から現役競走馬の管理を任せてもらえたことが、いまの仕事の土台になっています。競馬学校の受験対策も、特別なことではなく学校の授業そのものでした。憧れだったトレセンで働く毎日は、バジガクの延長線上にあります。",
-  },
-  {
-    name: "彩花",
-    meta: "一般高校乗馬コース卒業／乗馬クラブスタッフ",
-    img: "/images/top_future_006.jpg",
-    quote:
-      "未経験で入学した私が、いまはお客様に乗馬を教える立場になりました。3年間で身についたのは技術だけではなく、馬と人への向き合い方。担当馬が教えてくれたことを、今度は私がお客様と馬たちに伝えています。",
-  },
-];
-
-const studentVoices = [
-  {
-    name: "陽菜",
-    meta: "一般高校乗馬コース・1年",
-    avatar: "/images/voice-avatar-mk.png",
-    quote:
-      "入学して3か月で、馬のいない生活が想像できなくなりました。朝は正直眠いけれど、担当馬が待っていると思うと自然に起きられます。",
-  },
-  {
-    name: "蓮",
-    meta: "競走馬厩務員コース・2年",
-    avatar: "/images/voice-avatar-rt.png",
-    quote:
-      "中学ではあまり学校に行けなかった僕が、ここでは毎日馬場にいます。頑張った分がそのまま成績になる仕組みが、自分には合っていました。",
-  },
-  {
-    name: "芽衣",
-    meta: "騎手受験特別コース・3年",
-    avatar: "/images/voice-avatar-sa.png",
-    quote:
-      "同じ夢を持つ仲間がすぐ隣にいる環境は、想像以上に心強いです。大会遠征も学校が支えてくれるので、挑戦を諦めない3年間になりました。",
-  },
 ];
 
 const stats = [
@@ -543,7 +502,7 @@ export default function TokuchoPage() {
                   学校長の野口です。バジガクの高校授業は、1日6時間びっしり座学……ではありません。授業は1日2〜3時間に凝縮し、年間を通じても全日制高校より授業時間を大幅にスリム化。その2〜3時間にしっかり集中して学び、残った時間を思う存分「馬」に費やす。それが東関東馬事高等学院ならではの学び方です。
                 </p>
                 <p className="mt-4 text-sm leading-8 text-white/85 md:text-[15px]">
-                  広域通信制高校・明蓬館高等学校との連携により、「学校だったら当たり前」「高校だったら常識」という従来の枠にとらわれず、皆さんが最も学びやすいカリキュラムを編成しています。
+                  広域通信制高校・中央国際高等学校との連携により、「学校だったら当たり前」「高校だったら常識」という従来の枠にとらわれず、皆さんが最も学びやすいカリキュラムを編成しています。
                 </p>
                 <blockquote className="mt-8 border-l-4 border-gold-500 bg-white/5 px-7 py-6">
                   <p className="font-serif text-xl font-bold text-sun-400 md:text-2xl">
@@ -564,8 +523,8 @@ export default function TokuchoPage() {
             <SlideIn delay={0.2} className="relative">
               <div className="overflow-hidden border-4 border-white/10 shadow-lift">
                 <Image
-                  src="/images/DSC_0026-4.jpg"
-                  alt="生徒と馬が向き合うバジガクの日常"
+                  src={`/images/${encodeURIComponent("高橋羽　2年 (4).JPG")}`}
+                  alt="馬場で騎乗練習する生徒たち"
                   width={900}
                   height={1100}
                   className="h-full w-full object-cover"
@@ -732,86 +691,6 @@ export default function TokuchoPage() {
         </FadeUp>
       </Section>
 
-      {/* VOICES */}
-      <Section id="voices" className="bg-white">
-        <SectionTitle
-          en="VOICES"
-          align="center"
-          title="卒業生・在校生の声"
-          lead="未経験からのスタート、寮での暮らし、夢への挑戦、そして馬と生きる仕事へ。バジガクの毎日を、先輩たちの言葉でお届けします。"
-        />
-
-        {/* Graduates */}
-        <Stagger className="mt-12 grid gap-6 md:grid-cols-2">
-          {graduateVoices.map((v) => (
-            <StaggerItem key={v.name} className="h-full">
-              <figure className="flex h-full flex-col overflow-hidden bg-cream-50 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-                <div className="relative h-52 overflow-hidden md:h-60">
-                  <Image
-                    src={v.img}
-                    alt={`卒業生 ${v.name}さんの現在の職場`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                  <span className="absolute left-4 top-4 rounded-full bg-gold-500 px-3.5 py-1 text-[10px] font-bold text-pine-950">
-                    卒業生
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <blockquote className="flex-1 text-[13px] leading-7 text-ink-700 md:text-sm md:leading-8">
-                    {v.quote}
-                  </blockquote>
-                  <figcaption className="mt-6 border-t border-cream-300 pt-5">
-                    <span className="block font-serif text-sm font-bold text-pine-950">
-                      {v.name}さん
-                    </span>
-                    <span className="mt-0.5 block text-[11px] text-ink-500">
-                      {v.meta}
-                    </span>
-                  </figcaption>
-                </div>
-              </figure>
-            </StaggerItem>
-          ))}
-        </Stagger>
-
-        {/* Current students */}
-        <Stagger className="mt-6 grid gap-6 md:grid-cols-3">
-          {studentVoices.map((v) => (
-            <StaggerItem key={v.name} className="h-full">
-              <figure className="flex h-full flex-col bg-cream-50 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-                <span className="w-fit rounded-full bg-pine-50 px-3.5 py-1 text-[10px] font-bold text-pine-700">
-                  在校生
-                </span>
-                <blockquote className="mt-4 flex-1 text-[13px] leading-7 text-ink-700">
-                  {v.quote}
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-4 border-t border-cream-300 pt-5">
-                  <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src={v.avatar}
-                      alt=""
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </span>
-                  <span>
-                    <span className="block font-serif text-sm font-bold text-pine-950">
-                      {v.name}さん
-                    </span>
-                    <span className="mt-0.5 block text-[11px] text-ink-500">
-                      {v.meta}
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </Section>
-
       {/* BAJIGAKU IN NUMBERS */}
       <section id="numbers" className="relative overflow-hidden bg-pine-900 py-16 md:py-24">
         <div
@@ -924,14 +803,12 @@ export default function TokuchoPage() {
                 {site.tel}
               </a>
               まで。
-              <a
+              <Link
                 href={site.forms.contact}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="ml-2 underline decoration-white/40 underline-offset-4 transition hover:text-white"
               >
                 お問い合わせフォーム
-              </a>
+              </Link>
               は24時間受付です。
             </p>
           </FadeUp>

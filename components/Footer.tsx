@@ -95,7 +95,7 @@ export default function Footer() {
             © {new Date().getFullYear()} 馬の高校 {site.name}（{site.shortName}
             ）
           </p>
-          <p>千葉県山武市・八街市｜広域通信制 明蓬館高等学校 連携校</p>
+          <p>千葉県山武市・八街市｜広域通信制 中央国際高等学校 連携校</p>
         </div>
       </div>
     </footer>

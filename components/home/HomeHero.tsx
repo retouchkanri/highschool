@@ -69,7 +69,7 @@ export default function HomeHero() {
           </span>
         </h1>
         <p className="animate-[fade-in_1s_ease-out_1s_both] mt-5 text-xs leading-6 tracking-widest text-white/85 md:text-sm">
-          千葉県山武市｜全寮制・馬の学校｜広域通信制 明蓬館高等学校 連携
+          千葉県山武市｜全寮制・馬の学校｜広域通信制 中央国際高等学校 連携
         </p>
         <div className="animate-[fade-up_0.9s_ease-out_1.25s_both] mt-9 flex flex-wrap justify-center gap-4">
           <Link

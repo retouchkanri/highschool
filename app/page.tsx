@@ -11,13 +11,18 @@ import HomeHero from "@/components/home/HomeHero";
 import Accordion, { type QA } from "@/components/Accordion";
 import { InstagramIcon, XIcon } from "@/components/SocialIcons";
 import { site } from "@/lib/site";
-import { faqs } from "@/lib/faq";
+import { faqs as staticFaqs } from "@/lib/faq";
+import { getSupabasePublicClient, type Post } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "◆馬の学校【高校】東関東馬事高等学院（公式）／千葉県山武市・八街市",
 };
 
-const news = [
+// Re-fetch news/FAQ data from Supabase periodically so admin edits show up
+// without requiring a full site rebuild.
+export const revalidate = 60;
+
+const fallbackNews = [
   {
     date: "2026.07.10",
     cat: "入学関連",
@@ -38,18 +43,66 @@ const news = [
   },
 ];
 
+function formatDate(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(
+    d.getDate()
+  ).padStart(2, "0")}`;
+}
+
+async function getLatestNews(): Promise<
+  { date: string; cat: string; title: string; href: string }[]
+> {
+  try {
+    const supabase = getSupabasePublicClient();
+    if (!supabase) return fallbackNews;
+    const { data, error } = await supabase
+      .from("posts")
+      .select("*")
+      .eq("is_published", true)
+      .order("published_at", { ascending: false })
+      .limit(3);
+    if (error || !data || data.length === 0) return fallbackNews;
+    return (data as Post[]).map((p) => ({
+      date: formatDate(p.published_at),
+      cat: p.type === "announcement" ? "お知らせ" : "ニュース",
+      title: p.title,
+      href: "/news",
+    }));
+  } catch {
+    return fallbackNews;
+  }
+}
+
+async function getFaqData(): Promise<typeof staticFaqs> {
+  try {
+    const supabase = getSupabasePublicClient();
+    if (!supabase) return staticFaqs;
+    const { data, error } = await supabase
+      .from("faqs")
+      .select("category, question, answer")
+      .order("category", { ascending: true })
+      .order("sort_order", { ascending: true });
+    if (error || !data || data.length === 0) return staticFaqs;
+    return data.map((f) => ({ cat: f.category, q: f.question, a: f.answer }));
+  } catch {
+    return staticFaqs;
+  }
+}
+
 const aboutFacts = [
   { en: "FOUNDED", label: "設立", value: "2009年1月" },
   { en: "LOCATION", label: "所在地", value: "千葉県山武市" },
   { en: "DORMITORY", label: "学生寮", value: "全寮制・全室個室" },
-  { en: "PARTNER", label: "連携校", value: "明蓬館高等学校" },
+  { en: "PARTNER", label: "連携校", value: "中央国際高等学校" },
 ];
 
 const iconCls = "h-6 w-6";
 const whys = [
   {
-    title: "ほぼ毎日の騎乗授業",
-    desc: "育成馬・競走馬・競技馬・引退馬——多彩な馬たちと、ほぼ毎日騎乗。3年間で騎乗技術がぐんぐん伸びます。",
+    title: "馬と過ごす、高校生活3年間",
+    desc: "朝から夕方まで馬と過ごし、騎乗や馬の管理を学びながら、好きなことに夢中になれる3年間です。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <rect x="3" y="5" width="18" height="16" rx="2" />
@@ -58,8 +111,8 @@ const whys = [
     ),
   },
   {
-    title: "テストではなく、学習成果で単位認定",
-    desc: "中間・期末テストの点数ではなく、馬と向き合ってきた日々の学習成果そのものを評価する独自方式です。",
+    title: "勉強は最低限、夢は最大限！",
+    desc: "高校卒業に必要な学習と馬での勉強を両立。馬と向き合い夢に挑戦する時間を最大限に確保します。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.2 9.4l6.1-.8L12 3z" />
@@ -67,8 +120,8 @@ const whys = [
     ),
   },
   {
-    title: "資格・ライセンスを高校授業で取得",
-    desc: "乗馬ライセンスや騎乗者資格、さらに家畜商免許まで。将来につながる資格取得を授業の一環で目指せます。",
+    title: "約120頭の馬たちが、生きた教材",
+    desc: "ポニーや乗用馬、競走馬まで約120頭を管理。多彩な馬との実践から本物の知識と技術を学びます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <circle cx="12" cy="9" r="5" />
@@ -77,8 +130,18 @@ const whys = [
     ),
   },
   {
-    title: "全寮制・全室個室の安心環境",
-    desc: "同じ夢を持つ仲間と暮らす3年間。夜間はセコムによる管理体制と宿直スタッフで、保護者の方も安心です。",
+    title: "高校生から資格取得・競技会へ挑戦",
+    desc: "乗馬ライセンスや騎乗者資格の取得、馬術競技会への出場など高校生から本格的な挑戦ができます。",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
+        <path d="M8 4h8v5a4 4 0 01-8 0V4z" />
+        <path d="M8 5H4c0 3 1.5 5 4 5M16 5h4c0 3-1.5 5-4 5M12 13v4M8 21h8M9 17h6" />
+      </svg>
+    ),
+  },
+  {
+    title: "全国から集まる仲間との寮生活",
+    desc: "全国から集まる馬好きの仲間と寮生活。共に学び支え合う3年間を通じ自立心と人間力を育てます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M3 11l9-7 9 7" />
@@ -88,18 +151,8 @@ const whys = [
     ),
   },
   {
-    title: "大会遠征費は学校が全額負担",
-    desc: "馬術大会への出場にかかる諸経費は学校が全額負担。費用を気にせず、大会経験を積み重ねられます。",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
-        <path d="M8 4h8v5a4 4 0 01-8 0V4z" />
-        <path d="M8 5H4c0 3 1.5 5 4 5M16 5h4c0 3-1.5 5-4 5M12 13v4M8 21h8M9 17h6" />
-      </svg>
-    ),
-  },
-  {
-    title: "現場で学ぶ校外学習・進路サポート",
-    desc: "競馬場や牧場での研修が高校の単位に。350件超の求人情報と職場実習で、就職までを全力で支えます。",
+    title: "教室を飛び出して、本物の現場へ",
+    desc: "在学中にJRA厩務員受験をはじめ牧場、乗馬クラブなどでの校外学習も可能。本物を経験できます。",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" />
@@ -110,10 +163,10 @@ const whys = [
 ];
 
 const stats = [
-  { value: 38, suffix: "名", label: "騎手課程 合格者数", note: "開校以来12年間の実績" },
-  { value: 60, suffix: "名", label: "在校する高校生", note: "全国から集まる仲間たち" },
-  { value: 20, suffix: "頭", label: "学校所有の現役競走馬", note: "冠名「バジガク」で出走" },
-  { value: 350, suffix: "件超", label: "馬関連の求人情報", note: "全国の牧場・乗馬クラブ" },
+  { value: 18, suffix: "年目", label: "本校設立からの年", note: "信頼と実績の継続年" },
+  { value: 293, suffix: "名", label: "過去の入学生徒数", note: "令和８年現在入学数" },
+  { value: 118, suffix: "頭", label: "本校の管理馬の数", note: "当社３施設の在籍馬" },
+  { value: 681, suffix: "日", label: "３年間で学べる日", note: "休日除の概算の日数" },
 ];
 
 const policies = [
@@ -136,52 +189,52 @@ const policies = [
 
 const dayFlow = [
   {
-    time: "06:30",
-    title: "起床・朝の飼付",
-    desc: "馬たちの「おはよう」から1日が始まる。担当馬の健康チェックも欠かせません。",
+    time: "06:30～｜当番制",
+    title: "馬たちと一緒に、一日が始まる",
+    desc: "朝の飼いつけと健康チェック。馬たちに「おはよう」を伝えるところから一日が始まります。",
     img: "/images/DSC9265.jpg",
   },
   {
-    time: "07:30",
-    title: "厩舎作業",
-    desc: "馬房の清掃や寝藁の交換。命を預かる仕事の基本を毎日の作業で身につけます。",
-    img: "/images/shisetsu_008_1.jpg",
-  },
-  {
-    time: "09:00",
-    title: "騎乗授業",
-    desc: "レベル別のレッスンでほぼ毎日騎乗。部班運動から障害飛越まで挑戦します。",
-    img: "/images/tokucho_002_1.jpg",
-  },
-  {
-    time: "12:00",
-    title: "昼食",
-    desc: "食堂で仲間とひと休み。食事は365日3食しっかり提供されます。",
+    time: "07:00～",
+    title: "起床・朝食",
+    desc: "食堂で朝ごはん。しっかり食べて、元気よく。仲間と一緒に今日の一日の授業準備を始めます。",
     img: "/images/shisetsu_004_1.jpg",
   },
   {
-    time: "13:00",
+    time: "08:00～",
+    title: "集合・厩舎管理",
+    desc: "集合して一日の予定を確認。その後は馬房掃除など、馬たちが快適に過ごせる環境を整えます。",
+    img: "/images/shisetsu_008_1.jpg",
+  },
+  {
+    time: "09:00～",
     title: "高校授業",
-    desc: "明蓬館高等学校の授業は1日2〜3時間。集中して学び、高校の単位を取得します。",
+    desc: "高校卒業に必要な学習は1日約2時間半。先生のサポートを受けながら、集中して取り組みます。",
     img: "/images/shisetsu_005_1.jpg",
   },
   {
-    time: "15:00",
-    title: "午後の騎乗・調教",
-    desc: "コース走行の練習や競走馬の調教管理など、コースに応じた実践の時間です。",
-    img: "/images/tokucho_006_1.jpg",
+    time: "11:30～",
+    title: "昼食・自由時間",
+    desc: "仲間と一緒にランチタイム。食事を楽しんだり、おしゃべりしたり、午後に向けてひと休み。",
+    img: "/images/shisetsu_003_1.jpg",
   },
   {
-    time: "17:00",
-    title: "夕方の飼付・見回り",
-    desc: "1日の終わりも馬と共に。馬たちの様子を確かめてから厩舎を後にします。",
+    time: "13:00～",
+    title: "大好きな馬との授業",
+    desc: "午後はいよいよ馬との時間。騎乗や運動、お手入れ等、馬と触れ合いながら実践的に学びます。",
+    img: "/images/tokucho_002_1.jpg",
+  },
+  {
+    time: "16:30～",
+    title: "集合・馬たちに「また明日」",
+    desc: "一日の最後に馬たちの様子を確認。今日も一日一緒に過ごした馬たちを見届け授業終了です。",
     img: "/images/DSC_0026-4.jpg",
   },
   {
-    time: "19:00",
-    title: "寮での自由時間",
-    desc: "夕食・入浴のあとは仲間と団らん。門限は21:00、消灯は22:30です。",
-    img: "/images/shisetsu_003_1.jpg",
+    time: "放課後～",
+    title: "夕食・自由時間",
+    desc: "ここからは自分たちの時間。夕食、外出、仲間との時間、寮生活ならではの放課後を楽しみます。",
+    img: "/images/tokucho_006_1.jpg",
   },
 ];
 
@@ -237,30 +290,6 @@ const facilities = [
   { img: "/images/shisetsu_013_1.jpg", title: "学生寮（全室個室）", desc: "教室をリノベーションした個室寮" },
   { img: "/images/shisetsu_004_1.jpg", title: "食堂", desc: "365日3食、仲間と食卓を囲む" },
   { img: "/images/shisetsu_007_1.jpg", title: "体育館", desc: "天候を気にせず身体を動かせる" },
-];
-
-const voices = [
-  {
-    initials: "美咲",
-    meta: "一般高校乗馬コース・2年",
-    quote:
-      "乗馬はまったくの未経験で入学しました。ほぼ毎日騎乗できる環境のおかげで、2年生で馬術大会に出場できるまでに。失敗しても、先生と馬が何度でも付き合ってくれます。",
-    avatar: "/images/voice-avatar-mk.png",
-  },
-  {
-    initials: "翔太",
-    meta: "競走馬厩務員コース・3年",
-    quote:
-      "担当馬の世話は朝も夕方も正直大変です。でも、手をかけた分だけ馬が応えてくれる。JRA競馬学校の厩務員課程受験に向けて、毎日が本番の練習だと思っています。",
-    avatar: "/images/voice-avatar-rt.png",
-  },
-  {
-    initials: "結衣",
-    meta: "騎手受験特別コース・1年",
-    quote:
-      "同じ夢を持つ仲間と寮で暮らす毎日は、想像以上に楽しいです。勉強は苦手だったけど、ここでは日々の頑張りがそのまま成績になって、夢につながっていきます。",
-    avatar: "/images/voice-avatar-sa.png",
-  },
 ];
 
 const staff = [
@@ -360,17 +389,18 @@ const faqPicks = [
   "乗馬の未経験者でも合格できますか？",
   "学生寮の部屋は個室ですか？相部屋ですか？",
   "騎乗時間は1日にどれくらいありますか？",
-  "明蓬館高等学校の授業は1日どれくらいですか？",
+  "中央国際高等学校の授業は1日どれくらいですか？",
   "小学校・中学校で不登校でしたが、入学できますか？",
   "卒業後はどんな馬の仕事に就けますか？",
 ];
 
-const faqPreview: QA[] = faqPicks.flatMap((q) => {
-  const hit = faqs.find((f) => f.q === q);
-  return hit ? [{ q: hit.q, a: hit.a }] : [];
-});
+export default async function HomePage() {
+  const [news, faqs] = await Promise.all([getLatestNews(), getFaqData()]);
+  const faqPreview: QA[] = faqPicks.flatMap((q) => {
+    const hit = faqs.find((f) => f.q === q);
+    return hit ? [{ q: hit.q, a: hit.a }] : [];
+  });
 
-export default function HomePage() {
   return (
     <>
       <HomeHero />
@@ -498,7 +528,7 @@ export default function HomePage() {
           en="WHY BAJIGAKU"
           align="center"
           title="バジガクが選ばれる理由"
-          lead="「馬の学校」だからこそできる学び方があります。全国から生徒が集まる、バジガクならではの魅力をご紹介します。"
+          lead="「青春を、馬と一緒に。」大好きな馬と過ごす毎日が特別な高校生活になる。"
         />
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {whys.map((w) => (
@@ -632,8 +662,8 @@ export default function HomePage() {
         <SectionTitle
           en="DAILY LIFE"
           align="center"
-          title="バジガク生の1日"
-          lead="朝の飼付にはじまり、騎乗授業、高校授業、そして寮での団らんまで。馬が真ん中にある、バジガクの1日をのぞいてみましょう。"
+          title="馬と過ごす、高校生の1日"
+          lead="朝から夕方まで、青春のそばにはいつも馬がいる。勉強する時間も、馬と向き合う時間も、仲間と笑う時間も。「馬が好き」を毎日の真ん中に置いた、バジガクならではの高校生活です。"
         />
         <Stagger gap={0.06} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {dayFlow.map((d, i) => (
@@ -647,16 +677,16 @@ export default function HomePage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <span className="absolute left-0 top-0 bg-pine-950/85 px-3.5 py-1.5 font-serif text-sm font-bold tracking-wider text-sun-400 backdrop-blur-sm">
+                  <span className="absolute left-0 top-0 max-w-[90%] bg-pine-950/85 px-2.5 py-1.5 font-serif text-[11px] font-bold leading-snug tracking-wider text-sun-400 backdrop-blur-sm sm:text-xs">
                     {d.time}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-gold-600">
+                  <div className="flex items-start gap-2.5">
+                    <span className="mt-0.5 shrink-0 text-[10px] font-bold tracking-[0.2em] text-gold-600">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-serif text-[15px] font-bold text-pine-950">
+                    <h3 className="font-serif text-[15px] font-bold leading-snug text-pine-950">
                       {d.title}
                     </h3>
                   </div>
@@ -678,7 +708,7 @@ export default function HomePage() {
         </Stagger>
         <FadeUp delay={0.1}>
           <p className="mt-8 text-center text-[11px] text-ink-500">
-            ※スケジュールは一例です。時期・学年・コースにより変わります。
+            ※スケジュールは一例です。季節・学年・授業内容・個別スケジュール等により変更となる場合があります。
           </p>
         </FadeUp>
       </Section>
@@ -866,45 +896,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STUDENT VOICES */}
-      <Section className="bg-white">
-        <SectionTitle
-          en="STUDENT VOICES"
-          align="center"
-          title="在校生の声"
-          lead="未経験からのスタート、寮での暮らし、夢への挑戦。バジガクで過ごす毎日を、在校生の言葉でお届けします。"
-        />
-        <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
-          {voices.map((v) => (
-            <StaggerItem key={v.initials} className="h-full">
-              <figure className="flex h-full flex-col bg-cream-50 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-                <blockquote className="flex-1 text-[13px] leading-7 text-ink-700">
-                  {v.quote}
-                </blockquote>
-                <figcaption className="mt-6 flex items-center gap-4 border-t border-cream-300 pt-5">
-                  <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src={v.avatar}
-                      alt=""
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </span>
-                  <span>
-                    <span className="block font-serif text-sm font-bold text-pine-950">
-                      {v.initials}さん
-                    </span>
-                    <span className="mt-0.5 block text-[11px] text-ink-500">
-                      {v.meta}
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </Section>
 
       {/* TEACHERS & STAFF */}
       <Section className="texture-paper">
@@ -1176,15 +1167,13 @@ export default function HomePage() {
                 </div>
               </dl>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                <Link
                   href={site.forms.contact}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 rounded-full bg-pine-800 px-7 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-pine-700 hover:shadow-lift"
                 >
                   お問い合わせフォーム
                   <span className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-                </a>
+                </Link>
                 <a
                   href={`tel:${site.tel}`}
                   className="inline-flex items-center gap-3 rounded-full border-2 border-pine-800 px-7 py-3.5 text-sm font-bold text-pine-800 transition hover:bg-pine-50"

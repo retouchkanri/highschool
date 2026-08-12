@@ -471,15 +471,13 @@ export default function CampPage() {
                 )}
                 {s.no === "02" && (
                   <div className="mt-4 flex flex-col gap-2">
-                    <a
+                    <Link
                       href={site.forms.contact}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-xs font-bold text-pine-800 underline decoration-gold-400 underline-offset-4 transition hover:text-gold-600"
                     >
                       お問い合わせフォームはこちら
                       <span aria-hidden>→</span>
-                    </a>
+                    </Link>
                     <a
                       href={`tel:${site.tel}`}
                       className="inline-flex items-center gap-2 text-xs font-bold text-pine-800 underline decoration-gold-400 underline-offset-4 transition hover:text-gold-600"
@@ -572,17 +570,15 @@ export default function CampPage() {
           />
           <FadeUp delay={0.2}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a
+              <Link
                 href={site.forms.contact}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-sun-500 px-9 py-4 text-sm font-bold text-pine-950 shadow-soft transition hover:shadow-lift"
               >
                 合宿について問い合わせる
                 <span className="transition-transform duration-300 group-hover:translate-x-1.5">
                   →
                 </span>
-              </a>
+              </Link>
               <a
                 href={`tel:${site.tel}`}
                 className="inline-flex items-center gap-3 rounded-full border-2 border-pine-800 px-9 py-4 text-sm font-bold text-pine-800 transition hover:bg-pine-50"

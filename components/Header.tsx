@@ -95,6 +95,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href="/contact"
+            className="rounded-full border-2 border-white/50 px-5 py-2.5 text-[13px] font-bold text-white transition hover:border-sun-400 hover:text-sun-400"
+          >
+            お問い合わせ
+          </Link>
           <a
             href={site.forms.shiryo}
             target="_blank"
@@ -165,7 +171,13 @@ export default function Header() {
               </Link>
             )
           )}
-          <div className="pt-4">
+          <div className="flex flex-col gap-3 pt-4">
+            <Link
+              href="/contact"
+              className="block rounded-full border-2 border-white/40 px-6 py-3.5 text-center text-sm font-bold text-white"
+            >
+              お問い合わせ
+            </Link>
             <a
               href={site.forms.shiryo}
               target="_blank"

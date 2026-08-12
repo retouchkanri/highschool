@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 
@@ -60,14 +61,10 @@ export default function CTABand() {
           </p>
         </FadeUp>
         <Stagger className="mt-10 grid gap-5 md:grid-cols-3">
-          {ctas.map((c) => (
-            <StaggerItem key={c.en}>
-              <a
-                href={c.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group block h-full p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-lift ${c.accent}`}
-              >
+          {ctas.map((c) => {
+            const isExternal = c.href.startsWith("http");
+            const content = (
+              <>
                 <p className="text-[10px] font-bold tracking-[0.35em] opacity-70">
                   {c.en}
                 </p>
@@ -81,9 +78,23 @@ export default function CTABand() {
                     →
                   </span>
                 </span>
-              </a>
-            </StaggerItem>
-          ))}
+              </>
+            );
+            const className = `group block h-full p-6 shadow-soft transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-lift ${c.accent}`;
+            return (
+              <StaggerItem key={c.en}>
+                {isExternal ? (
+                  <a href={c.href} target="_blank" rel="noopener noreferrer" className={className}>
+                    {content}
+                  </a>
+                ) : (
+                  <Link href={c.href} className={className}>
+                    {content}
+                  </Link>
+                )}
+              </StaggerItem>
+            );
+          })}
         </Stagger>
       </div>
     </section>

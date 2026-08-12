@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section, SectionTitle } from "@/components/Section";
 import { FadeUp, Stagger, StaggerItem } from "@/components/motion";
 import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
-import FaqExplorer from "@/components/qa/FaqExplorer";
+import FaqExplorer, { type FaqItem } from "@/components/qa/FaqExplorer";
 import { site } from "@/lib/site";
+import { faqs as staticFaqs } from "@/lib/faq";
+import { getSupabasePublicClient } from "@/lib/supabase";
 
 export const metadata: Metadata = {
   title: "AIよくある質問 Q&A",
@@ -12,7 +15,27 @@ export const metadata: Metadata = {
     "東関東馬事高等学院（バジガク）のよくある質問。入学募集・入学手続・授業内容・学校生活・就職進路のQ&Aを、キーワード検索とカテゴリで素早く探せます。",
 };
 
-export default function QaPage() {
+// Re-fetch FAQs from Supabase periodically so admin edits show up without a rebuild.
+export const revalidate = 60;
+
+async function getFaqs(): Promise<FaqItem[]> {
+  try {
+    const supabase = getSupabasePublicClient();
+    if (!supabase) return staticFaqs;
+    const { data, error } = await supabase
+      .from("faqs")
+      .select("category, question, answer")
+      .order("category", { ascending: true })
+      .order("sort_order", { ascending: true });
+    if (error || !data || data.length === 0) return staticFaqs;
+    return data.map((f) => ({ cat: f.category, q: f.question, a: f.answer }));
+  } catch {
+    return staticFaqs;
+  }
+}
+
+export default async function QaPage() {
+  const faqs = await getFaqs();
   return (
     <>
       <PageHero
@@ -32,7 +55,7 @@ export default function QaPage() {
           lead="入学募集から寮生活、卒業後の進路まで、これまで多く寄せられた質問をまとめました。気になる言葉を入力するか、カテゴリを選ぶと、該当するQ&Aがリアルタイムに絞り込まれます。"
         />
         <FadeUp delay={0.15} className="mt-12">
-          <FaqExplorer />
+          <FaqExplorer faqs={faqs} />
         </FadeUp>
       </Section>
 
@@ -75,17 +98,15 @@ export default function QaPage() {
               <p className="mt-3 flex-1 text-[13px] leading-7 text-ink-700">
                 24時間受付。ご質問の内容を確認のうえ、スタッフより折り返しご連絡します。
               </p>
-              <a
+              <Link
                 href={site.forms.contact}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group mt-5 inline-flex items-center gap-3 rounded-full bg-sun-500 px-8 py-3.5 text-sm font-bold text-pine-950 shadow-soft transition hover:shadow-lift"
               >
                 フォームから相談する
                 <span className="transition-transform duration-300 group-hover:translate-x-1.5">
                   →
                 </span>
-              </a>
+              </Link>
             </div>
           </StaggerItem>
         </Stagger>

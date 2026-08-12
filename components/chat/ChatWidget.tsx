@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { faqs } from "@/lib/faq";
 import { site } from "@/lib/site";
 
 /** チャットの1メッセージ */
@@ -25,75 +24,6 @@ const starters = [
   "転入学はできますか？",
   "学費や奨学金について",
 ];
-
-/** 表記ゆれを吸収する同義語辞書（入力に含まれる語 → FAQ側で使われる語） */
-const synonyms: Record<string, string[]> = {
-  学費: ["奨学金", "教育ローン", "納付", "入学金"],
-  お金: ["奨学金", "教育ローン", "納付", "入学金"],
-  費用: ["奨学金", "教育ローン", "納付", "入学金"],
-  転校: ["転入学"],
-  ごはん: ["食事"],
-  ご飯: ["食事"],
-  食堂: ["食事"],
-  スマホ: ["wi-fi", "持ち込め"],
-  携帯: ["wi-fi", "持ち込め"],
-  部屋: ["個室", "寮"],
-  ジョッキー: ["騎手"],
-  休み: ["休日", "休暇"],
-  初心者: ["未経験"],
-};
-
-const THRESHOLD = 0.25;
-
-function normalize(s: string): string {
-  return s
-    .normalize("NFKC")
-    .toLowerCase()
-    .replace(/[\s、。・．，！？!?「」『』（）()]/g, "");
-}
-
-function bigrams(s: string): Set<string> {
-  const grams = new Set<string>();
-  for (let i = 0; i < s.length - 1; i++) grams.add(s.slice(i, i + 2));
-  return grams;
-}
-
-/** FAQ1件に対する質問文の一致度（0〜1強）を返す */
-function scoreFaq(rawQuery: string, faq: { q: string; a: string }): number {
-  const query = normalize(rawQuery);
-  if (!query) return 0;
-  const nq = normalize(faq.q);
-  const na = normalize(faq.a);
-
-  let score = 0;
-
-  const grams = bigrams(query);
-  if (grams.size > 0) {
-    let hit = 0;
-    grams.forEach((g) => {
-      if (nq.includes(g)) hit += 2;
-      else if (na.includes(g)) hit += 1;
-    });
-    score += hit / (grams.size * 2);
-  } else if (nq.includes(query) || na.includes(query)) {
-    score += 0.5;
-  }
-
-  if (query.length >= 2 && (nq.includes(query) || na.includes(query))) {
-    score += 0.4;
-  }
-
-  let bonus = 0;
-  for (const [key, terms] of Object.entries(synonyms)) {
-    if (!rawQuery.includes(key)) continue;
-    for (const t of terms) {
-      if ((nq + na).includes(normalize(t))) bonus += 0.15;
-    }
-  }
-  score += Math.min(bonus, 0.3);
-
-  return score;
-}
 
 const sparkle = (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -148,7 +78,7 @@ export default function ChatWidget() {
     []
   );
 
-  function buildReply(text: string): Msg {
+  function quickReply(text: string): Msg | null {
     if (/ありがとう|助かりました/.test(text)) {
       return {
         id: nextId(),
@@ -165,44 +95,61 @@ export default function ChatWidget() {
         related: starters,
       };
     }
+    return null;
+  }
 
-    const ranked = faqs
-      .map((f) => ({ f, score: scoreFaq(text, f) }))
-      .sort((a, b) => b.score - a.score);
-
-    const best = ranked[0];
-    if (best && best.score >= THRESHOLD) {
-      const related = ranked
-        .slice(1, 3)
-        .filter((r) => r.score >= THRESHOLD * 0.6)
-        .map((r) => r.f.q);
+  async function fetchAiReply(text: string, history: Msg[]): Promise<Msg> {
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: text,
+          history: history.slice(-6).map((m) => ({
+            role: m.role === "user" ? "user" : "assistant",
+            text: m.text,
+          })),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "chat request failed");
       return {
         id: nextId(),
         role: "bot",
-        text: best.f.a,
-        cat: best.f.cat,
-        related,
+        text: data.reply,
+        related: data.relatedQuestions,
+        fallback: Boolean(data.fallback),
+      };
+    } catch {
+      return {
+        id: nextId(),
+        role: "bot",
+        text: "申し訳ありません、ただいま応答できませんでした。お急ぎの場合はお電話、またはお問い合わせフォームからご連絡ください。",
+        fallback: true,
       };
     }
-
-    return {
-      id: nextId(),
-      role: "bot",
-      text: "ぴったりの回答が見つかりませんでした…。「寮」「門限」「騎手」など、別の言葉でもう一度試してみてください。お急ぎの場合やくわしいご相談は、こちらからどうぞ。",
-      fallback: true,
-    };
   }
 
-  function send(raw: string) {
+  async function send(raw: string) {
     const text = raw.trim();
     if (!text || typing) return;
     setInput("");
+    const history = messages;
     setMessages((m) => [...m, { id: nextId(), role: "user", text }]);
     setTyping(true);
-    timerRef.current = setTimeout(() => {
-      setMessages((m) => [...m, buildReply(text)]);
-      setTyping(false);
-    }, 700);
+
+    const quick = quickReply(text);
+    if (quick) {
+      timerRef.current = setTimeout(() => {
+        setMessages((m) => [...m, quick]);
+        setTyping(false);
+      }, 500);
+      return;
+    }
+
+    const reply = await fetchAiReply(text, history);
+    setMessages((m) => [...m, reply]);
+    setTyping(false);
   }
 
   return (
@@ -303,14 +250,12 @@ export default function ChatWidget() {
                             >
                               お電話で相談する（{site.tel}）
                             </a>
-                            <a
+                            <Link
                               href={site.forms.contact}
-                              target="_blank"
-                              rel="noopener noreferrer"
                               className="block text-pine-800 underline underline-offset-2 hover:text-pine-700"
                             >
                               お問い合わせフォームへ →
-                            </a>
+                            </Link>
                             <Link
                               href="/qa"
                               className="block text-pine-800 underline underline-offset-2 hover:text-pine-700"

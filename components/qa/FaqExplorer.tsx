@@ -2,7 +2,9 @@
 
 import { useMemo, useState } from "react";
 import Accordion, { type QA } from "@/components/Accordion";
-import { faqs, faqCategories } from "@/lib/faq";
+import { faqCategories } from "@/lib/faq";
+
+export type FaqItem = { cat: string; q: string; a: string };
 
 const tabs = ["すべて", ...faqCategories] as const;
 
@@ -20,7 +22,7 @@ const suggestions = ["未経験", "不登校", "転入学", "門限", "騎手"];
  * AI検索風のFAQエクスプローラー。
  * キーワード入力によるリアルタイム絞り込み + カテゴリタブ + アコーディオン表示。
  */
-export default function FaqExplorer() {
+export default function FaqExplorer({ faqs }: { faqs: FaqItem[] }) {
   const [query, setQuery] = useState("");
   const [activeCat, setActiveCat] = useState<string>("すべて");
 

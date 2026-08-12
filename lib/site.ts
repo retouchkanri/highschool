@@ -3,7 +3,7 @@ export const site = {
   shortName: "バジガク",
   tagline: "馬と共に過ごす、かけがえのない高校3年間。",
   description:
-    "千葉県山武市にある馬の学校「東関東馬事高等学院（バジガク）」。広域通信制高校・明蓬館高等学校との連携により、馬と共に過ごしながら高校卒業資格を取得。騎手・厩務員・乗馬業界への進路を全力でサポートします。",
+    "千葉県山武市にある馬の学校「東関東馬事高等学院（バジガク）」。広域通信制高校・中央国際高等学校との連携により、馬と共に過ごしながら高校卒業資格を取得。騎手・厩務員・乗馬業界への進路を全力でサポートします。",
   url: "https://bajigaku.net",
   tel: "050-6875-3336",
   fax: "050-6875-3337",
@@ -18,7 +18,7 @@ export const site = {
   forms: {
     shiryo: "https://bajigaku.net/shiryo/",
     taiken: "https://bajigaku.net/taiken-1/",
-    contact: "https://bajigaku.net/contact/",
+    contact: "/contact",
   },
 } as const;
 
@@ -32,6 +32,7 @@ export type NavItem = {
 
 export const nav: NavItem[] = [
   { label: "HOME", href: "/", en: "TOP" },
+  { label: "お知らせ", href: "/news", en: "NEWS" },
   { label: "本校の特徴", href: "/tokucho", en: "FEATURES" },
   { label: "コース紹介", href: "/course", en: "COURSES" },
   { label: "募集要項", href: "/boshu", en: "ADMISSION" },
@@ -52,6 +53,7 @@ export const nav: NavItem[] = [
 
 export const footerNav: { label: string; href: string }[] = [
   { label: "HOME", href: "/" },
+  { label: "お知らせ", href: "/news" },
   { label: "本校の特徴", href: "/tokucho" },
   { label: "コース紹介", href: "/course" },
   { label: "募集要項", href: "/boshu" },
