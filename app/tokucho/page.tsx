@@ -693,12 +693,13 @@ export default function TokuchoPage() {
 
 
       {/* BAJIGAKU IN NUMBERS */}
-      <section id="numbers" className="relative overflow-hidden bg-pine-900 py-16 md:py-24">
+      <section id="numbers" className="relative overflow-hidden bg-black py-16 md:py-24">
         <div
           aria-hidden
-          className="absolute inset-0 bg-cover bg-center opacity-15"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url(/images/DSC_2533.jpg)" }}
         />
+        <div aria-hidden className="absolute inset-0 bg-black/35" />
         <div className="relative mx-auto max-w-7xl px-6">
           <SectionTitle
             dark
