@@ -6,6 +6,7 @@ export const site = {
     "千葉県山武市にある馬の学校「東関東馬事高等学院（バジガク）」。広域通信制高校・中央国際高等学校との連携により、馬と共に過ごしながら高校卒業資格を取得。騎手・厩務員・乗馬業界への進路を全力でサポートします。",
   url: "https://bajigaku.net",
   tel: "050-6875-3336",
+  telHours: "平日 9:00 - 17:00",
   fax: "050-6875-3337",
   address: "〒289-1213 千葉県山武市雨坪10番地（旧・日向小学校）",
   principal: "野口佳槻",
@@ -31,8 +32,7 @@ export type NavItem = {
 };
 
 export const nav: NavItem[] = [
-  { label: "HOME", href: "/", en: "TOP" },
-  { label: "お知らせ", href: "/news", en: "NEWS" },
+  { label: "TOP", href: "/", en: "TOP" },
   { label: "本校の特徴", href: "/tokucho", en: "FEATURES" },
   { label: "コース紹介", href: "/course", en: "COURSES" },
   { label: "募集要項", href: "/boshu", en: "ADMISSION" },
@@ -48,12 +48,11 @@ export const nav: NavItem[] = [
     ],
   },
   { label: "学校概要", href: "/gaiyo", en: "ABOUT" },
-  { label: "よくある質問", href: "/qa", en: "Q&A" },
+  { label: "FAQ", href: "/qa", en: "Q&A" },
 ];
 
 export const footerNav: { label: string; href: string }[] = [
   { label: "HOME", href: "/" },
-  { label: "お知らせ", href: "/news" },
   { label: "本校の特徴", href: "/tokucho" },
   { label: "コース紹介", href: "/course" },
   { label: "募集要項", href: "/boshu" },

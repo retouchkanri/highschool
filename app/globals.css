@@ -1,35 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand — deep pine green, warm cream, racing gold */
-  --color-pine-950: #0b1f16;
-  --color-pine-900: #12291d;
-  --color-pine-800: #1b3a2a;
-  --color-pine-700: #24503a;
-  --color-pine-600: #2f6a4c;
-  --color-pine-500: #3d8560;
-  --color-pine-100: #dcefe4;
-  --color-pine-50: #eef7f1;
+  /* Brand — HATME-style green, neutral gray, clean white */
+  --color-pine-950: #2a2a2a;
+  --color-pine-900: #333333;
+  --color-pine-800: #444444;
+  --color-pine-700: #009247;
+  --color-pine-600: #00a651;
+  --color-pine-500: #00a651;
+  --color-pine-100: #e8f5ee;
+  --color-pine-50: #f0faf4;
 
-  --color-cream-50: #fdfcf9;
-  --color-cream-100: #faf7f0;
-  --color-cream-200: #f3eee1;
-  --color-cream-300: #e9e1cd;
+  --color-cream-50: #ffffff;
+  --color-cream-100: #f7f7f7;
+  --color-cream-200: #eeeeee;
+  --color-cream-300: #dddddd;
 
-  --color-gold-600: #a8821c;
-  --color-gold-500: #c9a227;
-  --color-gold-400: #dfb93e;
-  --color-gold-300: #eccf6e;
+  --color-gold-600: #009247;
+  --color-gold-500: #00a651;
+  --color-gold-400: #00b85c;
+  --color-gold-300: #b8e6ce;
 
-  --color-sun-500: #f5c518;
-  --color-sun-400: #f9d441;
+  --color-sun-500: #00a651;
+  --color-sun-400: #33b874;
 
-  --color-ink-900: #1a1a17;
-  --color-ink-700: #3d3c36;
-  --color-ink-500: #6b6a60;
+  --color-ink-900: #333333;
+  --color-ink-700: #333333;
+  --color-ink-500: #666666;
 
-  --shadow-soft: 0 10px 40px -12px rgb(11 31 22 / 0.18);
-  --shadow-lift: 0 24px 60px -20px rgb(11 31 22 / 0.32);
+  --shadow-soft: 0 10px 40px -12px rgb(0 0 0 / 0.1);
+  --shadow-lift: 0 24px 60px -20px rgb(0 0 0 / 0.15);
 
   --animate-kenburns: kenburns 18s ease-out both;
   --animate-marquee: marquee 42s linear infinite;
@@ -117,16 +117,17 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #00a651 #f0f0f0;
 }
 
 body {
-  @apply bg-cream-100 text-ink-900 font-sans antialiased;
+  @apply bg-white text-ink-900 font-sans antialiased;
   overflow-x: hidden;
 }
 
 ::selection {
   background: var(--color-gold-300);
-  color: var(--color-pine-950);
+  color: var(--color-pine-900);
 }
 
 /* Vertical Japanese text (decorative) */
@@ -135,7 +136,7 @@ body {
   letter-spacing: 0.35em;
 }
 
-/* Thin gold rule used under section titles */
+/* Accent rule used under section titles */
 .rule-gold {
   background: linear-gradient(
     90deg,
@@ -145,25 +146,27 @@ body {
   );
 }
 
-/* Subtle paper texture for cream sections */
+/* Subtle paper texture for light sections */
 .texture-paper {
   background-image: radial-gradient(
-      rgb(27 58 42 / 0.045) 1px,
+      rgb(0 0 0 / 0.04) 1px,
       transparent 1px
     ),
-    radial-gradient(rgb(27 58 42 / 0.03) 1px, transparent 1px);
+    radial-gradient(rgb(0 0 0 / 0.025) 1px, transparent 1px);
   background-size: 22px 22px, 34px 34px;
   background-position: 0 0, 11px 11px;
 }
 
-/* Scrollbar (webkit) */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-cream-200);
+  background: #f0f0f0;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-pine-700);
+  background: #00a651;
   border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #009247;
 }

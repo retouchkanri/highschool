@@ -364,7 +364,7 @@ const events = [
   {
     img: "/images/taiken-2_001_1.jpg",
     title: "夏休み4泊5日バジガク体験合宿",
-    desc: "馬のお世話から野外騎乗まで、リアルな学校生活を宿泊で体験。",
+    desc: "実際に学校での宿泊型体験授業に参加できます",
     href: "/opencampus#camp",
     tag: "夏季限定",
     meta: [
@@ -918,7 +918,7 @@ export default async function HomePage() {
           en="TEACHERS & STAFF"
           align="center"
           title="生徒と馬に、本気で向き合う指導陣。"
-          lead="騎乗指導から馬の管理、進路相談、寮生活まで。馬業界を知り尽くしたスタッフが、一人ひとりの3年間に伴走します。"
+          lead="「みんな一緒」が正解ではない。一人ひとりの「個」を尊重し、それぞれの成長、それぞれの未来に向き合いながら、大切な3年間に共にサポートしていきます。"
         />
         <FadeUp delay={0.1} className="mt-12">
           <div className="relative overflow-hidden bg-pine-900 p-8 shadow-lift md:p-12">
@@ -1139,7 +1139,7 @@ export default async function HomePage() {
                   アクセス
                 </>
               }
-              lead="学校見学・入学相談はお気軽にどうぞ。オープンキャンパス開催日には、JR東京駅からの無料送迎もご利用いただけます。"
+              lead="まずは、資料をご請求のうえ、学校見学＆オープンキャンパスにご参加ください。本校では開催日にJR東京駅までのお迎えがございます。（帰路はJR八街駅より特急しおさい号でJR東京駅まで直通運行です。）"
             />
             <FadeUp delay={0.15}>
               <dl className="mt-8 divide-y divide-cream-200 border border-cream-300 bg-cream-50 shadow-soft">
@@ -1169,7 +1169,7 @@ export default async function HomePage() {
                     アクセス
                   </dt>
                   <dd className="text-sm leading-7 text-ink-700">
-                    JR総武本線「日向駅」から徒歩圏内。学校見学・オープンキャンパスはJR東京駅より無料送迎あり。
+                    JR総武本線「日向（ひゅうが）駅」より徒歩8分程度。学校見学開催時は、バスにてJR東京駅（１２時３０分）のお迎えがあります。
                   </dd>
                 </div>
                 <div className="flex gap-6 px-6 py-4">
@@ -1202,7 +1202,7 @@ export default async function HomePage() {
             <div className="h-full min-h-[320px] overflow-hidden border border-cream-300 shadow-soft lg:min-h-[420px]">
               <iframe
                 title="東関東馬事高等学院（千葉県山武市雨坪10番地）の地図"
-                src="https://www.google.com/maps?q=千葉県山武市雨坪10番地&output=embed"
+                src="https://www.google.com/maps?q=35.630227,140.357186(%E6%9D%B1%E9%96%A2%E6%9D%B1%E9%A6%AC%E4%BA%8B%E9%AB%98%E7%AD%89%E5%AD%A6%E9%99%A2+%E5%8D%83%E8%91%89%E7%9C%8C%E5%B1%B1%E6%AD%A6%E5%B8%82%E9%9B%A8%E5%9D%AA10%E7%95%AA%E5%9C%B0)&hl=ja&z=17&output=embed"
                 className="h-full w-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

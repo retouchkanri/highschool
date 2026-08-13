@@ -115,15 +115,15 @@ const studentTypes = [
   },
 ];
 
-const timeline = [
-  { time: "06:30～", label: "朝の飼いつけ（当番制）" },
-  { time: "07:00～", label: "起床・朝食" },
-  { time: "08:00～", label: "集合・厩舎管理" },
-  { time: "09:00～", label: "高校授業" },
-  { time: "11:30～", label: "昼食・自由時間" },
-  { time: "13:00～", label: "大好きな馬との授業" },
-  { time: "16:30～", label: "集合・解散" },
-  { time: "放課後～", label: "夕食・自由時間" },
+const eightPowers = [
+  { title: "乗る力", desc: "騎乗・馬術・障害飛越・競技" },
+  { title: "扱う力", desc: "馬との接し方・引き馬・馬具装着" },
+  { title: "育てる力", desc: "飼養管理・健康管理・日々のケア" },
+  { title: "見抜く力", desc: "馬の気持ち・体調・変化を読み取る" },
+  { title: "調教する力", desc: "運動・トレーニング・引退馬のリトレーニング" },
+  { title: "働く力", desc: "インターンシップ・牧場・乗馬クラブでの実務" },
+  { title: "生活する力", desc: "全寮制で培う自立・協調・自己管理" },
+  { title: "未来を選ぶ力", desc: "競馬・馬術・就職・大学進学など、自分らしい進路選択" },
 ];
 
 const learnings = [
@@ -227,12 +227,10 @@ const achievements = [
 ];
 
 const stats = [
-  { value: 100, suffix: "%", label: "進路決定率", note: "馬業界への就職希望者・例年実績" },
-  { value: 18, suffix: "年目", label: "開校からの歩み", note: "2009年1月開校" },
-  { value: 60, suffix: "名", label: "在校する高校生", note: "全国から集まる仲間たち" },
-  { value: 20, suffix: "頭", label: "学校所有の現役競走馬", note: "冠名「バジガク」で出走" },
-  { value: 350, suffix: "件超", label: "馬関連の求人情報", note: "全国の牧場・乗馬クラブ" },
-  { value: 38, suffix: "名", label: "騎手課程 合格者数", note: "JRA・地方競馬（開校以来）" },
+  { value: 18, suffix: "年目", label: "本校設立からの年", note: "信頼と実績の継続年" },
+  { value: 293, suffix: "名", label: "過去の入学生徒数", note: "令和８年現在入学数" },
+  { value: 118, suffix: "頭", label: "本校の管理馬の数", note: "当社３施設の在籍馬" },
+  { value: 681, suffix: "日", label: "３年間で学べる日", note: "休日除の概算の日数" },
 ];
 
 export default function TokuchoPage() {
@@ -402,42 +400,39 @@ export default function TokuchoPage() {
           lead="騎乗、馬のお世話、高校授業、実習、資格取得、そして寮生活。馬が真ん中にある、バジガクの学びの中身をご紹介します。"
         />
 
-        {/* Day timeline */}
+        {/* 8 powers */}
         <FadeUp delay={0.1} className="mt-12">
-          <div className="bg-white p-6 shadow-soft md:p-8">
+          <div className="bg-white p-6 shadow-soft md:p-10">
             <p className="text-center text-[11px] font-bold tracking-[0.3em] text-gold-600">
-              A DAY AT BAJIGAKU
+              EIGHT POWERS
             </p>
-            <p className="mt-2 text-center font-serif text-lg font-bold text-pine-950">
-              バジガク生の1日（一例）
+            <p className="mt-2 text-center font-serif text-xl font-bold text-pine-950 md:text-2xl">
+              3年間で身につく「8つの力」
             </p>
-            <div className="mt-8 overflow-x-auto pb-2">
-              <ol className="flex min-w-max items-start">
-                {timeline.map((t, i) => (
-                  <li
-                    key={t.time}
-                    className="relative flex w-[110px] flex-col items-center px-1 md:w-[130px]"
-                  >
-                    {i < timeline.length - 1 && (
-                      <span
-                        aria-hidden
-                        className="absolute left-1/2 top-2 h-[2px] w-full bg-gold-400/50"
-                      />
-                    )}
-                    <span className="relative z-10 h-[18px] w-[18px] rounded-full border-[3px] border-gold-500 bg-white" />
-                    <span className="mt-3 font-serif text-sm font-bold text-pine-950">
-                      {t.time}
-                    </span>
-                    <span className="mt-1 text-center text-[11px] leading-4 text-ink-700">
-                      {t.label}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-            <p className="mt-4 text-center text-[11px] text-ink-500">
-              ※スケジュールは一例です。季節・学年・授業内容・個別スケジュール等により変更となる場合があります。
+            <div className="mx-auto mt-5 h-[2px] w-12 rule-gold" />
+            <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-8 text-ink-700 md:text-[15px]">
+              「馬に乗れるようになるだけではない。
+              <br className="hidden sm:inline" />
+              馬と過ごす3年間が、社会で生きていく力になる。」
             </p>
+            <Stagger className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {eightPowers.map((power, i) => (
+                <StaggerItem key={power.title}>
+                  <div className="h-full border border-cream-300 bg-cream-50 p-5 transition duration-300 hover:border-gold-400 hover:shadow-soft">
+                    <p className="text-[10px] font-bold tracking-[0.25em] text-gold-600">
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <p className="mt-2 font-serif text-base font-bold text-pine-950 md:text-lg">
+                      {power.title}
+                    </p>
+                    <div className="mt-2 h-[2px] w-8 rule-gold" />
+                    <p className="mt-3 text-[13px] leading-6 text-ink-700">
+                      {power.desc}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </Stagger>
           </div>
         </FadeUp>
 
@@ -502,7 +497,7 @@ export default function TokuchoPage() {
                   学校長の野口です。バジガクの高校授業は、1日6時間びっしり座学……ではありません。授業は1日2〜3時間に凝縮し、年間を通じても全日制高校より授業時間を大幅にスリム化。その2〜3時間にしっかり集中して学び、残った時間を思う存分「馬」に費やす。それが東関東馬事高等学院ならではの学び方です。
                 </p>
                 <p className="mt-4 text-sm leading-8 text-white/85 md:text-[15px]">
-                  広域通信制高校・中央国際高等学校との連携により、「学校だったら当たり前」「高校だったら常識」という従来の枠にとらわれず、皆さんが最も学びやすいカリキュラムを編成しています。
+                  中央国際高等学校との連携により、「学校だったら当たり前」「高校だったら常識」という従来の枠にとらわれず、皆さんが最も学びやすいカリキュラムを編成しています。
                 </p>
                 <blockquote className="mt-8 border-l-4 border-gold-500 bg-white/5 px-7 py-6">
                   <p className="font-serif text-xl font-bold text-sun-400 md:text-2xl">
@@ -707,7 +702,7 @@ export default function TokuchoPage() {
             align="center"
             title="数字で見るバジガク"
           />
-          <Stagger className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3">
+          <Stagger className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
             {stats.map((s) => (
               <StaggerItem key={s.label} className="text-center">
                 <p className="font-serif text-4xl font-bold text-sun-400 md:text-5xl">
@@ -720,7 +715,7 @@ export default function TokuchoPage() {
           </Stagger>
           <FadeUp delay={0.1}>
             <p className="mt-10 text-center text-[11px] text-white/50">
-              ※在校生数・求人件数・合格実績などは時期により変動します。
+              ※在籍馬数・入学者数などは時期により変動します。
             </p>
           </FadeUp>
         </div>

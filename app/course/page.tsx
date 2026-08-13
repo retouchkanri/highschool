@@ -97,10 +97,10 @@ const ippanFeatures = [
     body: (
       <>
         <p>
-          入学直後の生徒は、そのほとんどが乗馬の経験ゼロ。カリキュラムはひとりひとりのペースと技術に合わせて組み立てるため、心配はいりません。入学後は生徒それぞれに「担当馬」が決まり、毎日のお世話と騎乗を重ねるうちに、自然と心の距離が縮まっていきます。
+          入学者の多くは、乗馬未経験からのスタート。一人ひとりの経験や目標に合わせて学ぶため、初めてでも安心です。入学後は自分の「担当馬」を持ち、毎日のお世話や騎乗を通して、馬との信頼関係を育んでいきます。
         </p>
         <p className="mt-4">
-          キャンパスには1歳の若馬から養老馬まで、たくさんの馬たちが暮らしています。騎乗レベルに応じた乗馬ライセンスの取得も可能。「卒業後に何をやりたいか、まだ決めていない」——そんな人こそ大歓迎です。馬と暮らす日々の中で、じっくり自分の進む道を描いていきましょう。
+          1歳の若馬から養老馬まで、さまざまな馬と出会えるのも本校ならでは。「将来はまだ決まっていない」でも大丈夫。馬と過ごす3年間の中で、好きなこと、得意なこと、そして自分らしい未来を見つけていきます。
         </p>
       </>
     ),
@@ -111,62 +111,62 @@ const ippanFeatures = [
     alt: "馬術大会に出場する生徒と馬",
     title: (
       <>
-        キャンパスが馬術競技場に。
+        馬術大会に何度でも挑戦。
         <br />
-        大会出場の費用は、学校が全額負担。
+        大会出場費用は、学校が全額負担。
       </>
     ),
     body: (
       <>
         <p>
-          馬術競技の経験を数多く積めることも、本校ならではの魅力。通常、馬術大会への出場にはエントリー費・登録費・馬の輸送費など大きな費用がかかりますが、本校では競技会出場にかかる諸経費を学校が全額負担。技術の伸びに合わせて、何度でも挑戦できます。
+          本校では、日々の騎乗授業で身につけた技術を試す場として、さまざまな馬術大会への出場機会を設けています。エントリー費・登録費・馬の輸送費など、大会出場にかかる諸経費は学校が全額負担。技術の成長に合わせて、積極的に挑戦できます。
         </p>
         <p className="mt-4">
-          入学時は未経験だった生徒も、半年を過ぎる頃にはさまざまな馬術大会の舞台に立てるようになります。全国高校生馬術選手権大会への出場実績も。大会への出場歴や入賞成績は高校の履修科目として単位認定され、日々の頑張りがそのまま卒業への学びに変わります。
+          入学時は未経験だった生徒も、成長に応じて大会出場を目指すことができ、全国高校生馬術選手権大会への出場実績もあります。また、騎乗レベルに応じた乗馬ライセンスの取得も可能です。大会への出場や成績は高校の履修科目として単位認定。馬術への挑戦が、高校卒業の学びにもつながります。
         </p>
       </>
     ),
   },
   {
     no: "03",
-    img: "/images/ippan_001_3.jpg",
-    alt: "馬場での騎乗練習",
+    img: "/images/ippan_003_1-2.jpg",
+    alt: "引退競走馬のリトレーニングに取り組む生徒",
     title: (
       <>
-        競技実績を積み重ねて、
+        引退競走馬に、新しい未来を。
         <br />
-        大学へのスポーツ推薦進学も。
+        Retouchと連携し「リトレーニング」を学ぶ。
       </>
     ),
     body: (
       <>
         <p>
-          3年間で思う存分、馬術大会に出場して実績を積めば、大学馬術部へのスポーツ推薦入学という道も開けます。実際にこの道を選んで進学した卒業生もいて、大学の馬術部でいまも馬中心の毎日を過ごしています。
+          本校では、引退馬支援団体Retouchと連携し、数多くの引退競走馬と関わりながら、競走馬から乗用馬へと転用する「リトレーニング」を実践的に学びます。速く走ることを仕事としてきた競走馬に、人との新しい関わり方や乗用馬として必要なことを一つずつ教えていく。生徒自身が日々の手入れや運動、騎乗を重ね、馬とともに成長していきます。
         </p>
         <p className="mt-4">
-          馬術の競技経験は、馬業界への就職はもちろん、進学の場面でも大きな強みになります。高校3年間の「馬に打ち込んだ時間」を、そのまま次のステージへつなげられるのがこのコースです。
+          リトレーニングした馬と馬術大会への出場を目指すことも。学んだ技術が、引退競走馬の新たな活躍の場と未来をつくる。それも、本校だからこそ経験できる学びです。
         </p>
       </>
     ),
   },
   {
     no: "04",
-    img: "/images/ippan_003_1-2.jpg",
-    alt: "引退競走馬の転用調教に取り組む生徒",
+    img: "/images/ippan_001_3.jpg",
+    alt: "馬場での騎乗練習",
     title: (
       <>
-        引退した競走馬を、乗用馬へ。
+        3年間の経験を、そのまま進学・就職へ。
         <br />
-        馬の未来を救う「転用調教」を学ぶ。
+        大学進学から、全国の馬業界まで幅広い進路。
       </>
     ),
     body: (
       <>
         <p>
-          現役時代を「速く走ること」に捧げてきた競走馬は、引退した翌日から初心者を乗せて穏やかに歩けるわけではありません。乗り手を選ばず合図に応え、障害の飛越までこなせる乗用馬へと教育し直す——それが「転用調教」の技術です。
+          3年間で馬術大会への出場や競技実績を積み重ね、大学馬術部へのスポーツ推薦進学を目指すこともできます。実際に推薦で大学へ進学し、卒業後も馬術を続けている卒業生がいます。
         </p>
         <p className="mt-4">
-          この技術は就職で強みになるだけではありません。転用調教を担える人が増えるほど、引退後の行き先が見つからない馬を1頭でも多く救えるようになります。3年間の中で、生徒自身が転用調教した馬とともに馬術競技会に出場し、入賞を目指す。その喜びとやりがいは、何ものにも代えがたい経験です。
+          就職を希望する生徒は、在学中に複数の乗馬クラブ・観光牧場・生産牧場・育成牧場などでインターンシップを経験。実際の仕事や職場環境を確かめながら、自分に合った就職先を見つけていきます。高校3年間で積み重ねた「馬の経験」を、大学進学にも、馬業界への就職にもつなげられる。一人ひとりの希望に合わせて、その先の進路までサポートします。
         </p>
       </>
     ),
@@ -237,19 +237,22 @@ const kyumuinSteps = [
 
 const jockeyPoints = [
   {
+    no: "01",
     en: "EXAM PREP",
-    title: "受験対策",
-    desc: "筆記・面接・運動機能検査・騎乗適性。騎手課程の試験項目をひとつひとつ分解し、一人ひとりの得意と弱点に合わせて対策を積み上げていきます。",
+    title: "一人ひとりに合わせた騎手受験対策",
+    desc: "筆記・面接・運動機能検査・騎乗適性など、騎手課程の試験内容に合わせて対策。一人ひとりの得意・不得意を把握し、必要な力を段階的に伸ばしていきます。",
   },
   {
+    no: "02",
     en: "DAILY TRAINING",
-    title: "毎日のトレーニング",
-    desc: "毎日の騎乗にくわえ、フィジカルトレーニングと体重管理を徹底。生活まるごと「受験当日」に照準を合わせられるのは、全寮制のこの学校だからこそ。",
+    title: "毎日の生活が、騎手になるためのトレーニング",
+    desc: "毎日の騎乗に加え、フィジカルトレーニングや体重管理も実施。全寮制だからこそ、食事・運動・生活習慣まで含めて、騎手受験に向けた自己管理能力を身につけます。",
   },
   {
-    en: "RESULTS",
-    title: "積み重ねてきた実績",
-    desc: "開校以来12年間で、騎手課程合格38名。数字の裏には、一人ひとりの挑戦の物語があります。次の1名は、あなたかもしれません。",
+    no: "03",
+    en: "CHALLENGE",
+    title: "1年次から、JRA競馬学校へ挑戦",
+    desc: "入学後から受験準備を重ね、1年次の夏にはJRA競馬学校 騎手課程の受験に挑戦。JRAだけでなく、地方競馬の騎手という進路も視野に入れながら、一人ひとりの可能性を広げます。",
   },
 ];
 
@@ -258,33 +261,106 @@ const jockeyPoints = [
 const kyotsuItems = [
   {
     no: "01",
+    en: "LICENSE",
     title: "資格取得",
-    desc: "乗馬ライセンス（全国乗馬倶楽部振興協会）、騎乗者資格（日本馬術連盟）、家畜商免許。騎乗レベルや目標に合わせて、在学中に挑戦できます。",
+    desc: "乗馬ライセンス（全国乗馬倶楽部振興協会）、騎乗者資格（日本馬術連盟）、家畜商免許など、一人ひとりの騎乗レベルや将来の目標に合わせて、在学中の資格取得に挑戦できます。",
   },
   {
     no: "02",
+    en: "FIELD LEARNING",
     title: "実習・校外学習",
-    desc: "競馬場や牧場への見学・実習も、大切な授業のひとつ。校外での体験がそのまま高校の単位につながる、バジガクならではの学び方です。",
+    desc: "競馬場や牧場など、学校を飛び出して学ぶ機会も大切な授業のひとつ。実際の馬業界や仕事に触れながら、教室だけでは得られない経験を積み重ねていきます。",
   },
   {
     no: "03",
-    title: "インターンシップ",
-    desc: "馬関連の求人350件超のネットワークを生かし、在学中に約3か所以上の牧場インターンを経験。就職を決める前に「現場」を知ることができます。",
+    en: "INTERNSHIP",
+    title: "全国の馬業界でインターンシップ",
+    desc: "全国の牧場・乗馬クラブなどとのネットワークを活かし、在学中に複数の現場でインターンシップを経験。実際に働いてみることで、自分に合った仕事や職場を見つけ、進路選択や就職につなげます。",
   },
   {
     no: "04",
-    title: "高校授業",
-    desc: "中央国際高等学校の授業は1日2〜3時間。定期テストではなく学習成果で単位認定され、年1回の九州本校スクーリング（3泊4日）で卒業へ近づきます。",
+    en: "HIGH SCHOOL STUDY",
+    title: "馬を学びながら、高校卒業資格を取得",
+    desc: "連携する中央国際高等学校の高校授業と、馬に関する専門的な学びを両立。高校卒業に必要な学習を進めながら、3年間、思う存分「馬」に向き合える高校生活を送ります。",
   },
 ];
 
-const subjects = [
-  { subject: "倫理", content: "馬と人間の関わりを考える（人は馬を育て、馬は人を育てる）" },
-  { subject: "現代文B", content: "担当する馬の紹介新聞づくり" },
-  { subject: "体育", content: "基本馬術、応用馬術（障害・馬場）" },
-  { subject: "就業体験", content: "乗馬クラブでのインターンシップ記録" },
-  { subject: "課題研究", content: "馬術競技会への出場、入賞成績の記録" },
-  { subject: "生物基礎", content: "馬の飼料管理レポート、生体記録" },
+const highSchoolClasses = [
+  {
+    no: "01",
+    en: "ONLINE CLASSES",
+    title: "毎日2〜3時間のネット授業",
+    desc: "高校の授業は、連携する中央国際高等学校のインターネット授業が中心。1日あたり2〜3時間、全日制高校の半分ほどの時間で高校の学びを進め、残りの時間はすべて馬にあてられます。",
+  },
+  {
+    no: "02",
+    en: "LEARNING-BASED CREDIT",
+    title: "学習成果で単位を認定",
+    desc: "評価は定期テストの一発勝負ではなく、日々の学習の積み重ねが基準。理解できるところまで戻って、自分のペースでやり直せるので、勉強が苦手な生徒も無理なく学べます。",
+  },
+  {
+    no: "03",
+    en: "TEACHER SUPPORT",
+    title: "教員チームによる学習サポート",
+    desc: "ネット授業のサポートはもちろん、レポート指導や学習の進め方についての相談も教員チームが担当。卒業までの3年間、一人ひとりの学びにしっかり伴走します。",
+  },
+  {
+    no: "04",
+    en: "SCHOOLING",
+    title: "年1回のスクーリング",
+    desc: "年に1回、連携校の本校（九州）で3泊4日のスクーリングを実施。全国の仲間たちと顔を合わせながら、卒業に必要な学びを積み重ねる特別な機会です。",
+  },
+];
+
+const lifeSkills = [
+  {
+    no: "01",
+    en: "MONEY",
+    title: "お金を「使う・貯める・守る・育てる」",
+    desc: "給与の見方から、貯蓄、金利・利息、金融、投資、不動産まで。社会人になって必要になる「お金の基本」を学び、自分で考えて判断する力を身につけます。",
+  },
+  {
+    no: "02",
+    en: "BUSINESS",
+    title: "「働く側」から「経営する側」まで考える",
+    desc: "労働者・経営者・投資家、それぞれの立場や役割を学習。牧場や乗馬クラブなどを題材にした「バーチャル経営」にも挑戦し、売上・経費・利益・給与など、仕事と経営の仕組みを学びます。",
+  },
+  {
+    no: "03",
+    en: "LAW & COMPLIANCE",
+    title: "知らなかったでは済まされない、法律の基本",
+    desc: "民法・刑法・コンプライアンスなど、社会生活に関わる法律の基礎を学びます。契約・解約、未成年者の契約、トラブルや犯罪に関する基本的な仕組みなど、社会人として自分自身を守るための知識を身につけます。",
+  },
+  {
+    no: "04",
+    en: "CONTRACT",
+    title: "契約書を「読んで考える」力",
+    desc: "就職、賃貸、自動車、携帯電話、ローンなど、社会に出ればさまざまな契約と関わります。契約・解約・解除の違いや、実印・認印・押印・捺印・割印など、社会生活で必要になる基本を学びます。",
+  },
+  {
+    no: "05",
+    en: "TAX & SOCIAL INSURANCE",
+    title: "「給料から、なぜ引かれる？」を理解する",
+    desc: "所得税・消費税・自動車税などの税金から、健康保険・年金などの社会保険まで。給与明細を題材に、「働いたら、実際にいくら手元に残るのか」を自分で理解できる力を育てます。",
+  },
+  {
+    no: "06",
+    en: "INSURANCE & RISK",
+    title: "もしもの時、自分を守る知識",
+    desc: "生命保険・損害保険・自動車保険・車両保険・賠償責任など、身近な保険の役割を学習。「何となく加入する」のではなく、必要性や補償内容を自分で考えられる基礎知識を身につけます。",
+  },
+  {
+    no: "07",
+    en: "SOCIAL RESPONSIBILITY",
+    title: "社会のルールと、自分を守る判断力",
+    desc: "法令遵守、SNSの使い方、反社会的勢力との関係など、社会人として知っておくべきルールやリスクについて学びます。正しい知識を持ち、「していいこと・いけないこと」を自分で判断できる力を養います。",
+  },
+  {
+    no: "08",
+    en: "MANNERS & HUMANITY",
+    title: "最後に大切なのは、「人として」の力。",
+    desc: "挨拶、言葉遣い、礼儀、時間を守ること、感謝すること、約束を守ること。そして、周囲の人から「この人と一緒に働きたい」「この人なら応援したい」と思ってもらえる人になること。馬との生活や全寮制での共同生活を通して、一般常識・マナー・道徳・協調性・責任感を育て、社会から信頼される人材を目指します。",
+  },
 ];
 
 function FlowArrow() {
@@ -400,7 +476,7 @@ export default function CoursePage() {
               3コース共通
             </span>
             <p className="text-[13px] leading-6 text-ink-700 md:text-sm">
-              どのコースを選んでも、広域通信制・中央国際高等学校との連携により
+              どのコースを選んでも、中央国際高等学校との連携により
               <span className="font-bold text-pine-950">高校卒業資格</span>
               を取得できます。高校授業は1日2〜3時間だから、残りの時間はまるごと馬の学びへ。
             </p>
@@ -415,7 +491,7 @@ export default function CoursePage() {
             en="GENERAL RIDING COURSE"
             align="center"
             title="一般高校乗馬コース"
-            lead="朝も放課後も、いつもそばに馬がいる。そんな濃密な高校3年間は、ここでしか味わえません。初めて馬に触れる人から馬術経験者まで、それぞれの持ち味をぐんと伸ばしていくコースです。"
+            lead="馬と高校生活を楽しみながら、自分らしい進路を見つけていく3年間。馬とともに過ごし、毎日、馬たちとたっぷりの時間を過ごせるコースです。"
           />
         </div>
 
@@ -508,7 +584,7 @@ export default function CoursePage() {
             </h3>
             <div className="mx-auto mt-4 h-[3px] w-16 rule-gold" />
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-ink-700">
-              このコースの一日は、馬に始まり、馬に終わります。騎乗と高校授業、そしてお世話。5つの学びのかたまりを、季節と成長に合わせて組み合わせていきます。
+              一日は、馬に始まり、馬に終わります。騎乗・馬の管理・高校授業・実践学習など、馬を中心とした5つの学びを、一人ひとりの成長や目標に合わせて組み合わせます。
             </p>
           </FadeUp>
           <Stagger className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
@@ -569,7 +645,7 @@ export default function CoursePage() {
             <SectionTitle
               en="RACEHORSE GROOM COURSE"
               title="競走馬厩務員コース"
-              lead="現役競走馬とともに、プロの「馬の仕事」を実践で学ぶコース。1年次に乗馬の基礎をしっかり固めたうえで、2年次10月以降に選択します。ここでは概要をご紹介——詳しいカリキュラムは専用ページでどうぞ。"
+              lead="現役競走馬とともに、プロの「馬の仕事」を実践で学ぶコースです。1年次は「一般高校乗馬コース」において、基礎・基本を学び、2年次より、この「競走馬厩務員コース」にて、競走馬の飼養管理から騎乗・調教までを実践。JRA厩務員をはじめ、生産牧場・育成牧場など、競走馬に関わる仕事を目指します。"
             />
             <FadeUp delay={0.1}>
               <div className="mt-8 flex items-center gap-6 border-l-[3px] border-gold-500 bg-cream-100 px-6 py-5">
@@ -657,14 +733,39 @@ export default function CoursePage() {
             en="JOCKEY COURSE"
             align="center"
             title="騎手受験特別コース"
-            lead="「騎手になりたい」——その一心に、学校まるごとで応えるコース。入学時に選択し、1年目の夏にはJRA競馬学校 騎手課程の受験に挑みます。"
+            lead={
+              <>
+                「騎手になりたい。」その夢に、本気で挑める学習環境。最短で本校の1年次にJRA・地方競馬の騎手を目指せるよう、入学時から騎手受験を見据え、騎乗技術はもちろん、体力・学力・面接・体重管理まで、一人ひとりに合わせた徹底した受験対策を行います。
+                <br />
+                <br />
+                入学後、最初の大きな目標となるのが、1年次のJRA競馬学校
+                騎手課程への挑戦。学校生活そのものを、騎手になるための成長につなげていきます。
+              </>
+            }
           />
+
+          <FadeUp delay={0.1} className="mx-auto mt-12 max-w-md text-center">
+            <div className="flex items-baseline justify-center gap-1">
+              <Counter
+                to={38}
+                className="font-serif text-6xl font-bold text-white md:text-7xl"
+              />
+              <span className="font-serif text-2xl font-bold text-gold-400">
+                名
+              </span>
+            </div>
+            <p className="mt-2 text-sm font-bold text-white">騎手課程 合格実績</p>
+            <p className="mt-1 text-[11px] text-white/60">
+              ※実績はJRA・地方競馬合算
+            </p>
+          </FadeUp>
+
           <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
             {jockeyPoints.map((p) => (
               <StaggerItem key={p.title} className="h-full">
                 <div className="flex h-full flex-col border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
                   <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
-                    {p.en}
+                    {p.no}｜{p.en}
                   </p>
                   <h3 className="mt-3 font-serif text-lg font-bold text-white">
                     {p.title}
@@ -679,49 +780,30 @@ export default function CoursePage() {
           </Stagger>
 
           <FadeUp delay={0.15}>
-            <div className="mx-auto mt-14 grid max-w-4xl items-center gap-8 md:grid-cols-[auto_1fr]">
-              <div className="text-center md:border-r md:border-white/15 md:pr-10">
-                <p className="text-[11px] font-bold tracking-[0.3em] text-gold-400">
-                  JOCKEY EXAM RESULTS
-                </p>
-                <div className="mt-2 flex items-baseline justify-center gap-1">
-                  <Counter
-                    to={38}
-                    className="font-serif text-6xl font-bold text-white"
-                  />
-                  <span className="font-serif text-2xl font-bold text-gold-400">
-                    名
+            <div className="mx-auto mt-14 max-w-4xl">
+              <p className="text-center text-sm leading-8 text-white/80 md:text-[15px]">
+                一人で挑ませない。学校全体で夢を支える。騎乗技術、受験勉強、体力づくり、体重管理。騎手になるために必要なことは、一つではありません。担任・騎乗講師・寮スタッフが連携し、日々の学校生活から受験当日まで一人ひとりをサポート。「騎手になりたい」という夢に、学校全体で向き合います。
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/jockey"
+                  className="group inline-flex items-center gap-3 rounded-full bg-sun-500 px-7 py-3.5 text-sm font-bold text-pine-950 shadow-soft transition hover:bg-sun-400 hover:shadow-lift"
+                >
+                  騎手受験特別コースを詳しく見る
+                  <span className="transition-transform duration-300 group-hover:translate-x-1.5">
+                    →
                   </span>
-                </div>
-                <p className="mt-2 text-xs font-bold text-white/80">
-                  騎手課程合格（開校以来12年間）
-                </p>
+                </Link>
+                <Link
+                  href="/camp"
+                  className="inline-flex items-center gap-3 rounded-full border-2 border-white/70 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
+                >
+                  騎手受験事前合宿（中3対象）
+                </Link>
               </div>
-              <div>
-                <p className="text-sm leading-8 text-white/80">
-                  受験も、トレーニングも、体重管理も。ひとりで抱えるには大きすぎる挑戦を、担任・講師・寮のスタッフみんなで支えます。中学3年生を対象にした騎手受験事前合宿もご用意しています。
-                </p>
-                <div className="mt-6 flex flex-wrap gap-4">
-                  <Link
-                    href="/jockey"
-                    className="group inline-flex items-center gap-3 rounded-full bg-sun-500 px-7 py-3.5 text-sm font-bold text-pine-950 shadow-soft transition hover:bg-sun-400 hover:shadow-lift"
-                  >
-                    騎手受験特別コースを詳しく見る
-                    <span className="transition-transform duration-300 group-hover:translate-x-1.5">
-                      →
-                    </span>
-                  </Link>
-                  <Link
-                    href="/camp"
-                    className="inline-flex items-center gap-3 rounded-full border-2 border-white/70 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-white/10"
-                  >
-                    騎手受験事前合宿（中3対象）
-                  </Link>
-                </div>
-                <p className="mt-4 text-[11px] leading-5 text-white/60">
-                  ※出願には体重45kg以下などの条件があります。詳しくは募集要項・専用ページをご確認ください。
-                </p>
-              </div>
+              <p className="mt-4 text-center text-[11px] leading-5 text-white/60">
+                ※出願には体重45kg以下などの条件があります。詳しくは募集要項・専用ページをご確認ください。
+              </p>
             </div>
           </FadeUp>
         </div>
@@ -733,14 +815,14 @@ export default function CoursePage() {
           en="COMMON CURRICULUM"
           align="center"
           title="どのコースでも、共通で学べること。"
-          lead="コースの違いはあっても、バジガクの土台はひとつ。資格も、実習も、インターンも、高校授業も——3年間の学びを支える共通のカリキュラムです。"
+          lead="選ぶコースや目指す進路は違っても、学びの土台は同じです。資格取得、校外実習、インターンシップ、高校授業、そして社会に出るための学びまで。3年間を通して、将来につながる力を身につけます。"
         />
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {kyotsuItems.map((item) => (
             <StaggerItem key={item.no} className="h-full">
               <div className="flex h-full flex-col bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-                <span className="font-serif text-3xl font-bold text-gold-500">
-                  {item.no}
+                <span className="text-[10px] font-bold tracking-[0.25em] text-gold-600">
+                  {item.no}｜{item.en}
                 </span>
                 <h3 className="mt-3 font-serif text-lg font-bold text-pine-950">
                   {item.title}
@@ -754,53 +836,96 @@ export default function CoursePage() {
           ))}
         </Stagger>
 
-        {/* curriculum table */}
+        {/* 本校の高校授業について */}
         <div className="mt-20 md:mt-24">
-          <div className="grid gap-10 lg:grid-cols-[320px_1fr] lg:gap-16">
-            <div>
-              <SectionTitle
-                en="CURRICULUM"
-                title="履修科目と馬の学び（一例）"
-                lead="「馬と過ごす時間」は、遊びではなく学びそのもの。大会への出場も、ライセンス取得も、インターンシップも、履修科目の学習成果として単位認定されます。"
-              />
-            </div>
-            <FadeUp delay={0.1}>
-              <div className="overflow-x-auto bg-white shadow-soft">
-                <table className="w-full min-w-[480px] border-collapse text-left">
-                  <thead>
-                    <tr className="bg-pine-800 text-white">
-                      <th className="whitespace-nowrap px-6 py-4 text-xs font-bold tracking-widest md:text-sm">
-                        履修科目
-                      </th>
-                      <th className="px-6 py-4 text-xs font-bold tracking-widest md:text-sm">
-                        馬に関する学習内容
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {subjects.map((s, i) => (
-                      <tr
-                        key={s.subject}
-                        className={i % 2 === 0 ? "bg-white" : "bg-cream-100/60"}
-                      >
-                        <th className="whitespace-nowrap border-t border-cream-300 px-6 py-4 font-serif text-sm font-bold text-pine-950">
-                          {s.subject}
-                        </th>
-                        <td className="border-t border-cream-300 px-6 py-4 text-[13px] leading-6 text-ink-700 md:text-sm">
-                          {s.content}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-4 text-[11px] leading-5 text-ink-500">
-                ※あくまで一例です。ひとりひとりの目標・技術レベルに応じて学習プランを提案します。
-              </p>
-            </FadeUp>
-          </div>
+          <SectionTitle
+            en="HIGH SCHOOL STUDY"
+            align="center"
+            title="本校で行う高校授業について"
+            lead="高校卒業に必要な学習は、連携する中央国際高等学校のしくみで進めます。全日制のような重い時間割ではなく、馬にたっぷり向き合えるように設計された学びのスタイルです。"
+          />
+          <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {highSchoolClasses.map((c) => (
+              <StaggerItem key={c.no} className="h-full">
+                <div className="flex h-full flex-col bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                  <span className="text-[10px] font-bold tracking-[0.25em] text-gold-600">
+                    {c.no}｜{c.en}
+                  </span>
+                  <h3 className="mt-3 font-serif text-lg font-bold text-pine-950">
+                    {c.title}
+                  </h3>
+                  <div className="mt-3 h-[3px] w-10 rule-gold" />
+                  <p className="mt-4 flex-1 text-[13px] leading-6 text-ink-700">
+                    {c.desc}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </Section>
+
+      {/* LIFE & SOCIAL SKILLS */}
+      <section className="relative overflow-hidden bg-pine-950 py-16 md:py-24">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{ backgroundImage: "url(/images/DSC_0028.jpg)" }}
+        />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <SectionTitle
+            dark
+            en="LIFE & SOCIAL SKILLS"
+            align="center"
+            title={
+              <>
+                馬の技術だけではない。
+                <br />
+                「社会で生きる力」まで学ぶ。
+              </>
+            }
+            lead="高校を卒業すれば、その先には大学進学、就職、そして一人の社会人としての生活が待っています。本校が育てたいのは、「馬に乗れる人」だけではありません。お金、契約、税金、保険、法律、仕事、人との関わり方——。社会に出てから「知らなかった」で困らないために、学校生活の中で社会の仕組みを実践的に学ぶ、独自の特別授業を行います。"
+          />
+
+          <Stagger className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {lifeSkills.map((s) => (
+              <StaggerItem key={s.no} className="h-full">
+                <div className="flex h-full flex-col border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition duration-300 hover:border-gold-400/40">
+                  <p className="text-[10px] font-bold tracking-[0.3em] text-gold-400">
+                    {s.no}｜{s.en}
+                  </p>
+                  <h3 className="mt-3 font-serif text-base font-bold leading-snug text-white">
+                    {s.title}
+                  </h3>
+                  <div className="mt-3 h-[2px] w-8 rule-gold" />
+                  <p className="mt-4 flex-1 text-[13px] leading-6 text-white/75">
+                    {s.desc}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </Stagger>
+
+          <FadeUp delay={0.15}>
+            <div className="mx-auto mt-16 max-w-3xl text-center">
+              <p className="text-sm font-bold leading-8 text-white md:text-base">
+                馬から学び、社会を学ぶ。
+                <br />
+                馬の技術は、将来の武器に。
+                <br />
+                社会の知識は、自分を守る力に。
+                <br />
+                人としての魅力は、一生の財産に。
+              </p>
+              <p className="mt-6 text-sm leading-8 text-white/75">
+                本校の3年間は、高校を卒業するためだけの3年間ではありません。
+                <br />
+                卒業後、自分で考え、自分で選び、自分の人生を歩んでいくための3年間です。
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
 
       {/* コース選択の流れ */}
       <Section id="flow" className="scroll-mt-20 bg-white">

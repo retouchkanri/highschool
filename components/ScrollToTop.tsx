@@ -39,7 +39,7 @@ export default function ScrollToTop() {
           transition={{ duration: 0.2, ease: "easeOut" }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="ページトップへ戻る"
-          className="fixed bottom-5 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-pine-800 text-white shadow-lift transition hover:bg-pine-700 md:bottom-8 md:right-8"
+          className="fixed bottom-5 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#00a651] text-white shadow-lift transition hover:bg-[#009247] md:bottom-8 md:right-8"
         >
           <svg
             width="16"
