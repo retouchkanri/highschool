@@ -10,9 +10,35 @@ import { faqs as staticFaqs } from "@/lib/faq";
 import { getSupabasePublicClient } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "AIよくある質問 Q&A",
+  title: {
+    absolute: "馬の高校 よくある質問｜JRA厩務員・競馬学校・入学・寮生活｜東関東馬事高等学院",
+  },
   description:
-    "東関東馬事高等学院（バジガク）のよくある質問。入学募集・入学手続・授業内容・学校生活・就職進路のQ&Aを、キーワード検索とカテゴリで素早く探せます。",
+    "馬の学校　東関東馬事高等学院のよくある質問。乗馬未経験からの入学、不登校からの高校進学・転入、学費、全寮制の学校生活、乗馬授業、JRA競馬学校の騎手課程・厩務員課程、卒業後の馬の仕事や就職まで、馬の学校 比較　中学生・高校生・保護者の疑問に詳しくお答えします。",
+  keywords: [
+    "馬の高校",
+    "馬の学校",
+    "東関東馬事高等学院",
+    "バジガク",
+    "JRA厩務員",
+    "JRA厩務員になるには",
+    "JRA競馬学校",
+    "競馬学校",
+    "騎手になるには",
+    "騎手高校",
+    "厩務員高校",
+    "乗馬高校",
+    "馬術高校",
+    "不登校高校",
+    "高校転入",
+    "全寮制高校",
+    "寮のある高校",
+    "馬の仕事",
+    "学校生活",
+    "学費",
+    "入学",
+    "比較",
+  ],
 };
 
 // Re-fetch FAQs from Supabase periodically so admin edits show up without a rebuild.

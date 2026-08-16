@@ -15,7 +15,31 @@ import { faqs as staticFaqs } from "@/lib/faq";
 import { getSupabasePublicClient, type Post } from "@/lib/supabase";
 
 export const metadata: Metadata = {
-  title: "◆馬の学校【高校】東関東馬事高等学院（公式）／千葉県山武市・八街市",
+  title: "馬の高校・馬の学校｜東関東馬事高等学院｜JRA厩務員・騎手・乗馬を目指せる全寮制の高校学校（馬の学校 比較）",
+  description:
+    "馬が好き。その気持ちを高校生活に。馬の高校 東関東馬事高等学院は、千葉県にある全寮制の馬の学校です。約120頭の馬と過ごしながら高校卒業資格を取得。未経験から乗馬・馬術を学び、JRA厩務員・騎手・牧場・乗馬クラブなど馬業界への進路を目指せる学校",
+  keywords: [
+    "馬の高校",
+    "馬の学校",
+    "乗馬高校",
+    "馬術高校",
+    "東関東馬事高等学院",
+    "バジガク",
+    "JRA厩務員",
+    "厩務員になるには",
+    "JRA競馬学校",
+    "騎手になるには",
+    "騎手学校",
+    "競馬学校",
+    "乗馬学校",
+    "馬術学校",
+    "競走馬",
+    "馬の仕事",
+    "馬業界",
+    "全寮制高校",
+    "通信制高校",
+    "千葉県",
+  ],
 };
 
 // Re-fetch news/FAQ data from Supabase periodically so admin edits show up
@@ -192,49 +216,49 @@ const dayFlow = [
     time: "06:30～｜当番制",
     title: "馬たちと一緒に、一日が始まる",
     desc: "朝の飼いつけと健康チェック。馬たちに「おはよう」を伝えるところから一日が始まります。",
-    img: "/images/DSC9265.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/01.jpg",
   },
   {
     time: "07:00～",
     title: "起床・朝食",
     desc: "食堂で朝ごはん。しっかり食べて、元気よく。仲間と一緒に今日の一日の授業準備を始めます。",
-    img: "/images/shisetsu_004_1.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/02.jpg",
   },
   {
     time: "08:00～",
     title: "集合・厩舎管理",
     desc: "集合して一日の予定を確認。その後は馬房掃除など、馬たちが快適に過ごせる環境を整えます。",
-    img: "/images/shisetsu_008_1.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/03.jpg",
   },
   {
     time: "09:00～",
     title: "高校授業",
     desc: "高校卒業に必要な学習は1日約2時間半。先生のサポートを受けながら、集中して取り組みます。",
-    img: "/images/shisetsu_005_1.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/04.jpg",
   },
   {
     time: "11:30～",
     title: "昼食・自由時間",
     desc: "仲間と一緒にランチタイム。食事を楽しんだり、おしゃべりしたり、午後に向けてひと休み。",
-    img: "/images/shisetsu_003_1.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/05.jpg",
   },
   {
     time: "13:00～",
     title: "大好きな馬との授業",
     desc: "午後はいよいよ馬との時間。騎乗や運動、お手入れ等、馬と触れ合いながら実践的に学びます。",
-    img: "/images/tokucho_002_1.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/06.jpg",
   },
   {
     time: "16:30～",
     title: "集合・馬たちに「また明日」",
     desc: "一日の最後に馬たちの様子を確認。今日も一日一緒に過ごした馬たちを見届け授業終了です。",
-    img: "/images/DSC_0026-4.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/07.jpg",
   },
   {
     time: "放課後～",
     title: "夕食・自由時間",
     desc: "ここからは自分たちの時間。夕食、外出、仲間との時間、寮生活ならではの放課後を楽しみます。",
-    img: "/images/tokucho_006_1.jpg",
+    img: "/%E9%A6%AC%E3%81%A8%E9%81%8E%E3%81%94%E3%81%99%E9%AB%98%E6%A0%A1%E7%94%9F%E3%81%AE%E4%B8%80%E6%97%A5/08.jpg",
   },
 ];
 
@@ -284,12 +308,12 @@ const futures = [
 ];
 
 const facilities = [
-  { img: "/facility/faci%20(1).jpg", title: "馬場", desc: "馬と過ごす毎日の中心になるメインエリア", featured: true },
-  { img: "/facility/faci%20(2).jpg", title: "厩舎", desc: "生徒と馬がすぐそばで学び合う実践空間" },
-  { img: "/facility/faci%20(3).jpg", title: "教室", desc: "高校授業もキャンパス内で集中して学べる" },
-  { img: "/facility/faci%20(4).jpg", title: "学生寮（全室個室）", desc: "安心して暮らせる全寮制の生活空間" },
-  { img: "/facility/faci%20(5).jpg", title: "食堂", desc: "365日3食、仲間と食卓を囲むあたたかな場所" },
-  { img: "/facility/faci%20(6).jpg", title: "体育館", desc: "天候を気にせず身体を動かせる校内施設" },
+  { img: "/%E6%96%BD%E8%A8%AD%E3%83%BB%E7%92%B0%E5%A2%83/%E9%A6%AC%E5%A0%B4.jpg", title: "馬場", desc: "馬と過ごす毎日の中心になるメインエリア", featured: true },
+  { img: "/%E6%96%BD%E8%A8%AD%E3%83%BB%E7%92%B0%E5%A2%83/%E5%8E%A9%E8%88%8E.jpg", title: "厩舎", desc: "生徒と馬がすぐそばで学び合う実践空間" },
+  { img: "/%E6%96%BD%E8%A8%AD%E3%83%BB%E7%92%B0%E5%A2%83/%E6%95%99%E5%AE%A4.jpg", title: "教室", desc: "高校授業もキャンパス内で集中して学べる" },
+  { img: "/%E6%96%BD%E8%A8%AD%E3%83%BB%E7%92%B0%E5%A2%83/%E5%AD%A6%E7%94%9F%E5%AF%AE%EF%BC%88%E5%85%A8%E5%AE%A4%E5%80%8B%E5%AE%A4%EF%BC%89.jpg", title: "学生寮（全室個室）", desc: "安心して暮らせる全寮制の生活空間" },
+  { img: "/%E6%96%BD%E8%A8%AD%E3%83%BB%E7%92%B0%E5%A2%83/%E9%A3%9F%E5%A0%82.jpg", title: "食堂", desc: "365日3食、仲間と食卓を囲むあたたかな場所" },
+  { img: "/%E6%96%BD%E8%A8%AD%E3%83%BB%E7%92%B0%E5%A2%83/%E4%BD%93%E8%82%B2%E9%A4%A8.jpg", title: "体育館", desc: "天候を気にせず身体を動かせる校内施設" },
 ];
 
 const staff = [
