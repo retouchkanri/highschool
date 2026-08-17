@@ -66,38 +66,38 @@ const supports = [
   {
     no: "01",
     tag: "実技（騎乗）対策",
-    title: "現役競走馬とともに磨く騎乗技術",
-    desc: "毎日の騎乗運動管理そのものが、実技試験への何よりの備え。約20頭の現役競走馬とともに、受験で求められる騎乗技術を実践の中で積み上げます。",
+    title: "試験で求められる「基本馬術」を徹底習得",
+    desc: "試験で求められるのは、速く走らせる技術ではなく安定した基本馬術です。日々の騎乗授業で、姿勢・バランス・リズムを繰り返し磨き、試験に必要な騎乗技術を身につけます。",
   },
   {
     no: "02",
     tag: "学科（筆記）対策",
-    title: "筆記試験対策を高校授業に内蔵",
-    desc: "現代文・日本史・現代社会などの授業に、厩務員課程受験の筆記試験対策用オリジナルワークを組み込み。日々の高校授業が、そのまま受験勉強になります。",
+    title: "高校の授業そのものが、受験対策につながる",
+    desc: "国語・社会は過去の出題傾向をもとに対策。さらに専門校ならではの「競馬一般科目」も高校授業と連動して学び、試験に必要となる知識を日々の授業から身につけます。",
   },
   {
     no: "03",
     tag: "面接対策",
-    title: "自分の言葉で語れる面接練習",
-    desc: "「聞く書く話す」や総合的学習の時間で、自己分析・心構え・振り返り記録を積み重ね。面接の場で、馬への想いを自分の言葉で伝える力を育てます。",
+    title: "自分の言葉で、想いを伝える力を身につける",
+    desc: "「聞く・書く・話す」を日頃から繰り返し、自己分析や振り返りを重ねます。「なぜJRA厩務員を目指すのか」を自分自身の言葉で伝えられるよう、実践的な面接力を養います。",
   },
   {
     no: "04",
     tag: "現場を知る",
-    title: "美浦トレーニングセンター見学",
-    desc: "JRAの調教拠点・美浦トレセンを在学中に見学。厩務員が働く現場の空気に触れることで、目指す場所がはっきりとイメージできるようになります。",
+    title: "現役競走馬と、実際の競馬の現場から学ぶ",
+    desc: "在学中から現役競走馬に関わり、さらに全国の牧場で実習を経験。競走馬の管理や仕事の流れを実際の現場で学び、JRA厩務員として働く自分を具体的にイメージできます。",
   },
   {
     no: "05",
-    tag: "プロに学ぶ",
-    title: "現役プロによる特別授業",
-    desc: "JRAの現役騎手・調教助手・厩務員などを定期的に学校へ招き、第一線のリアルな話を聞ける特別授業を開催しています。",
+    tag: "試験に挑戦",
+    title: "高校在学中に、最大2回のJRA厩務員試験へ",
+    desc: "本校では高校在学中に最大2回、JRA厩務員試験に挑戦できます。中学卒業後、未経験から入学し、高校3年生前期で合格する生徒も輩出。これまで多くの合格者を送り出しています。",
   },
   {
     no: "06",
-    tag: "連携・授業編成",
-    title: "合格者輩出牧場との連携",
-    desc: "厩務員課程の合格者を多数輩出してきた育成牧場と連携。受験の最新動向を、高校授業の編成そのものに反映しています。",
+    tag: "卒業後も再挑戦",
+    title: "万が一の不合格でも、夢をそこで終わらせない",
+    desc: "在学中に合格へ届かなかった場合も、JRA厩務員受験に協力いただける牧場と連携。卒業後も現場で経験を積みながら再受験できるよう、夢の実現まで継続して支援します。",
   },
 ];
 
@@ -108,38 +108,23 @@ const pillars = [
     no: "01",
     en: "RIDING",
     title: "騎乗訓練",
-    sub: "現役競走馬の騎乗運動管理",
-    desc: "教材であり相棒は、学校所有の冠名「バジガク」現役競走馬 約20頭。実際にレースへ出走する馬たちの運動管理から調教トレーニングまで、競走馬にまたがる時間を毎日の授業として重ねます。",
+    sub: "基本馬術から競走騎乗まで",
+    desc: "本校では習熟度に応じて、1日1回から多い日には3〜4回の騎乗機会を設けています。基本馬術からモンキー騎乗まで、3年間の積み重ねによって、競走馬を扱うための確かな騎乗技術を身につけます。",
   },
   {
     no: "02",
     en: "STABLE WORK",
     title: "厩舎実習",
-    sub: "飼養管理・馬匹管理",
-    desc: "エサの配合を考える飼養管理、馬体をケアする馬匹管理を、生徒自身が担当馬に対して実践。担当馬は最短でレースの10日前まで生徒の手でコンディションを整え、本番から逆算する厩舎の仕事を体得します。",
+    sub: "担当馬制度で「自分で考える」管理力を",
+    desc: "担当馬の飼料を考える飼養管理、馬体の状態を確認する馬匹管理を毎日実践。基本を確実にこなす力から、馬の変化に気づき、自分で考え判断・行動できる、現場で求められる応用力まで養います。",
   },
   {
     no: "03",
     en: "PHYSICAL",
     title: "フィジカル",
-    sub: "体力・体重管理",
-    desc: "馬を支える仕事は、まず自分の身体づくりから。体育の授業で騎乗適性を高めるトレーニングと記録を重ね、体力測定や体重測定のデータを授業でグラフ化しながら、プロに必要な自己管理の習慣を育てます。",
+    sub: "体力・体重を自分で管理する力を",
+    desc: "競走馬を支える仕事だからこそ、自分自身の身体管理も大切です。日々のトレーニングに加え、体力・体重を継続的に記録。データを授業でも活用しながら、プロとして必要な体力と自己管理力を養います。",
   },
-];
-
-/* ---------------- 履修科目一例 ---------------- */
-
-const curriculum = [
-  { subject: "現代文B", content: "厩務員課程受験の筆記試験対策用オリジナルワーク" },
-  { subject: "社会と情報", content: "運動機能検査の体力測定、体重測定グラフの作成 など" },
-  { subject: "日本史B", content: "厩務員課程受験の筆記試験対策用オリジナルワーク" },
-  { subject: "総合的学習", content: "受験に向けた学校生活、心構え、自己分析、振り返り記録" },
-  { subject: "地理B", content: "国内にあるJRA競馬場・地方競馬場の所在地とその特徴" },
-  { subject: "就業体験A", content: "競馬場見学、職場見学、現役騎手との対談レポート" },
-  { subject: "現代社会", content: "騎手課程受験の筆記試験対策用オリジナルワーク" },
-  { subject: "課題研究A", content: "自分が担当する馬の報告書、馬匹管理レポート" },
-  { subject: "体育", content: "騎乗適性検査（騎乗試験）に向けた騎乗記録と検定取得、競技歴" },
-  { subject: "聞く書く話す", content: "受験の面接に向けたトレーニングレポート" },
 ];
 
 /* ---------------- JRA受験までのロードマップ ---------------- */
@@ -184,22 +169,26 @@ const roadmap = [
 
 /* ---------------- JRA厩務員 合格実績 ---------------- */
 
-const results = [
-  { year: "令和3年度", term: "後期", applied: 5, first: 5, passed: 4 },
-  { year: "令和3年度", term: "前期", applied: 5, first: 5, passed: 3 },
-  { year: "令和2年度", term: "後期", applied: 4, first: 4, passed: 2 },
-  { year: "令和2年度", term: "前期", applied: 4, first: 4, passed: 4 },
-  { year: "令和元年度", term: "後期", applied: 2, first: 2, passed: 1 },
-  { year: "令和元年度", term: "前期", applied: 4, first: 4, passed: 4 },
-  { year: "平成30年度", term: "後期", applied: 2, first: 2, passed: 1 },
-  { year: "平成30年度", term: "前期", applied: 4, first: 4, passed: 2 },
-  { year: "平成29年度", term: "後期", applied: 2, first: 2, passed: 2 },
-  { year: "平成29年度", term: "前期", applied: 1, first: 1, passed: 1 },
+const resultStats = [
+  { value: 118, suffix: "頭", label: "本校で管理する馬匹の数" },
+  { value: 8, suffix: "施設", label: "本校の職場実習連携施設" },
+  { value: 72, suffix: "名", label: "JRA厩務員の合格者数", note: "※平成28年度以降" },
+  { value: 73, suffix: "%", label: "未経験・初心者の入学率", note: "※令和3年以降実績" },
 ];
 
-const totalApplied = results.reduce((sum, r) => sum + r.applied, 0); // 33
-const totalFirst = results.reduce((sum, r) => sum + r.first, 0); // 33
-const totalPassed = results.reduce((sum, r) => sum + r.passed, 0); // 24
+const yearlyResults = [
+  { year: "令和8年度", applied: 5, enrolled: 2, after: 2 },
+  { year: "令和7年度", applied: 7, enrolled: 5, after: 3 },
+  { year: "令和6年度", applied: 4, enrolled: 2, after: 1 },
+  { year: "令和5年度", applied: 5, enrolled: 5, after: 3 },
+  { year: "令和4年度", applied: 6, enrolled: 6, after: 3 },
+  { year: "令和3年度", applied: 5, enrolled: 2, after: 3 },
+  { year: "令和2年度", applied: 8, enrolled: 6, after: 2 },
+  { year: "平成31年度", applied: 6, enrolled: 5, after: 4 },
+  { year: "平成30年度", applied: 6, enrolled: 3, after: 4 },
+  { year: "平成29年度", applied: 3, enrolled: 3, after: 3 },
+  { year: "平成28年度", applied: 1, enrolled: 1, after: 4 },
+];
 
 /* ---------------- FAQ ---------------- */
 
@@ -362,9 +351,9 @@ export default function KyumuinPage() {
         </Stagger>
         <FadeUp delay={0.1} className="mt-10">
           <p className="mx-auto max-w-3xl bg-pine-50 px-6 py-5 text-center text-sm font-bold leading-7 text-pine-800">
-            受験のチャンスは高校3年次の前期・後期の2回。
+            JRA競馬学校の厩務員課程を目指す生徒は、高校3年次に前期・後期の2回、受験に挑戦できます。
             <br className="hidden md:block" />
-            地方競馬の厩務員や育成・生産牧場を目指す生徒にも、そのまま生きるサポート体制です。
+            また、ここで身につける知識・騎乗技術・馬の管理能力は、地方競馬の厩務員や育成・生産牧場を目指す生徒にも、そのまま活かせる力となります。
           </p>
         </FadeUp>
       </Section>
@@ -374,8 +363,15 @@ export default function KyumuinPage() {
         <SectionTitle
           en="SPECIAL CURRICULUM"
           align="center"
-          title="現役競走馬約20頭と学ぶ、特別カリキュラム"
-          lead="競走馬厩務員コースの教材は、教科書だけではありません。学校所有の冠名「バジガク」現役競走馬たち。デビューからレース本番までを支える厩務員の実務を、3つの柱で毎日の高校授業に落とし込んでいます。"
+          title={
+            <>
+              JRA競馬学校 厩務員課程への挑戦
+              <span className="mt-3 block font-serif text-base font-bold leading-snug text-pine-800 md:text-xl">
+                高校3年次の前期・後期、最大2回の受験機会。
+              </span>
+            </>
+          }
+          lead="競走馬の厩務員を目指すために必要なのは、一つの技術だけではありません。本校では、試験で求められる基本馬術と、競走馬を扱うためのモンキー騎乗による競走騎乗訓練の両方を実践。未経験からでも、3年間の毎日の積み重ねによって、現場で通用する本物の実力を身につけます。"
         />
         <Stagger className="mt-12 grid gap-6 md:grid-cols-3">
           {pillars.map((p) => (
@@ -409,44 +405,7 @@ export default function KyumuinPage() {
             />
           </div>
           <p className="mt-3 text-center text-xs text-ink-500">
-            手をかけて育てた「バジガク」の馬たちがレースに出走。生徒たちも競馬場へ足を運び、担当馬の走りを見届けます。
-          </p>
-        </FadeUp>
-        <FadeUp delay={0.1} className="mt-16">
-          <p className="text-center text-[11px] font-bold tracking-[0.35em] text-gold-600">
-            SUBJECTS
-          </p>
-          <h3 className="mt-2 text-center font-serif text-2xl font-bold text-pine-950 md:text-3xl">
-            履修科目の一例
-          </h3>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-ink-700">
-            高校の授業そのものが、厩務員課程の受験準備につながる。バジガクならではの科目編成です。
-          </p>
-          <div className="mt-8 overflow-x-auto border border-cream-300 shadow-soft">
-            <table className="w-full min-w-[560px] text-left text-sm">
-              <thead>
-                <tr className="bg-pine-800 text-[12px] tracking-wider text-white">
-                  <th className="w-44 px-5 py-4 font-bold">科目</th>
-                  <th className="px-5 py-4 font-bold">学習内容（例）</th>
-                </tr>
-              </thead>
-              <tbody>
-                {curriculum.map((c, i) => (
-                  <tr
-                    key={c.subject}
-                    className={`border-t border-cream-300 ${
-                      i % 2 === 1 ? "bg-cream-100" : "bg-white"
-                    }`}
-                  >
-                    <td className="px-5 py-3.5 font-bold text-pine-950">{c.subject}</td>
-                    <td className="px-5 py-3.5 leading-7 text-ink-700">{c.content}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-center text-[11px] leading-6 text-ink-500">
-            ※履修科目・学習内容は一例です。年度により変更となる場合があります。
+            東関東馬事高等学院では、最年少である高校3年生（17歳～）の合格者多数
           </p>
         </FadeUp>
       </Section>
@@ -504,32 +463,35 @@ export default function KyumuinPage() {
                 INTERNSHIP
               </p>
               <h3 className="mt-2 font-serif text-2xl font-bold leading-snug text-pine-950">
-                ロードマップを支える、
-                <br />
                 豊富なインターンシップ
               </h3>
+              <p className="mt-3 text-sm font-bold leading-7 text-pine-800">
+                現場を知るから、自分に合った進路が見えてくる。
+              </p>
               <p className="mt-5 text-sm leading-8 text-ink-700">
-                2年次以降、学校の定める競走馬実践カリキュラムを修了した生徒から順に、全国の牧場での実地研修が始まります。研修先は、バジガクが持つ全国の馬関連求人ネットワークの中から、一人ひとりの希望に合わせて選択。在学中に複数の現場を経験できるから、技術も視野も広がり、自分に合った進路をじっくり見極められます。
+                2年次以降、競走馬実践カリキュラムを修了した生徒から、全国の牧場で実地研修を開始します。研修先は、バジガクが持つ全国の馬関連ネットワークから、一人ひとりの目標に合わせて選択。在学中に複数の現場を経験し、技術を磨きながら、自分に合った進路を見極めます。
               </p>
               <div className="mt-7 grid grid-cols-2 gap-4">
                 <div className="bg-cream-100 p-5 text-center">
                   <p className="font-serif text-3xl font-bold text-pine-800 md:text-4xl">
-                    <Counter to={350} suffix="件超" />
+                    <Counter to={3} suffix="か所以上" />
                   </p>
                   <p className="mt-2 text-xs font-bold text-ink-700">
-                    全国の馬関連求人情報
+                    在学中に経験する牧場・競馬関連施設
                   </p>
                 </div>
                 <div className="bg-cream-100 p-5 text-center">
                   <p className="font-serif text-3xl font-bold text-pine-800 md:text-4xl">
-                    約<Counter to={3} suffix="か所" />
-                    <span className="text-lg">以上</span>
+                    全国各地
                   </p>
                   <p className="mt-2 text-xs font-bold text-ink-700">
-                    在学中に経験できる牧場数
+                    希望する進路に合わせた実地研修
                   </p>
                 </div>
               </div>
+              <p className="mt-4 text-[11px] leading-6 text-ink-500">
+                ※上記は、株式会社馬事学院全体（東関東馬事高等学院・東関東馬事専門学院）の実績を掲載しています。
+              </p>
             </div>
           </div>
           <div className="mt-10 text-center">
@@ -557,57 +519,62 @@ export default function KyumuinPage() {
             align="center"
             en="RESULTS"
             title="JRA競馬学校 厩務員課程 合格実績"
-            lead="平成29年度から令和3年度までの5年間、受験者は全員が一次試験を通過。高校在学中の現役合格者も続々と誕生しています。"
           />
-          <Stagger className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {[
-              { value: totalApplied, label: "受験者数（累計）", note: "平成29年度〜令和3年度" },
-              { value: totalFirst, label: "一次試験通過（累計）", note: "受験者全員が一次を通過" },
-              { value: totalPassed, label: "最終合格（累計）", note: "高校在学中の現役合格も多数" },
-            ].map((s) => (
+          <Stagger className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+            {resultStats.map((s) => (
               <StaggerItem key={s.label} className="text-center">
-                <div className="border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-                  <p className="font-serif text-5xl font-bold text-sun-400">
-                    <Counter to={s.value} suffix="名" />
-                  </p>
-                  <p className="mt-3 text-sm font-bold text-white">{s.label}</p>
-                  <p className="mt-1 text-[11px] text-white/60">{s.note}</p>
-                </div>
+                <p className="font-serif text-4xl font-bold text-sun-400 md:text-5xl">
+                  <Counter to={s.value} />
+                  <span className="text-2xl text-white md:text-3xl">{s.suffix}</span>
+                </p>
+                <div className="mx-auto mt-3 h-[2px] w-10 bg-gold-400" />
+                <p className="mt-3 text-sm font-bold text-white">{s.label}</p>
+                {s.note && <p className="mt-1 text-[11px] text-white/60">{s.note}</p>}
               </StaggerItem>
             ))}
           </Stagger>
-          <FadeUp delay={0.15} className="mt-12">
-            <div className="overflow-x-auto border border-white/10">
-              <table className="w-full min-w-[560px] text-left text-sm text-white/85">
+          <FadeUp delay={0.15} className="mt-16">
+            <p className="text-center text-[11px] font-bold tracking-[0.35em] text-gold-300">
+              RECORDS
+            </p>
+            <h3 className="mt-2 text-center font-serif text-2xl font-bold text-white md:text-3xl">
+              年度別 JRA厩務員課程 合格実績
+            </h3>
+            <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-7 text-white/80">
+              平成28年度以降、在学中の受験・合格実績を年度別にご紹介します。※は本校を卒業後、牧場等に就職してから受験・合格した人数です。
+            </p>
+            <div className="mt-8 overflow-x-auto border border-cream-300 bg-white shadow-soft">
+              <table className="w-full min-w-[640px] text-left text-sm">
                 <thead>
-                  <tr className="bg-white/10 text-[12px] tracking-wider text-gold-300">
+                  <tr className="bg-pine-800 text-[12px] tracking-wider text-white">
                     <th className="px-5 py-4 font-bold">年度</th>
-                    <th className="px-5 py-4 font-bold">期</th>
                     <th className="px-5 py-4 text-right font-bold">受験者数</th>
-                    <th className="px-5 py-4 text-right font-bold">一次試験通過</th>
-                    <th className="px-5 py-4 text-right font-bold">最終合格</th>
+                    <th className="px-5 py-4 text-right font-bold">合格者数（在学中）</th>
+                    <th className="px-5 py-4 text-right font-bold">※卒業後の合格者数</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {results.map((r) => (
+                  {yearlyResults.map((r, i) => (
                     <tr
-                      key={`${r.year}-${r.term}`}
-                      className="border-t border-white/10 transition hover:bg-white/5"
+                      key={r.year}
+                      className={`border-t border-cream-300 ${
+                        i % 2 === 1 ? "bg-cream-100" : "bg-white"
+                      }`}
                     >
-                      <td className="px-5 py-3.5 font-bold text-white">{r.year}</td>
-                      <td className="px-5 py-3.5">{r.term}</td>
-                      <td className="px-5 py-3.5 text-right">{r.applied}名</td>
-                      <td className="px-5 py-3.5 text-right">{r.first}名</td>
-                      <td className="px-5 py-3.5 text-right font-bold text-sun-400">
-                        {r.passed}名
+                      <td className="px-5 py-3.5 font-bold text-pine-950">{r.year}</td>
+                      <td className="px-5 py-3.5 text-right text-ink-700">{r.applied}名</td>
+                      <td className="px-5 py-3.5 text-right font-bold text-gold-600">
+                        {r.enrolled}名
+                        {r.enrolled === r.applied ? "（全員合格）" : ""}
                       </td>
+                      <td className="px-5 py-3.5 text-right text-ink-700">{r.after}名</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <p className="mt-4 text-center text-[11px] leading-6 text-white/55">
-              ※東関東馬事専門学院・東関東馬事高等学院の在校生・卒業生の合格実績です。
+              ※上記は、株式会社馬事学院全体（東関東馬事高等学院・東関東馬事専門学院）の実績を掲載しています。
             </p>
           </FadeUp>
           <FadeUp delay={0.2} className="mt-10 text-center">
