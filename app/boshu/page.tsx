@@ -678,60 +678,41 @@ export default function BoshuPage() {
         <SectionTitle
           en="DOCUMENTS"
           align="center"
-          title="募集要項・願書のご請求"
-          lead="出願に必要な書類一式は、資料請求フォームから無料でお取り寄せいただけます。冊子を手に取って、ご家族でゆっくりご検討ください。"
+          title="募集要項"
+          lead={
+            <>
+              <span className="mb-3 block font-serif text-lg font-bold text-pine-950 md:text-xl">
+                学校案内・募集要項のお取り寄せについて
+              </span>
+              馬の高校　東関東馬事高等学院の中身をしっかりとご判断いただける資料をお届けいたします。以下の資料請求フォームよりご請求ください。
+              <br className="hidden md:block" />
+              資料請求フォームより送信後、本校のオープンキャンパスにご参加頂くことができます。オープンキャンパスにご参加いただいた後に出願が可能です。
+            </>
+          }
         />
-        <Stagger className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
-          <StaggerItem className="h-full">
-            <div className="flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-              <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
-                BROCHURE
-              </p>
-              <h3 className="mt-3 font-serif text-xl font-bold text-pine-950">
-                募集要項・学校案内（冊子）
-              </h3>
-              <div className="mt-4 h-[3px] w-10 rule-gold" />
-              <p className="mt-5 flex-1 text-[13px] leading-7 text-ink-700">
-                コース紹介・学費・寮生活・進路実績など、本校の3年間がひと目でわかる冊子です。資料請求フォームからお申し込みいただくと、無料で郵送いたします。
-              </p>
-              <a
-                href={site.forms.shiryo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-pine-800 px-8 py-3.5 text-sm font-bold text-white transition hover:bg-pine-700"
-              >
-                資料請求フォームへ
-                <span aria-hidden>→</span>
-              </a>
-            </div>
-          </StaggerItem>
-          <StaggerItem className="h-full">
-            <div className="flex h-full flex-col bg-white p-8 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
-              <p className="text-[10px] font-bold tracking-[0.35em] text-gold-600">
-                APPLICATION FORM
-              </p>
-              <h3 className="mt-3 font-serif text-xl font-bold text-pine-950">
-                願書（入校申込書）
-              </h3>
-              <div className="mt-4 h-[3px] w-10 rule-gold" />
-              <p className="mt-5 flex-1 text-[13px] leading-7 text-ink-700">
-                願書は学校案内の冊子に同封してお届けしています。まだお手元にない方は、資料請求フォームからご請求ください。なお、出願はWebの出願フォームからのご提出も可能です。
-              </p>
-              <a
-                href={site.forms.shiryo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border-2 border-pine-800 px-8 py-3 text-sm font-bold text-pine-800 transition hover:bg-pine-800 hover:text-white"
-              >
-                願書を請求する（資料請求）
-                <span aria-hidden>→</span>
-              </a>
-            </div>
-          </StaggerItem>
-        </Stagger>
+        <FadeUp delay={0.1} className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={site.forms.shiryo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-pine-800 px-8 py-3.5 text-sm font-bold text-white transition hover:bg-pine-700"
+          >
+            学校案内の資料請求フォームへ
+            <span aria-hidden>→</span>
+          </a>
+          <a
+            href={site.forms.taiken}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-pine-800 px-8 py-3 text-sm font-bold text-pine-800 transition hover:bg-pine-800 hover:text-white"
+          >
+            オープンキャンパスへのお申込み
+            <span aria-hidden>→</span>
+          </a>
+        </FadeUp>
         <FadeUp delay={0.15} className="mx-auto mt-8 max-w-4xl">
-          <p className="text-xs leading-6 text-ink-500">
-            ※資料はすべて無料です。※Web出願をご希望の方や、書類の記入についてご不明な点がある方は、事務局（
+          <p className="text-center text-xs leading-6 text-ink-500">
+            ※資料はすべて無料です。ご不明な点がある方は、事務局（
             <a
               href={`tel:${site.tel}`}
               className="mx-1 font-bold tracking-wider text-pine-800 hover:underline"

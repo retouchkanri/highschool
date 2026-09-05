@@ -285,26 +285,26 @@ const kyotsuItems = [
   {
     no: "01",
     en: "LICENSE",
-    title: "資格取得",
-    desc: "乗馬ライセンス（全国乗馬倶楽部振興協会）、騎乗者資格（日本馬術連盟）、家畜商免許など、一人ひとりの騎乗レベルや将来の目標に合わせて、在学中の資格取得に挑戦できます。",
+    title: "在学中に挑戦できる\n資格取得",
+    desc: "乗馬ライセンス（全国乗馬倶楽部振興協会）、騎乗者資格（日本馬術連盟）、家畜商免許など、騎乗レベルや目標に合わせて資格取得に挑戦できます。",
   },
   {
     no: "02",
     en: "FIELD LEARNING",
-    title: "実習・校外学習",
-    desc: "競馬場や牧場など、学校を飛び出して学ぶ機会も大切な授業のひとつ。実際の馬業界や仕事に触れながら、教室だけでは得られない経験を積み重ねていきます。",
+    title: "現場で学ぶ\n実習・校外学習",
+    desc: "競馬場や牧場など、学校を飛び出して学ぶ機会も大切な授業のひとつ。実際の馬業界や仕事に触れ、教室だけでは得られない経験を積みます。",
   },
   {
     no: "03",
     en: "INTERNSHIP",
-    title: "全国の馬業界でインターンシップ",
-    desc: "全国の牧場・乗馬クラブなどとのネットワークを活かし、在学中に複数の現場でインターンシップを経験。実際に働いてみることで、自分に合った仕事や職場を見つけ、進路選択や就職につなげます。",
+    title: "全国の馬業界で\nインターンシップ",
+    desc: "全国の牧場・乗馬クラブなどとのネットワークを活かし、在学中に複数の現場でインターンシップを経験。自分に合った仕事や職場を見極めます。",
   },
   {
     no: "04",
     en: "HIGH SCHOOL STUDY",
-    title: "馬を学びながら、高校卒業資格を取得",
-    desc: "連携する中央国際高等学校の高校授業と、馬に関する専門的な学びを両立。高校卒業に必要な学習を進めながら、3年間、思う存分「馬」に向き合える高校生活を送ります。",
+    title: "馬を学びながら、\n高校卒業資格を取得",
+    desc: "連携する中央国際高等学校の高校授業と、馬に関する専門的な学びを両立。卒業に必要な学習を進めながら、思う存分馬に向き合えます。",
   },
 ];
 
@@ -312,77 +312,88 @@ const highSchoolClasses = [
   {
     no: "01",
     en: "ONLINE CLASSES",
-    title: "毎日2〜3時間のネット授業",
-    desc: "高校の授業は、連携する中央国際高等学校のインターネット授業が中心。1日あたり2〜3時間、全日制高校の半分ほどの時間で高校の学びを進め、残りの時間はすべて馬にあてられます。",
+    title: "1日約2.5時間の高校授業",
+    desc: "本校の高校授業は、連携する中央国際高等学校のインターネット授業が中心。1日約2.5時間で高校の学びを進め、残りの時間はすべて馬にあてられます。",
   },
   {
     no: "02",
     en: "LEARNING-BASED CREDIT",
-    title: "学習成果で単位を認定",
-    desc: "評価は定期テストの一発勝負ではなく、日々の学習の積み重ねが基準。理解できるところまで戻って、自分のペースでやり直せるので、勉強が苦手な生徒も無理なく学べます。",
+    title: "単位取得しやすい履修科目",
+    desc: "高校授業そのものが学習の負担にならないよう、目的に合わせた履修科目を選定できるため、勉強が苦手でも単位をスムーズに取得できます。",
   },
   {
     no: "03",
     en: "TEACHER SUPPORT",
-    title: "教員チームによる学習サポート",
-    desc: "ネット授業のサポートはもちろん、レポート指導や学習の進め方についての相談も教員チームが担当。卒業までの3年間、一人ひとりの学びにしっかり伴走します。",
+    title: "スタッフによる各サポート",
+    desc: "ネット授業のサポートはもちろん、レポート指導や学習の進め方についてもスタッフが指導。卒業までの3年間、一人ひとりの学びにしっかり伴走します。",
   },
   {
     no: "04",
     en: "SCHOOLING",
-    title: "年1回のスクーリング",
-    desc: "年に1回、連携校の本校（九州）で3泊4日のスクーリングを実施。全国の仲間たちと顔を合わせながら、卒業に必要な学びを積み重ねる特別な機会です。",
+    title: "年1回のスクーリングへ",
+    desc: "連携校により実施されるスクーリング授業を実施。千葉県の「御宿」にて、宿泊型のスクーリング合宿は、まるで修学旅行のような雰囲気で楽しく学べます。",
   },
 ];
+
+/** Keep the last N Japanese characters from wrapping alone (orphan prevention). */
+function keepTail(text: string, n = 4) {
+  if (text.length <= n) return text;
+  return (
+    <>
+      {text.slice(0, -n)}
+      <span className="whitespace-nowrap">{text.slice(-n)}</span>
+    </>
+  );
+}
 
 const lifeSkills = [
   {
     no: "01",
     en: "MONEY",
-    title: "お金を「使う・貯める・守る・育てる」",
-    desc: "給与の見方から、貯蓄、金利・利息、金融、投資、不動産まで。社会人になって必要になる「お金の基本」を学び、自分で考えて判断する力を身につけます。",
+    title: "お金を「使う・貯める・守る・増やす」の学び",
+    desc: "給与明細の見方から、貯蓄、金利（単利・複利）・利息、金融、投資、不動産のことまで、社会人になって必要になる「お金の基本」を学び、自分で考えて判断する力を身につけられるようお金の授業を実施。",
   },
   {
     no: "02",
     en: "BUSINESS",
-    title: "「働く側」から「経営する側」まで考える",
-    desc: "労働者・経営者・投資家、それぞれの立場や役割を学習。牧場や乗馬クラブなどを題材にした「バーチャル経営」にも挑戦し、売上・経費・利益・給与など、仕事と経営の仕組みを学びます。",
+    title: "「働く側」から「経営する側」まで考える力を育む",
+    desc: "労働者・経営者・投資家、それぞれの立場や役割を学習。牧場や乗馬クラブなどを題材にした「バーチャル経営」にも挑戦し、売上・経費・利益・給与など、仕事と経営の仕組みをしっかりと学んでいきます。",
   },
   {
     no: "03",
     en: "LAW & COMPLIANCE",
-    title: "知らなかったでは済まされない、法律の基本",
-    desc: "民法・刑法・コンプライアンスなど、社会生活に関わる法律の基礎を学びます。契約・解約、未成年者の契約、トラブルや犯罪に関する基本的な仕組みなど、社会人として自分自身を守るための知識を身につけます。",
+    title: "知らなかったでは済まされない、法律の基本と解釈",
+    desc: "民法・刑法・コンプライアンスなど、社会生活に関わる法律の基礎を学びます。契約・解約、未成年者契約、トラブルや犯罪に関する基本的な仕組み等、社会人として自身を守れる知識の備えをしっかり学ぶ。",
   },
   {
     no: "04",
     en: "CONTRACT",
-    title: "契約書を「読んで考える」力",
-    desc: "就職、賃貸、自動車、携帯電話、ローンなど、社会に出ればさまざまな契約と関わります。契約・解約・解除の違いや、実印・認印・押印・捺印・割印など、社会生活で必要になる基本を学びます。",
+    title: "契約書を「読んで考える」本質の理解力の向上",
+    desc: "就職、賃貸、自動車、携帯電話、ローンなど、社会に出ればさまざまな契約と関わります。契約・解約・解除の違いや、実印・認印・押印・捺印・割印など、社会生活で必ず必要となる契約の仕組みを学ぶ。",
   },
   {
     no: "05",
     en: "TAX & SOCIAL INSURANCE",
-    title: "「給料から、なぜ引かれる？」を理解する",
-    desc: "所得税・消費税・自動車税などの税金から、健康保険・年金などの社会保険まで。給与明細を題材に、「働いたら、実際にいくら手元に残るのか」を自分で理解できる力を育てます。",
+    title: "「給料支給額からなぜ引かれる？」を理解する",
+    desc: "住民税・消費税・源泉税・自動車税などの税金から、健康保険・年金などの社会保険まで。給与明細を題材に、「働いたら、実際にいくら手元に残るのか」を理解できる力。社会保険や給料の仕組みを理解。",
   },
   {
     no: "06",
     en: "INSURANCE & RISK",
-    title: "もしもの時、自分を守る知識",
-    desc: "生命保険・損害保険・自動車保険・車両保険・賠償責任など、身近な保険の役割を学習。「何となく加入する」のではなく、必要性や補償内容を自分で考えられる基礎知識を身につけます。",
+    title: "もしもの時、自分を守る仕組みの構築に備える",
+    desc: "生命保険・損害保険・自動車保険・車両保険・賠償責任など、身近な保険の役割を学習。「何となく加入する」のではなく、必要性や補償内容を自分で考えられる保険の基礎知識を身につけ理解し契約をする。",
   },
   {
     no: "07",
     en: "SOCIAL RESPONSIBILITY",
-    title: "社会のルールと、自分を守る判断力",
+    title: "社会のルールを理解し、社会を歩む力と判断力",
     desc: "法令遵守、SNSの使い方、反社会的勢力との関係など、社会人として知っておくべきルールやリスクについて学びます。正しい知識を持ち、「していいこと・いけないこと」を自分で判断できる力を養います。",
   },
   {
     no: "08",
     en: "MANNERS & HUMANITY",
-    title: "最後に大切なのは、「人として」の力。",
-    desc: "挨拶、言葉遣い、礼儀、時間を守ること、感謝すること、約束を守ること。そして、周囲の人から「この人と一緒に働きたい」「この人なら応援したい」と思ってもらえる人になること。馬との生活や全寮制での共同生活を通して、一般常識・マナー・道徳・協調性・責任感を育て、社会から信頼される人材を目指します。",
+    title: "最後に大切なのは、「人としての魅力」を養う。",
+    desc: "挨拶、言葉遣い、礼儀、時間を守ること、感謝すること、約束を守ること。そして、周囲の人から「かわいがられる人間性」全寮制での共同生活を通して、社会から信頼される人へと促す本校での道徳学習。",
   },
 ];
 
@@ -668,29 +679,24 @@ export default function CoursePage() {
             <SectionTitle
               en="RACEHORSE GROOM COURSE"
               title="競走馬厩務員コース"
-              lead="現役競走馬とともに、プロの「馬の仕事」を実践で学ぶコースです。1年次は「一般高校乗馬コース」において、基礎・基本を学び、2年次より、この「競走馬厩務員コース」にて、競走馬の飼養管理から騎乗・調教までを実践。JRA厩務員をはじめ、生産牧場・育成牧場など、競走馬に関わる仕事を目指します。"
+              lead="1年次は「一般高校乗馬コース」で学び、2年次より「競走馬厩務員コース」を選択可能です。競走馬の取り扱いを学び、実際の牧場でのインターンシップに出向き、高校3年生次には、前期・後期の2回、JRA競馬学校の厩務員課程受験合格を目指すことができます。また万が一の不合格でもそのまま競走馬の牧場への就職が可能です。"
             />
             <FadeUp delay={0.1}>
               <div className="mt-8 flex items-center gap-6 border-l-[3px] border-gold-500 bg-cream-100 px-6 py-5">
                 <div>
                   <Counter
-                    to={24}
+                    to={72}
                     suffix="名"
                     className="font-serif text-4xl font-bold text-pine-950"
                   />
                   <p className="mt-1 text-[11px] font-bold text-ink-700">
-                    JRA競馬学校 厩務員課程 最終合格
+                    JRA競馬学校合格実績
                   </p>
                 </div>
                 <p className="text-[12px] leading-5 text-ink-700">
-                  平成29〜令和3年度は受験33名が
-                  <span className="font-bold text-pine-950">全員一次通過</span>
-                  、うち24名が最終合格しています。
+                  平成28年以降、高校部門・専門部門の在学生ならびに卒業生におけるJRA競馬学校の厩務員課程合格実績数となります。
                 </p>
               </div>
-              <p className="mt-3 text-[11px] text-ink-500">
-                ※実績は公表時点（平成29〜令和3年度）のものです。
-              </p>
             </FadeUp>
           </div>
           <ScaleIn className="overflow-hidden shadow-lift">
@@ -843,16 +849,16 @@ export default function CoursePage() {
         <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {kyotsuItems.map((item) => (
             <StaggerItem key={item.no} className="h-full">
-              <div className="flex h-full flex-col bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <div className="flex h-full flex-col bg-white px-6 py-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                 <span className="text-[10px] font-bold tracking-[0.25em] text-gold-600">
                   {item.no}｜{item.en}
                 </span>
-                <h3 className="mt-3 font-serif text-lg font-bold text-pine-950">
+                <h3 className="mt-3 min-h-[3.25rem] font-serif text-lg font-bold leading-snug text-pine-950 whitespace-pre-line">
                   {item.title}
                 </h3>
                 <div className="mt-3 h-[3px] w-10 rule-gold" />
-                <p className="mt-4 flex-1 text-[13px] leading-6 text-ink-700">
-                  {item.desc}
+                <p className="mt-4 flex-1 text-[13px] leading-[1.7] tracking-[-0.02em] text-ink-700 text-pretty">
+                  {keepTail(item.desc)}
                 </p>
               </div>
             </StaggerItem>
@@ -870,7 +876,7 @@ export default function CoursePage() {
           <Stagger className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {highSchoolClasses.map((c) => (
               <StaggerItem key={c.no} className="h-full">
-                <div className="flex h-full flex-col bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+                <div className="flex h-full flex-col bg-white px-6 py-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:shadow-lift">
                   <span className="text-[10px] font-bold tracking-[0.25em] text-gold-600">
                     {c.no}｜{c.en}
                   </span>
@@ -878,8 +884,8 @@ export default function CoursePage() {
                     {c.title}
                   </h3>
                   <div className="mt-3 h-[3px] w-10 rule-gold" />
-                  <p className="mt-4 flex-1 text-[13px] leading-6 text-ink-700">
-                    {c.desc}
+                  <p className="mt-4 flex-1 text-[13px] leading-[1.7] tracking-[-0.02em] text-ink-700 text-pretty">
+                    {keepTail(c.desc)}
                   </p>
                 </div>
               </StaggerItem>
@@ -1079,9 +1085,12 @@ export default function CoursePage() {
               </p>
               <ul className="mt-5 space-y-2.5">
                 {[
-                  "JRA競馬学校 厩務員課程を受験",
-                  "牧場・乗馬クラブなど馬業界へ就職",
-                  "大学・短大・専門学校へ進学／一般就職",
+                  "JRA競馬学校 厩務員課程受験合格（2回の挑戦）",
+                  "全国を対象とした地方競馬の厩務員への直接就職",
+                  "生産牧場や育成牧場など、競走馬に関連する牧場",
+                  "全国の乗馬クラブや観光牧場、養老牧場への就職",
+                  "大学、短大、専門学校への進学や一般就職の活動",
+                  "当社関連の会社における優先雇用契約、就職内定",
                 ].map((item) => (
                   <li
                     key={item}
@@ -1094,6 +1103,9 @@ export default function CoursePage() {
                     {item}
                   </li>
                 ))}
+                <li className="pl-[18px] text-[13px] font-medium leading-6 text-ink-700">
+                  など
+                </li>
               </ul>
             </div>
           </StaggerItem>

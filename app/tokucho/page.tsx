@@ -105,7 +105,7 @@ const studentTypes = [
   },
   {
     title: "新しい挑戦をしたい人",
-    desc: "勉強が苦手、不登校を経験した、今の高校が合わない、転校したい。そんな生徒も大丈夫。環境を変えて、新しい高校生活に挑戦できます。",
+    desc: "勉強が苦手、不登校を経験した、今の高校が合わない、転校したい。そんな生徒も大丈夫。環境を変えて、新しい高校生活に挑戦！",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <path d="M5 21V4" />
@@ -115,7 +115,7 @@ const studentTypes = [
   },
   {
     title: "馬の仕事に就きたい人",
-    desc: "騎手・厩務員・牧場スタッフ・乗馬クラブなど、「将来は馬と働きたい」という夢を持つ生徒たち。高校生から夢に向かって本格的に学べます。",
+    desc: "騎手・厩務員・牧場スタッフ・乗馬クラブなど、「将来は馬と働きたい」という夢を持つ生徒たち。高校生から夢に向かって一直線！",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconCls} aria-hidden>
         <circle cx="12" cy="12" r="9" />
@@ -242,11 +242,8 @@ const futures = [
   { img: "/images/top_future_008.jpg", title: "養老牧場", desc: "引退馬・養老馬に寄り添う仕事" },
 ];
 
-const achievements = [
-  "騎手課程（JRA・地方競馬）合格者 38名を輩出",
-  "JRA競馬学校 厩務員課程にも合格者を輩出",
-  "卒業生が全国の牧場・乗馬クラブ・競馬の現場で活躍中",
-];
+const achievementsText =
+  "ＪＲＡ騎手、地方競馬の騎手、ＪＲＡ厩務員、地方競馬の厩務員、ノーザンファーム、社台ファーム、追分ファーム、ビックレッドファーム、グリーンウッドパーク、大山ヒルズ、坂東牧場、宇治田原優駿ステーブル、チャンピオンズファーム、白井牧場をはじめ全国の競走馬関連の牧場、乗馬クラブ・観光牧場・養老牧場・繁殖牧場、馬具屋、馬の輸送会社、出版・マスコミ関係、ＪＲＡ日本中央競馬会、競馬の誘導馬・日本馬術連盟・審判員・装蹄師、その他、動物園（飼育管理・業務内容）福祉関連、一般企業（アパレル・各種店舗・宿泊施設・携帯ショップ）専門学校への進学、大学への進学等を含む";
 
 const stats = [
   { value: 18, suffix: "年目", label: "本校設立からの年", note: "信頼と実績の継続年" },
@@ -384,7 +381,7 @@ export default function TokuchoPage() {
         <Stagger gap={0.06} className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {studentTypes.map((s, i) => (
             <StaggerItem key={s.title} className="h-full">
-              <div className="group flex h-full flex-col items-center border border-cream-300 bg-cream-50 p-6 text-center transition duration-300 hover:-translate-y-1.5 hover:border-gold-400 hover:shadow-lift">
+              <div className="group flex h-full flex-col items-start border border-cream-300 bg-cream-50 p-6 text-left transition duration-300 hover:-translate-y-1.5 hover:border-gold-400 hover:shadow-lift">
                 <span className="text-[10px] font-bold tracking-[0.3em] text-gold-600">
                   TYPE {String(i + 1).padStart(2, "0")}
                 </span>
@@ -394,7 +391,9 @@ export default function TokuchoPage() {
                 <h3 className="mt-4 font-serif text-[15px] font-bold leading-relaxed text-pine-950">
                   {s.title}
                 </h3>
-                <p className="mt-3 text-xs leading-6 text-ink-700">{s.desc}</p>
+                <p className="mt-3 text-xs leading-6 tracking-[-0.01em] text-ink-700 text-pretty">
+                  {s.desc}
+                </p>
               </div>
             </StaggerItem>
           ))}
@@ -647,14 +646,9 @@ export default function TokuchoPage() {
             <p className="mt-2 font-serif text-lg font-bold text-pine-950 md:text-xl">
               卒業生・修了生の主な実績
             </p>
-            <ul className="mt-4 grid gap-2.5 md:grid-cols-3">
-              {achievements.map((a) => (
-                <li key={a} className="flex items-start gap-2.5 text-[13px] leading-6 text-ink-700">
-                  <span aria-hidden className="mt-1.5 h-2 w-2 shrink-0 rotate-45 bg-gold-500" />
-                  {a}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 text-[13px] leading-7 tracking-[-0.01em] text-ink-700 text-pretty">
+              {achievementsText}
+            </p>
           </div>
         </FadeUp>
 

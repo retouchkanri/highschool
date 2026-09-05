@@ -15,7 +15,7 @@ const ctas = [
   {
     en: "OPEN CAMPUS",
     title: "体験入学のお申込み",
-    desc: "JR東京駅から無料送迎。乗馬体験つき。",
+    desc: "東京駅までのお迎え。乗馬体験つき",
     href: site.forms.taiken,
     accent: "bg-gold-500 text-pine-950",
   },
