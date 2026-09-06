@@ -71,7 +71,7 @@ const profileRows: { label: string; value: React.ReactNode }[] = [
       <>
         JR総武本線「日向駅」より徒歩圏内
         <span className="mt-1 block text-xs text-ink-500">
-          学校見学の際は、JR東京駅から無料送迎をご利用いただけます（完全予約制）
+          学校見学の際は、JR東京駅（八重洲中央口）までのお迎えがあります。
         </span>
       </>
     ),
@@ -92,9 +92,9 @@ const profileRows: { label: string; value: React.ReactNode }[] = [
     label: "生徒数",
     value: (
       <>
-        約60名
+        約50名程度
         <span className="mt-1 block text-xs text-ink-500">
-          騎手・厩務員など馬の仕事を志して、全国から生徒が集まっています
+          少人数制で一人ひとりの生徒たちに寄り添える高校サポート校です。
         </span>
       </>
     ),
@@ -275,8 +275,9 @@ type StaffRow = {
   en: string;
   role: string;
   name?: string;
-  body: string;
-  note?: string;
+  paragraphs: string[];
+  quote?: string;
+  closing?: string[];
   link?: { href: string; label: string };
 };
 
@@ -285,19 +286,37 @@ const staffRows: StaffRow[] = [
     en: "PRINCIPAL",
     role: "学校長",
     name: "野口 佳槻",
-    body: "平成21年の設立以来、「馬の学校」づくりの先頭に立ち続けてきた学校長。合言葉は「勉強は最低限！夢は最大限！」。高校の授業はコンパクトに、馬と過ごす時間はたっぷりと——バジガクならではの学び方は、この言葉に凝縮されています。",
+    paragraphs: [
+      "自らも小学時代より乗馬をはじめ、小・中・高と馬とともに青春時代を歩む。大学時代には、名門「日本大学 馬術部」に所属。全日本学生や数々の馬術大会で活躍。卒業後は、引退競走馬を支え、乗馬クラブなどを経営。平成21年の設立以来、現在の「馬の学校」づくりの先頭に立ち続けてきた学校長。",
+      "高校卒業に必要な学習は効率よく取り組み、馬と向き合い、経験する時間はできるだけ多く。教室の中だけではなく、馬と過ごす毎日そのものを学びに変えていく——バジガクならではの教育の考え方が、この言葉に込められています。",
+    ],
+    quote: "「勉強は最低限！夢は最大限！」",
     link: { href: "/tokucho", label: "学校長が語るバジガクの特長を見る" },
   },
   {
     en: "TEACHERS",
-    role: "教員",
-    body: "連携する広域通信制・中央国際高等学校の高校授業を支えるのが、教員チームです。1日2〜3時間のネット授業のサポートに加え、定期テストの代わりとなる学習成果の評価やレポート指導を担当。卒業までの3年間、一人ひとりの学びに伴走します。",
+    role: "教員（職員）",
+    paragraphs: [
+      "本校と連携する中央国際高等学校の高校授業を支えるのが、教員チームです。1日2〜3時間を基本とした高校学習のサポートをはじめ、レポート指導や学習成果の確認などを担当。一人ひとりの学習状況に寄り添いながら、高校卒業までの3年間をしっかりと支えます。",
+      "通信制高校の教材を提供し、各自の自主学習だけに任せるのではなく、日々の学校生活の中に高校授業に取り組む時間を設けていることも、本校の大きな特長です。分からないところがあれば教員に相談しながら、一つひとつ学習を進めることができます。",
+      "馬の専門的な勉強や実習にしっかり取り組みながら、高校卒業に必要な学習にも安心して取り組める。「馬の学び」と「高校の学び」を両立できる環境を整えています。",
+    ],
   },
   {
     en: "INSTRUCTORS",
     role: "インストラクター",
-    body: "騎乗指導や馬匹管理を担うのは、馬の現場を知り尽くしたプロのインストラクター陣。寮生活や進路をサポートする担当スタッフとともに、生徒たちの毎日を見守ります。",
-    note: "現役騎手や調教助手を学校に招いての特別授業が開かれることもあります。",
+    paragraphs: [
+      "騎乗指導や馬匹管理、馬に関する専門的な授業を担当するのは、馬の現場を知り尽くしたプロのインストラクター陣です。馬への接し方や日々の手入れから、騎乗技術、競走馬の管理まで。一人ひとりの経験や目標に合わせ、実践を重ねながら丁寧に指導します。",
+      "そして、バジガクが大切にしているのが、「馬業界のプロ」と「今の若い世代」をつなぐことです。馬産業の現場には、長年の経験によって培われてきた技術や考え方があります。一方で、時代とともに若者の価値観や学び方、コミュニケーションのあり方も変化しています。",
+      "本校には、馬業界で長く経験を積んできたベテランスタッフに加え、かつてバジガクで学び、卒業後にスタッフとして戻ってきた若い世代も活躍しています。自分たち自身がバジガクで高校生活や寮生活を経験してきたからこそ、生徒たちと近い目線で悩みや不安に寄り添い、学校生活を支えることができます。",
+      "昔から馬の世界で大切にされてきた技術や姿勢は、しっかりと受け継ぐ。その一方で、今の世代に合った考え方や伝え方を柔軟に取り入れる。世代の異なるスタッフがお互いの強みを生かしながら、生徒一人ひとりを支えていることも、バジガクならではの教育環境です。",
+      "さらに全寮制だからこそ、騎乗や馬の授業だけではなく、寮生活や日々の悩み、将来の進路についても担当スタッフがサポート。学校・馬・寮生活を切り離すことなく、生徒の成長をチーム全体で見守ります。",
+    ],
+    closing: [
+      "教員から学ぶ「高校の学び」と、馬のプロから学ぶ「現場の学び」。",
+      "そして、世代を超えて支える「人の力」。",
+      "そのすべてがあることが、バジガクの大きな特長です。",
+    ],
   },
 ];
 
@@ -328,7 +347,7 @@ const accessRows: { label: string; value: React.ReactNode }[] = [
     label: "見学時",
     value: (
       <>
-        JR東京駅 八重洲中央口から無料送迎を行っています（完全予約制）。
+        JR東京駅（八重洲中央口）までのお迎えがあります。
         <span className="mt-1 block text-xs text-ink-500">
           帰路はJR八街駅までお送りしますので、日帰りでもゆっくりご覧いただけます
         </span>
@@ -350,52 +369,83 @@ export default function GaiyoPage() {
 
       {/* SCHOOL PROFILE */}
       <Section id="profile" className="texture-paper">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-16">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+          <FadeUp>
+            <figure>
+              <div className="overflow-hidden border border-cream-300 bg-white shadow-soft">
+                <Image
+                  src="/g11.JPG"
+                  alt="東関東馬事高等学院 学校長 野口佳槻"
+                  width={800}
+                  height={1000}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 text-center text-sm tracking-wide text-ink-700">
+                東関東馬事高等学院　学校長　野口　佳槻
+              </figcaption>
+            </figure>
+          </FadeUp>
           <div>
             <SectionTitle
               en="SCHOOL PROFILE"
               title={
                 <>
-                  馬と共に、
+                  全寮制だからこそ学べる、
                   <br />
-                  高校3年間を過ごす学校。
+                  馬と自然の中での高校生活
                 </>
               }
             />
             <FadeUp delay={0.15}>
               <p className="mt-8 text-sm leading-8 text-ink-700 md:text-[15px]">
-                東関東馬事高等学院は、株式会社馬事学院が運営する「馬の学校」です。広域通信制高校・中央国際高等学校との連携により、馬に囲まれた毎日を送りながら高校卒業資格の取得を目指せます。
+                東関東馬事高等学院は、緑豊かな自然の中で、馬と共に学び、生活する全寮制の高校です。ここには、馬に関わる仕事を目指す生徒はもちろん、「動物が好き」「自然の中で学びたい」「新しい環境で自分を変えたい」など、さまざまな目的や目標を持った生徒たちが全国から集まっています。
               </p>
               <p className="mt-4 text-sm leading-8 text-ink-700 md:text-[15px]">
-                騎手・厩務員をはじめ馬業界を志す生徒たちが、全国からこの千葉県山武市のキャンパスに集まっています。
+                馬や自然と向き合う毎日は、教室の中だけでは得ることのできない、たくさんの気づきや学びを与えてくれます。
+              </p>
+              <ul className="mt-6 space-y-2 text-sm leading-8 text-ink-700 md:text-[15px]">
+                <li>馬の気持ちを考えること。</li>
+                <li>仲間と協力すること。</li>
+                <li>自分の役割に責任を持つこと。</li>
+                <li>
+                  うまくいかないときにも、自分で考え、もう一度挑戦すること。
+                </li>
+              </ul>
+              <p className="mt-6 text-sm leading-8 text-ink-700 md:text-[15px]">
+                そうした日々の積み重ねを通じて、新しい価値観や自分自身の可能性に出会えることも、本校ならではの学びです。
               </p>
             </FadeUp>
           </div>
-          <FadeUp delay={0.1}>
-            <div className="overflow-x-auto border border-cream-300 bg-white shadow-soft">
-              <table className="w-full min-w-[440px] border-collapse text-left">
-                <tbody>
-                  {profileRows.map((row) => (
-                    <tr
-                      key={row.label}
-                      className="border-b border-cream-200 last:border-b-0"
-                    >
-                      <th
-                        scope="row"
-                        className="w-32 whitespace-nowrap bg-pine-50/70 px-6 py-5 align-top text-xs font-bold tracking-[0.25em] text-pine-800"
-                      >
-                        {row.label}
-                      </th>
-                      <td className="px-6 py-5 text-sm leading-7 text-ink-700 md:text-[15px]">
-                        {row.value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </FadeUp>
         </div>
+      </Section>
+
+      {/* SCHOOL DATA */}
+      <Section id="data" className="bg-white">
+        <FadeUp>
+          <div className="overflow-x-auto border border-cream-300 bg-white shadow-soft">
+            <table className="w-full min-w-[440px] border-collapse text-left">
+              <tbody>
+                {profileRows.map((row) => (
+                  <tr
+                    key={row.label}
+                    className="border-b border-cream-200 last:border-b-0"
+                  >
+                    <th
+                      scope="row"
+                      className="w-32 whitespace-nowrap bg-pine-50/70 px-6 py-5 align-top text-xs font-bold tracking-[0.25em] text-pine-800 md:w-40"
+                    >
+                      {row.label}
+                    </th>
+                    <td className="px-6 py-5 text-sm leading-7 text-ink-700 md:text-[15px]">
+                      {row.value}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </FadeUp>
       </Section>
 
       {/* PHILOSOPHY */}
@@ -633,15 +683,28 @@ export default function GaiyoPage() {
       <Section id="staff" className="bg-white">
         <SectionTitle
           en="FACULTY"
+          align="center"
           title={
             <>
-              生徒と馬を、
+              学ぶ生徒たちと
               <br />
-              それぞれの持ち場で支える。
+              それを支えてくれる馬たちの存在
             </>
           }
-          lead="高校の学びに伴走する教員から、馬の現場を知り尽くしたインストラクターまで。バジガクの毎日は、役割の異なるプロたちのチームワークで成り立っています。"
         />
+        <FadeUp delay={0.1}>
+          <div className="mt-8 max-w-3xl space-y-4 text-sm leading-8 text-ink-700 md:text-[15px]">
+            <p>
+              本校では、全国から集まったさまざまな考え方や個性を持つ仲間たちと生活を共にします。その中で、探究する力、知識を身につける力、自ら考えて行動する力、コミュニケーション力、信念を持つ力、心を開く力、思いやり、挑戦する力、心身のバランス、そして自分自身を振り返る力を育んでいきます。
+            </p>
+            <p>
+              馬の世話も、学校生活も、寮生活も、すべてが学びの時間です。私たちが大切にしているのは、単に馬の技術や知識を身につけることだけではありません。
+            </p>
+            <p>
+              自分で考え、自分で行動し、仲間を思いやり、失敗してもまた挑戦できる人へ。馬と自然、そして仲間との全寮制生活を通じて心と身体の調和を図り、社会の一員としてより良い人間関係を築きながら、これからの人生を自分らしく歩んでいくための「生きる力」を育てること。それが、東関東馬事高等学院が目指す教育です。
+            </p>
+          </div>
+        </FadeUp>
         <Stagger className="mt-12 border-t border-cream-300">
           {staffRows.map((s) => (
             <StaggerItem key={s.en}>
@@ -659,19 +722,30 @@ export default function GaiyoPage() {
                     </p>
                   )}
                 </div>
-                <div>
-                  <p className="text-sm leading-8 text-ink-700 md:text-[15px]">
-                    {s.body}
-                  </p>
-                  {s.note && (
-                    <p className="mt-3 border-l-2 border-gold-500 pl-4 text-[13px] leading-6 text-ink-700">
-                      {s.note}
-                    </p>
+                <div className="space-y-4 text-sm leading-8 text-ink-700 md:text-[15px]">
+                  {s.paragraphs.map((p, i) => (
+                    <div key={i}>
+                      {i === 1 && s.quote && (
+                        <p className="mb-4 border-l-2 border-gold-500 pl-4 font-serif text-base font-bold text-pine-950 md:text-lg">
+                          {s.quote}
+                        </p>
+                      )}
+                      <p>{p}</p>
+                    </div>
+                  ))}
+                  {s.closing && (
+                    <div className="space-y-2 pt-2">
+                      {s.closing.map((line) => (
+                        <p key={line} className="font-medium text-pine-900">
+                          {line}
+                        </p>
+                      ))}
+                    </div>
                   )}
                   {s.link && (
                     <a
                       href={s.link.href}
-                      className="group mt-5 inline-flex items-center gap-2 text-sm font-bold text-pine-800 transition hover:text-gold-600"
+                      className="group mt-1 inline-flex items-center gap-2 text-sm font-bold text-pine-800 transition hover:text-gold-600"
                     >
                       {s.link.label}
                       <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -692,13 +766,13 @@ export default function GaiyoPage() {
           en="ACCESS"
           align="center"
           title="キャンパスへの行き方"
-          lead="キャンパスがあるのは、千葉県山武市。最寄りのJR日向駅から歩ける距離で、学校見学の際にはJR東京駅からの無料送迎もご利用いただけます。"
+          lead="キャンパスがあるのは、千葉県山武市。最寄りのJR日向駅から歩ける距離で、学校見学の際にはJR東京駅（八重洲中央口）までのお迎えがあります。"
         />
         <div className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_1fr]">
           <FadeUp>
             <div className="h-full overflow-hidden border border-cream-300 bg-white shadow-soft">
               <iframe
-                src="https://www.google.com/maps?q=千葉県山武市雨坪10番地&output=embed"
+                src="https://www.google.com/maps?q=35.630227,140.357186(%E6%9D%B1%E9%96%A2%E6%9D%B1%E9%A6%AC%E4%BA%8B%E9%AB%98%E7%AD%89%E5%AD%A6%E9%99%A2+%E5%8D%83%E8%91%89%E7%9C%8C%E5%B1%B1%E6%AD%A6%E5%B8%82%E9%9B%A8%E5%9D%AA10%E7%95%AA%E5%9C%B0)&hl=ja&z=17&output=embed"
                 title="東関東馬事高等学院の地図（千葉県山武市雨坪10番地）"
                 loading="lazy"
                 className="h-80 w-full border-0 lg:h-full lg:min-h-[420px]"

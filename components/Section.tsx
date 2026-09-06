@@ -4,7 +4,7 @@ import { FadeUp } from "@/components/motion";
 
 /**
  * Section heading: small EN kicker, JP serif title, gold rule, optional lead.
- * align: "left" | "center"
+ * align: "left" | "center" — on mobile always centered; "left" becomes left-aligned from md up.
  */
 export function SectionTitle({
   en,
@@ -19,9 +19,11 @@ export function SectionTitle({
   align?: "left" | "center";
   dark?: boolean;
 }) {
-  const alignCls = align === "center" ? "text-center" : "text-left";
+  // Center on mobile; respect `align` from md up.
+  const alignCls =
+    align === "center" ? "text-center" : "text-center md:text-left";
   const ruleCls =
-    align === "center" ? "mx-auto rule-gold" : "rule-gold";
+    align === "center" ? "mx-auto rule-gold" : "mx-auto rule-gold md:mx-0";
   return (
     <FadeUp className={alignCls}>
       <p
@@ -32,7 +34,7 @@ export function SectionTitle({
         {en}
       </p>
       <h2
-        className={`mt-3 font-serif text-2xl font-bold leading-snug md:text-4xl ${
+        className={`mt-3 font-serif text-xl font-bold leading-snug tracking-tight md:text-4xl md:tracking-normal ${
           dark ? "text-white" : "text-pine-950"
         }`}
       >
@@ -43,7 +45,7 @@ export function SectionTitle({
         <p
           className={`mt-6 max-w-3xl text-sm leading-8 md:text-[15px] ${
             dark ? "text-white/80" : "text-ink-700"
-          } ${align === "center" ? "mx-auto" : ""}`}
+          } ${align === "center" ? "mx-auto" : "mx-auto md:mx-0"}`}
         >
           {lead}
         </p>

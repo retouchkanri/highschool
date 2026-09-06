@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
 };
 
-const iconCls = "h-6 w-6";
+const iconCls = "h-4 w-4 md:h-6 md:w-6";
 
 const whys = [
   {
@@ -385,12 +385,14 @@ export default function TokuchoPage() {
                 <span className="text-[10px] font-bold tracking-[0.3em] text-gold-600">
                   TYPE {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="mt-4 flex h-14 w-14 items-center justify-center rounded-full bg-pine-50 text-pine-800 transition duration-300 group-hover:bg-pine-800 group-hover:text-sun-400">
-                  {s.icon}
-                </span>
-                <h3 className="mt-4 font-serif text-[15px] font-bold leading-relaxed text-pine-950">
-                  {s.title}
-                </h3>
+                <div className="mt-4 flex items-center gap-3">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-pine-50 text-pine-800 transition duration-300 group-hover:bg-pine-800 group-hover:text-sun-400 md:h-14 md:w-14">
+                    {s.icon}
+                  </span>
+                  <h3 className="font-serif text-[15px] font-bold leading-snug text-pine-950">
+                    {s.title}
+                  </h3>
+                </div>
                 <p className="mt-3 text-xs leading-6 tracking-[-0.01em] text-ink-700 text-pretty">
                   {s.desc}
                 </p>

@@ -71,10 +71,10 @@ export default function HomeHero() {
         <p className="animate-[fade-in_1s_ease-out_1s_both] mt-5 text-xs leading-6 tracking-widest text-white/85 md:text-sm">
           千葉県山武市｜全寮制・馬の学校｜中央国際高等学校 連携
         </p>
-        <div className="animate-[fade-up_0.9s_ease-out_1.25s_both] mt-9 flex flex-wrap justify-center gap-4">
+        <div className="animate-[fade-up_0.9s_ease-out_1.25s_both] mt-9 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
           <Link
             href="/opencampus"
-            className="group inline-flex items-center gap-3 rounded-full bg-sun-500 px-8 py-4 text-sm font-bold text-pine-950 shadow-lift transition hover:brightness-105"
+            className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-sun-500 px-8 py-4 text-sm font-bold text-pine-950 shadow-lift transition hover:brightness-105 sm:w-auto"
           >
             オープンキャンパスに参加する
             <span className="transition-transform duration-300 group-hover:translate-x-1.5">
@@ -83,7 +83,7 @@ export default function HomeHero() {
           </Link>
           <Link
             href="/course"
-            className="inline-flex items-center gap-3 rounded-full border-2 border-white/70 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/15"
+            className="inline-flex w-full items-center justify-center gap-3 rounded-full border-2 border-white/70 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/15 sm:w-auto"
           >
             コースを見る
           </Link>
@@ -91,7 +91,7 @@ export default function HomeHero() {
       </div>
 
       {/* slide dots */}
-      <div className="absolute bottom-24 left-1/2 z-10 flex -translate-x-1/2 gap-2.5 md:bottom-20">
+      <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 gap-2.5 md:bottom-20">
         {slides.map((_, i) => (
           <button
             key={i}
@@ -105,8 +105,8 @@ export default function HomeHero() {
         ))}
       </div>
 
-      {/* scroll cue */}
-      <div className="animate-[fade-in_1s_ease-out_1.8s_both] absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center">
+      {/* scroll cue — desktop only */}
+      <div className="animate-[fade-in_1s_ease-out_1.8s_both] absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 text-center md:block">
         <p className="text-[10px] font-bold tracking-[0.4em] text-white/70">
           SCROLL
         </p>

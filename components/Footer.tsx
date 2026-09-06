@@ -10,8 +10,10 @@ const snsLinks = [
 ];
 
 export default function Footer() {
+  const half = Math.ceil(footerNav.length / 2);
+
   return (
-    <footer className="relative overflow-hidden bg-pine-950 text-white">
+    <footer className="relative overflow-hidden bg-[#005229] text-white">
       {/* faint horse silhouette line art */}
       <div
         aria-hidden
@@ -67,7 +69,7 @@ export default function Footer() {
           </div>
 
           <nav className="grid grid-cols-1 content-start gap-1 text-sm">
-            {footerNav.slice(0, 6).map((l) => (
+            {footerNav.slice(0, half).map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
@@ -78,7 +80,7 @@ export default function Footer() {
             ))}
           </nav>
           <nav className="grid grid-cols-1 content-start gap-1 text-sm">
-            {footerNav.slice(6).map((l) => (
+            {footerNav.slice(half).map((l) => (
               <Link
                 key={l.href}
                 href={l.href}

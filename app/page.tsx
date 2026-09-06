@@ -498,7 +498,7 @@ export default async function HomePage() {
                   </div>
                 ))}
               </dl>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
                 <Link
                   href="/tokucho"
                   className="group inline-flex items-center gap-3 rounded-full bg-pine-800 px-7 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-pine-700 hover:shadow-lift"
@@ -667,7 +667,7 @@ export default async function HomePage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-9">
+              <div className="mt-9 flex justify-center md:justify-start">
                 <Link
                   href="/gaiyo"
                   className="group inline-flex items-center gap-3 rounded-full border-2 border-pine-800 px-7 py-3.5 text-sm font-bold text-pine-800 transition hover:bg-pine-50"
@@ -790,7 +790,13 @@ export default async function HomePage() {
         <SectionTitle
           en="FUTURE"
           align="center"
-          title="生徒たちの未来（目指せる進路）"
+          title={
+            <>
+              生徒たちの未来
+              <br className="md:hidden" />
+              （目指せる進路）
+            </>
+          }
           lead={
             <>
               騎手や厩務員として競馬の第一線へ。牧場や乗馬クラブで馬と生きる。
@@ -957,7 +963,7 @@ export default async function HomePage() {
               className="absolute inset-0 bg-cover bg-center opacity-10"
               style={{ backgroundImage: "url(/images/DSC_2533.jpg)" }}
             />
-            <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+            <div className="relative flex flex-col items-center justify-between gap-8 text-center md:flex-row md:items-center md:text-left">
               <div>
                 <p className="text-[10px] font-bold tracking-[0.35em] text-gold-400">
                   PRINCIPAL MESSAGE
@@ -1014,7 +1020,7 @@ export default async function HomePage() {
       {/* YOUTUBE */}
       <section className="overflow-hidden bg-pine-950 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div className="flex flex-col items-center justify-between gap-6 md:flex-row md:items-end">
             <SectionTitle
               dark
               en="YOUTUBE CHANNEL"
@@ -1211,7 +1217,7 @@ export default async function HomePage() {
                   </dd>
                 </div>
               </dl>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
                 <Link
                   href={site.forms.contact}
                   className="group inline-flex items-center gap-3 rounded-full bg-pine-800 px-7 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-pine-700 hover:shadow-lift"

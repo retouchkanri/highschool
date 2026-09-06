@@ -1132,7 +1132,7 @@ export default function CoursePage() {
             <p className="mt-6 text-sm leading-8 text-ink-700 md:text-[15px]">
               入学の時点で、将来の答えを用意しておく必要はありません。馬と仲間と先生に囲まれた3年間が、進みたい道を少しずつ照らしてくれます。進路選びは焦らず、一緒に考えていきましょう。
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
               <Link
                 href="/boshu"
                 className="group inline-flex items-center gap-3 rounded-full bg-pine-800 px-7 py-3.5 text-sm font-bold text-white shadow-soft transition hover:bg-pine-700 hover:shadow-lift"
